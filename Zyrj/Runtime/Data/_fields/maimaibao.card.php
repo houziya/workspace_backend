@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'id', 1 => 'bid', 2 => 'buser_id', 3 => 'card_no', 4 => 'card_pw', 5 => 'c_time', 6 => 'f_time', 7 => 'l_time', 8 => 'b_time', 9 => 'is_sell', 10 => 'is_use', 11 => 'money', 12 => 'c_type', 13 => 'bz', '_autoinc' => true, '_pk' => 'id', ); ?>

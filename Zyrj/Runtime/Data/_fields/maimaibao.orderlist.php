@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'id', 1 => 'userid', 2 => 'num', 3 => 'money', 4 => 'ordstatus', 5 => 'payment_type', 6 => 'payment_trade_no', 7 => 'payment_trade_status', 8 => 'payment_notify_id', 9 => 'payment_notify_time', 10 => 'payment_buyer_email', 11 => 'c_type', '_autoinc' => true, '_pk' => 'id', ); ?>

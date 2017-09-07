@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?><span style="font-size:12px; font-family:Arial, Helvetica, sans-serif"><?php echo ($card_num); ?></span>

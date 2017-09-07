@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'id', 1 => 'cash_id', 2 => 'code', 3 => 'time', 4 => 'content', 5 => 'old_money', 6 => 'money', 7 => 'new_money', 8 => 'action_type', 9 => 'did', 10 => 'type', 11 => 'status', '_autoinc' => true, '_pk' => 'id', ); ?>

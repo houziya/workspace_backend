@@ -1,0 +1,131 @@
+<load href="__PUBLIC__/Js/Ajax/ThinkAjax-1.js" />
+<load href="__PUBLIC__/Js/UserJs.js" />
+<script language='javascript'>
+function CheckForm(){
+	if(document.form1.ePoints.value==""){
+		alert("金额不能为空！");
+		return false;
+	}
+	if(document.form1.select.value==1){
+		if(confirm('您确定把 '+document.form1.ePoints.value+' 转借给会员（'+document.form1.UserID.value+'）吗？'))
+		{
+			return true;
+		}else{
+			alert('您取消了本次操作');
+			return false;
+		}
+	}
+}
+
+function yhServer(Ful){
+	str = $F(Ful).replace(/^\s+|\s+$/g,"");
+	ThinkAjax.send('__APP__/Fck/check_CCuser/','ajax=1&userid='+str,'',Ful+'1');
+}
+</script>
+<form name="form1" method="post" action="__URL__/transferMoneyAC_b" onSubmit="{return CheckForm();}">
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+  <tr>
+    <td height="30" align="right">报单币账户： </td>
+    <td colspan="2" width="80%"><span class="hong">{$rs.agent_use}</span></td>
+  </tr>
+  <tr>
+    <td height="30" align="right">金币账户： </td>
+    <td colspan="2" width="80%"><span class="hong">{$rs.agent_cash}</span></td>
+  </tr>
+  <!--<tr>
+    <td height="30" align="right">分红币账户： </td>
+    <td colspan="2" width="80%"><span class="hong">{$rs.agent_xf}</span></td>
+  </tr>
+  <tr>
+    <td height="30" align="right">报单币账户： </td>
+    <td colspan="2" width="80%"><span class="hong">{$rs.agent_kt}</span></td>
+  </tr>
+  <tr>
+    <td height="30" align="right">购物币账户： </td>
+    <td colspan="2" width="80%"><span class="hong">{$rs.agent_cf}</span></td>
+  </tr>-->
+  <tr>
+    <td height="30" align="right">转账类型：</td>
+    <td colspan="2">
+    <select name="select" id="select" onchange="Selev(this.value)" onpropertychange="Selev(this.value)">
+      <!--<option value="1"> 报单币 转给 其他会员 </option>-->
+      <option value="2" selected="selected"> 金币 转 报单币 </option>
+      <!--<option value="3"> 分红币 转 报单币 </option>
+      <option value="4"> 报单币 转 报单币 </option>
+      <option value="5"> 报单币 转 购物币 </option>-->
+    </select>
+    </td>
+  </tr>
+  <tr id="Selev" style="display:none">
+    <td height="30" align="right">{:xstr('account')}：</td>
+    <td><input name="UserID" type="text" id="UserID" class="ipt" onblur="javascript:yhServer(this.name);" onfocus="notice('0','')" /></td>
+    <td><div id="UserID1" class="info"><div id="0" class="focus_r" style="display:none;"><div class="msg_tip">请输入你要转给会员的编号。</div></div></div></td>
+  </tr>
+  <tr>
+    <td height="30" align="right">{:xstr('money')}：</td>
+    <td><input name="ePoints" type="text" id="ePoints" class="ipt" onkeyup="javascript:Null_Int(this.name)" onfocus="notice('1','')"  onblur="notice('1','none')"/></td>
+    <td><div id="ePoints1" class="info"><div id="1" class="focus_r" style="display:none;"><div class="msg_tip">请输入你要转入的金额。</div></div></div></td>
+  </tr>
+  <tr>
+    <td height="30" align="right">转账说明：</td>
+    <td colspan="2"><textarea name="content" cols="40" rows="4" id="content"></textarea></td>
+  </tr>
+  <tr style="display:none">
+    <td height="30" colspan="3" style="height:5px;"><hr></td>
+  </tr>
+  <tr style="display:none">
+    <td height="30" align="right">{:xstr('safe_question')}：</td>
+    <td>{$rs['wenti']}</td>
+    <td>&nbsp;</td>
+    </tr>
+  <tr style="display:none">
+    <td height="30" align="right">{:xstr('tpl137')}：</td>
+    <td><input name="wenti_dan" type="text" id="wenti_dan" value="" class="ipt"/></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="30">&nbsp;</td>
+    <td colspan="2"><input type="submit" name="Submit" value="确定转账" class="button_text" /></td>
+  </tr>
+</table>
+</form>
+<br>
+<table width="100%" class="tab3" border="0" cellpadding="3" cellspacing="1" id="tb1" bgcolor="#b9c8d0">
+	<thead>
+		<tr>
+			<th><span>借方{:xstr('account')}</span></th>
+			<th><span>贷方{:xstr('account')}</span></th>
+			<th><span>{:xstr('time')}</span></th>
+			<th><span>交易额</span></th>
+            <th><span>类型</span></th>
+            <th><span>说明</span></th>
+		</tr>
+	</thead>
+    <volist name='list' id='vo'>
+	<tr align="center">
+		<td>{$vo['out_userid']}</td>
+		<td>{$vo['in_userid']}</td>
+		<td>{$vo['rdt']|date='Y-m-d H:i:s',###}</td>
+		<td>{$vo['epoint']}</td>
+        <td>
+        	<eq name="vo['type']" value="1">报单币 转给 其他会员</eq>
+            <eq name="vo['type']" value="2">金币 转 报单币</eq>
+            <eq name="vo['type']" value="3">报单币 转给 其他账户</eq>
+            <eq name="vo['type']" value="4">报单币 转 报单币</eq>
+        </td>
+        <td>{$vo['sm']}</td>
+	</tr>
+    </volist>
+</table>
+<table width="100%" class="tab3_bottom" border="0" cellpadding="0" cellspacing="1">
+    <tr>
+        <td align="center">{$page}</td>
+    </tr>
+</table>
+<script language="javascript">
+function Selev(o){
+	if(o==1){document.getElementById('Selev').style.display = '';}
+	if(o==2||o==3||o==4||o==5||o==6||o==7){document.getElementById('Selev').style.display = 'none';}
+}
+new TableSorter("tb1");
+</script>

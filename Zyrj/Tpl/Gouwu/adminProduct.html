@@ -1,0 +1,58 @@
+<form name="form3" method="post" action="__URL__/adminProductAC">
+<table width="100%" cellpadding=3 border=0 cellspacing="1" id="tb1" bgcolor="#b9c8d0" class="tab3">
+<thead>
+    <tr class="content_td" align="center">
+        <th >
+            <input type="checkbox" name="chkall" value="checkbox" onclick="CheckAll(this.form)"  class="btn2" id="chkall" />
+          </th>
+        <th nowrap ><span>会员编号</span></th>
+        <th nowrap ><span>收货人</span></th>
+        <th nowrap ><span>收货地址</span></th>
+        <th nowrap ><span>{:xstr('phone_number')}</span></th>
+        <th nowrap ><span>提货数量</span></th>
+        <th nowrap ><span>{:xstr('tpl157')}</span></th>
+        <th nowrap ><span>{:xstr('status')}</span></th>
+
+    </tr>
+</thead>
+<volist name="list" id="vo">
+<tr align="center">
+	<td><input type="checkbox" name="tabledb[]" value="{$vo['id']}" class="btn2" /></td>
+	<td>{$vo['user_id']}</td>
+	<td>{$vo['user_name']}</td>
+	<td>{$vo['bank_address']}</td>
+	<td>{$vo['user_tel']}</td>
+	<td><span style="color: #F00;">{$vo['epoint']}</span></td>
+	<td>{$vo.rdt|date='Y-m-d H:i:s',###}</td>
+	<td><eq name="vo['is_pay']" value="1"><span style="color: #F00;">{:xstr('is_confirmed')}</span></eq><eq name="vo['is_pay']" value="0"><span style="color: #090;">{:xstr('not_comfirmed')}</span></eq></td>
+</tr>
+</volist>
+</table>
+<table width="100%" class="tab3_bottom" border="0" cellpadding="0" cellspacing="1">
+    <tr>
+    	<td width="50%"><input name="{:xstr('select_all')}" type="button" class="button_text" id="{:xstr('select_all')}" onclick="CheckAll(this.form)" value="{:xstr('select_all')}" />	  &nbsp; &nbsp;
+	  <input type="submit" name="action" value="{:xstr('confirm_2')}" class="button_text" onclick="if(confirm('{:xstr('are_you_sure')}')) return true; else return false;">
+	  &nbsp; &nbsp;
+	  <input type="submit" name="action" value="{:xstr('delete')}" class="button_text" onclick="if(confirm('{:xstr('are_you_sure_to_delete')}')) return true; else return false;"> &nbsp; &nbsp;
+	  <!-- <input name="button3" type="button" onclick="window.location.href='__URL__/DaoChu'" value="{:xstr('export_to_excel')}" class="button_text" />
+    &nbsp;&nbsp;&nbsp;
+    <input name="button4" type="button" onclick="window.location.href='__URL__/DaoChu1'" value="{:xstr('export_to_wps')}" class="button_text" /> -->
+    </td>
+    </tr>
+</table>
+</form>
+<table width="100%" class="tab3_bottom" border="0" cellpadding="0" cellspacing="1">
+	<tr>
+		<td align="center">{$page}</td>
+    </tr>
+</table>
+<table width="600" align="center">
+    <tr>
+    <td align="center">
+    <form method='post' action="__URL__/adminPruduct">
+		{:xstr('account')}：<input name="UserID" type="text"id="UserID" title="{:xstr('account_query')}" maxlength="200" >
+		  <input type="submit" name="Submit" value="{:xstr('search')}"  class="button_text"/>
+		</form>
+    </td>
+    </tr>
+</table>

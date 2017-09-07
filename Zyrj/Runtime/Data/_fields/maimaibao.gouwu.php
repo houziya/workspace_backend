@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'id', 1 => 'uid', 2 => 'did', 3 => 'lx', 4 => 'ispay', 5 => 'pdt', 6 => 'money', 7 => 'shu', 8 => 'cprice', 9 => 'pvzhi', 10 => 'guquan', 11 => 's_type', 12 => 'user_id', 13 => 'us_name', 14 => 'us_address', 15 => 'us_tel', 16 => 'isfh', 17 => 'fhdt', 18 => 'okdt', 19 => 'ccxhbz', 20 => 'tshu', 21 => 'zhong_sum', 22 => 'zhong_ti', 23 => 'is_fh', '_autoinc' => true, '_pk' => 'id', ); ?>

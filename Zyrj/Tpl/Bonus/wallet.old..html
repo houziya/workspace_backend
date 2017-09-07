@@ -1,0 +1,255 @@
+﻿<include file="../Public/header" />
+<script type="text/javascript">
+jQuery(document).ready(function(e) {
+    jQuery(".show_board_btn").click(function(ex){
+        
+        ex.stopPropagation();
+        ex.preventDefault();
+        var topBody = jQuery(window.parent.document).find("body");
+        if(topBody.length > 0)
+        {
+            var showBoard = jQuery("#show").clone();
+            showBoard.css("display","none");
+            showBoard.attr("id",null);
+            showBoard.appendTo(topBody);
+            var contentBoard = showBoard.children("div");
+            // alert(showBoard);
+            if(contentBoard.length > 0)
+            {
+                contentBoard.click(function(es){
+                    es.stopPropagation();
+                });
+            }
+            showBoard.fadeIn(300);
+            showBoard.click(function(ex){
+                ex.stopPropagation();
+                ex.preventDefault();
+                jQuery(this).fadeOut(300,function(){
+                    jQuery(this).remove();
+                });
+            });
+        }
+        else
+            alert('not found top window body');
+    });
+    
+});
+</script>
+<script type="text/javascript">
+jQuery(document).ready(function(e) {
+    jQuery(".show_board_btn2").click(function(ex){
+        ex.stopPropagation();
+        ex.preventDefault();
+        var topBody = jQuery(window.parent.document).find("body");
+        if(topBody.length > 0)
+        {
+            var showBoard = jQuery("#show2").clone();
+            showBoard.css("display","none");
+            showBoard.attr("id",null);
+            showBoard.appendTo(topBody);
+            var contentBoard = showBoard.children("div");
+            if(contentBoard.length > 0)
+            {
+                contentBoard.click(function(es){
+                    es.stopPropagation();
+                });
+            }
+            showBoard.fadeIn(300);
+            showBoard.click(function(ex){
+                ex.stopPropagation();
+                ex.preventDefault();
+                jQuery(this).fadeOut(300,function(){
+                    jQuery(this).remove();
+                });
+            });
+        }
+        else
+            alert('not found top window body');
+    });
+});
+</script>
+<div class="money">
+	<div class="virtual">
+    	<h1 style="color:red;">创客静态钱包</h1>
+<!--         <p>待定：<strong style="color:#D9534F;">{$money_hong|default=0.00}</strong>&nbsp;</p> -->
+        <h2>{$fck_rs['agent_cash']|default=0.00}</h2>
+        <h3>创客币</h3>
+        <a  class="show_board_btn">
+        	<b style="font-size:30px;">♥</b><br>接受帮助
+        </a>
+        
+    </div>
+    <div class="virtual">
+    	<h1>创客动态钱包</h1>
+<!--         <p>待定：<strong style="color:#D9534F;">{$money_hong|default=0.00}</strong>&nbsp;</p> -->
+        <!-- <p>流动：<strong style="color:#f0ba00">{$fck_rs['agent_use']|default=0.00}</strong></p> -->
+        <h2>{$fck_rs['agent_use']|default=0.00}</h2>
+        <h3>业绩</h3>
+        <a class="show_board_btn2">
+        	<b style="font-size:30px;">♥</b><br>接受帮助
+        </a>
+    </div>
+	
+</div>
+<div class="borecord">
+    <h3>互助钱包记录</h3>
+    <div class="bonlist">
+        <table class="tab11 tab_bor">
+            <tr>
+                <td width="12%" height="20"> 编号</td>
+                <td width="18%">日期</td>
+                <td width="20%">说明</td>
+                <td width="14%">原余额</td>
+                <td width="22%">+收入/-支出</td>
+                <td width="14%">新余额</td>
+            </tr>
+        </table>
+        <volist name="cash" id='voo'>
+        <table class="tab11 tab_bor1">
+            <tr >
+                <td width="12%" height="14">{$voo['code']}{$key|key_num}</td>
+                <td width="18%">{$voo['time']|date='Y-m-d H:i:s',###}</td>
+                <td width="20%">{$voo['content']}</td>
+                <td width="14%">{$voo['old_money']}</td>
+                <td width="22%"><gt name="voo['money']" value="0">+</gt>{$voo['money']}</td>
+                <td width="14%">{$voo['new_money']}</td>
+            </tr>
+        </table>
+        </volist>
+		<table class="tab11 tab_bor1">
+            <tr >
+                <td height="14">{$bpage}</td>
+            </tr>
+       </table>
+    </div>
+    
+</div>
+
+<div class="borecord">
+	<h3>业绩钱包记录</h3>
+    <div class="bonlist">
+    	<table class="tab11 tab_bor">
+        	<tr>
+            	<td width="12%" height="20"> 编号</td>
+                <td width="18%">日期</td>
+                <td width="20%">说明</td>
+                <td width="14%">原余额</td>
+                <td width="22%">+收入/-支出</td>
+                <td width="14%">新余额</td>
+            </tr>
+        </table>
+        <volist name="use" id='voo'>
+        <table class="tab11 tab_bor1">
+        	<tr >
+            	<td width="12%" height="14">{$voo['code']}{$key|key_num}</td>
+                <td width="18%">{$voo['time']|date='Y-m-d H:i:s',###}</td>
+                <td width="20%">{$voo['content']}</td>
+                <td width="14%">{$voo['old_money']}</td>
+                <td width="22%"><gt name="voo['money']" value="0">+</gt>{$voo['money']}</td>
+                <td width="14%">{$voo['new_money']}</td>
+            </tr>
+        </table>
+        </volist>
+		<table class="tab11 tab_bor1">
+            <tr >
+                <td height="14">{$spage}</td>
+            </tr>
+       </table>
+    </div>
+    
+</div>
+<!-- 弹出框 -->
+<div id="show" class="help_Box" >
+    <div class="del" style="margin-top:-350px;">
+        <div class="color-line"></div>
+         <div class="modal-header">
+            <h2>接受帮助</h2>
+        </div>
+        <form name="form1" method="post" action="__APP__/Mavro/sellAC/money_type/1">
+        <div class="modal-body">
+            <div class="dataa" style="color:#D9534F"><span style="float:left;color:#D9534F">创客币</span>&nbsp;{$money_hong}</div>
+            <div class="dataa"  style="color:#62CB31"><span style="float:left">可出售创客币</span>&nbsp;{$fck_rs['agent_cash']}
+            </div>
+            <div class="dataa"><span>最低出售数量</span>&nbsp;{$s2[0]}</div>
+            <div class="dataa"><span>剩余出售限额</span>&nbsp;{$s6-$fck_rs['xx_money']}</div>
+            <h4 class="mod">接受帮助支付方式</h4> 
+            <div align="left" class="pay_style">
+            <label><input type="checkbox" value="0" name="pay_type[]" checked="checked">银行支付</label>
+            <label><input type="checkbox" value="1" name="pay_type[]" checked="checked" >支付宝支付</label>
+            <label><input type="checkbox" value="2" name="pay_type[]" checked="checked" >微信支付</label>
+            <label><input type="checkbox" value="3" name="pay_type[]" checked="checked" >财富通</label>
+             </div>
+            <h4>请输入出售的创客币数量</h4>
+            <div class="dat">
+<input type="text" name="s_money">
+               <!-- <select name="s_money">
+                    <volist name="s2" id="kk">
+					 <option value="{$kk}">{$kk}</option>
+                   
+                    </volist>
+                </select>-->
+            </div>
+        
+            <p><span style="color:green">1</span> 创客币= <span style="color:#f00">1</span> 人民币</p>
+            <p style=" text-align:left;">!警告，我已完全了解所有风险。我决定参与与人帮人互助,尊重人帮人互助文化与传统。</p>
+           
+        </div>
+         <div class="btns" style="padding-bottom:16px;">
+            <button class="sure" type="submit"  onclick="if(confirm('确定要申请求助吗？')) return true; else return false;">我要求助 </button>
+            <!-- <button class="cancel"  id="cancel" type="button">取消 </button> -->
+            
+        </div>
+        
+        
+       </form>
+    </div>
+</div>
+
+<div id="show2" class="help_Box" >
+    <div class="del" style="margin-top:-350px;">
+        <div class="color-line"></div>
+         <div class="modal-header">
+            <h2>接受帮助</h2>
+        </div>
+        <form name="form1" method="post" action="__APP__/Mavro/sellAC/money_type/2">
+        <div class="modal-body">
+            <div class="dataa"><span>业绩钱包</span>&nbsp;<input type="text" value="{$fck_rs['b0']+$fck_rs['b1']+$fck_rs['b3']+$fck_rs['b4']}" readonly></div>
+            <div class="dataa"  style="color:#62CB31"><span style="float:left">可出售业绩钱包</span>&nbsp;{$fck_rs['agent_use']}
+            </div>
+            <div class="dataa"><span>最低出售数量</span>&nbsp;{$s2[0]}</div>
+            <div class="dataa"><span>剩余出售限额</span>&nbsp;{$s6-$fck_rs['xx_money']}</div>
+            <h4 class="mod">接受帮助支付方式</h4> 
+            <div align="left" class="pay_style">
+            <label><input type="checkbox" value="0" name="pay_type[]" checked="checked">银行支付</label>
+            <label><input type="checkbox" value="1" name="pay_type[]" checked="checked" >支付宝支付</label>
+            <label><input type="checkbox" value="2" name="pay_type[]" checked="checked" >微信支付</label>
+            <label><input type="checkbox" value="3" name="pay_type[]" checked="checked" >财富通</label>
+             </div>
+            <h4>请输入出售的业绩钱包数量</h4>
+            <div class="dat">
+<input type="text" name="s_money">
+               <!-- <select name="s_money">
+                    <volist name="s2" id="kk">
+					 
+                    <option value="{$kk}">{$kk}</option>
+                    </volist>
+                </select>-->
+            </div>
+        
+            <p><span style="color:green">1</span> 创客币= <span style="color:#f00">1</span> 人民币</p>
+            <p style=" text-align:left;">!警告，我已完全了解所有风险。我决定参与与人帮人互助,尊重人帮人互助文化与传统。</p>
+           
+        </div>
+         <div class="btns" style="padding-bottom:16px;">
+            <button class="sure" type="submit"  onclick="if(confirm('确定要申请求助吗？')) return true; else return false;">我要求助 </button>
+            <!-- <button class="cancel"  id="cancel" type="button">取消 </button> -->
+            
+        </div>
+        
+        
+       </form>
+    </div>
+</div>
+<!-- 弹出框 -->
+</body>
+</html>

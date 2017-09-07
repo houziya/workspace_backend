@@ -1,0 +1,274 @@
+﻿<include file="headers" />
+<!--倒计时代码-->
+<SCRIPT LANGUAGE="JavaScript" type="text/javascript">
+function countDown( maxtime,fn )
+{    
+   var timer = setInterval(function()
+   {
+	   if(maxtime>=0){   
+hours = Math.floor(maxtime/3600);
+minutes = Math.floor((maxtime-hours*3600)/60);   
+seconds = Math.floor(maxtime%60);
+			 msg = "还有"+hours+"小时"+minutes+"分"+seconds+"秒";   
+			 fn( msg );
+			 if(maxtime == 5*60) alert('注意，付款时间还有5分钟!');   
+			 --maxtime;   
+		}   
+		 else{   
+			clearInterval( timer );
+			fn("时间到，已超时!");  
+		}   
+	}, 1000);
+}
+</SCRIPT>
+ <script>
+		 
+		  function ss(i)
+		  {
+				  var a = document.getElementById(i).style.display;
+				  if (a == "none"){document.getElementById(i).style.display="";}
+				  if (a == ""){document.getElementById(i).style.display="none";}
+		  }
+		  
+		  	  function tt(c)
+		  {
+				  var aa = document.getElementById(c).style.display;
+				  if (aa == "none"){document.getElementById(c).style.display="";}
+				  if (aa== ""){document.getElementById(c).style.display="none";}
+		  }
+		  
+		  	  	  function rr(d)
+		  {
+				  var ee = document.getElementById(d).style.display;
+				  if (ee == "none"){document.getElementById(d).style.display="";}
+				  if (ee== ""){document.getElementById(d).style.display="none";}
+		  }
+		  
+		  	  	  function mm(p)
+		  {
+				  var dd = document.getElementById(p).style.display;
+				  if (dd == "none"){document.getElementById(p).style.display="";}
+				  if (dd== ""){document.getElementById(p).style.display="none";}
+		  }
+		  </script>
+<!-- BEGIN CONTAINER -->
+<div class="page-container"> 
+  <!-- BEGIN SIDEBAR -->
+  <include file="sidebar" />
+  <!-- END SIDEBAR --> 
+  <!-- BEGIN PAGE -->
+  <div class="page-content"> 
+    <!-- BEGIN PAGE CONTAINER-->
+    <div class="container-fluid"> 
+      <!-- BEGIN PAGE HEADER-->
+      <div class="row-fluid">
+        <div class="span12">
+          <h3 class="page-title"> 抢单市场 <small>Order Market</small> </h3>
+          <ul class="breadcrumb">
+            <li> <i class="icon-home"></i> <a href="__APP__/Public/main">Home</a> <i class="icon-angle-right"></i> </li>
+       
+          </ul>
+        </div>
+      </div>
+      <!-- END PAGE HEADER--> 
+      <!-- BEGIN ACCOUNT INFO--><!-- END ACCOUNT INFO--> 
+      
+      <!--舍得按钮--><!--舍列表-->
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="portlet box grey">
+            <div class="portlet-title">
+              <div class="caption"><i class="icon-cloud-upload"></i>帮助抢单列表 </div>
+              <div class="tools"> <a href="javascript:;" class="collapse"></a></div>
+            </div>
+			
+            <div class="portlet-body pd-wrap" >
+			
+			   <volist name="buylist" id="voo" key="key">
+			
+              <div class="table-pd">
+ 
+                <div class="donate-header clearfix"> <a href="javascript:void(0);">
+				
+				 <eq name="voo['match_num']" value="0">
+				
+				<i class="icon-reorder hireTable" rel="{$voo['x1']}" value="pd" data-toggle="tooltip" data-placement="top" align="right"   ></i>
+				
+				 <else />
+				
+				<i class="icon-reorder hireTable" rel="{$voo['x1']}" value="pd" data-toggle="tooltip" data-placement="top" align="right"    ></i>
+				
+				</eq>
+				
+				</a>
+                  <h4>提供帮助编号：<span>{$voo['x1']} 
+                 <eq name="voo['is_timeout']" value="1">【超时重排】</eq></span></h4>
+                  <ul class="div_list">
+                    <li>参加者：{$voo['user_id']}</li>
+                    <li>提供帮助数额：RMB {$voo['money']}</li>
+                    <li>排队日期：{$voo.rdt|date='Y-m-d H:i:s',###}<!--<gt name="voo['pdt']" value="0">{$voo.pdt|date='Y-m-d H:i:s',###}<span style="color:red">
+                                   
+                                </span>                               
+                           <else/>未匹配</gt>--></li>
+                    <li>匹配状态：  <eq name="voo['is_pay']" value="0">
+                            <span style="color: #FFFF00">等待匹配</span><else/>已匹配成功</eq> </li>
+
+
+  <eq name="voo['is_pay']" value="1">
+<!-- star 确认 --> 
+ <li>确认状态：  <eq name="voo['is_done']" value="0">
+<!-- star 打款 --> 
+<eq name="voo['is_get']" value="0"> <?php
+ $sytime=$voo['rdt']+3600*24-time();
+ ?>
+ 
+<script type="text/javascript">
+	countDown( {$sytime},function( msg )
+	{
+		document.getElementById('timer{$voo[id]}').innerHTML = msg;
+	});
+</script>
+<span style="color:#FFFF00">等待您打款</span> <span id="timer{$voo[id]}" ></span>
+                            <else/>
+                            <span style="color:#FFFF00"><a>等待对方确认收款</a></span>
+                            </eq>
+<!-- end 打款 --> 
+ <else/>对方已成功确认</eq>
+ 
+ <eq name="voo['is_pay']" value="0">
+            <form action="__APP__/Mavro/Delect" method="post">
+            <input type="hidden" name="del_id" value="{$voo['id']}" />
+            
+            </form>
+            </eq></li>
+<!-- star 确认 --> 
+ <else/>预计匹配时间：
+ <?php
+ $sytimea=$voo['rdt']+3600*120;
+ $sytimeb=$voo['rdt']+3600*240;
+ ?>
+<span id="thediv">{$sytimea|date='Y-m-d',###}至{$sytimeb|date='Y-m-d',###}之间</span>
+</eq>
+
+
+                   <!-- <li>预计匹配时间：2015-12-21 上午 （因排队太多，需多等待一天，多计一天的收益）</li>
+                    
+                    <li>剩余数额: RMB0.00</li>
+                    <li>回酬分布剩余时间: 剩余0天</li>-->
+                  </ul>
+				  <div style="height: auto;width:100%; background:#FFFFFF; color:#333; display:none" id="{$key}">
+				  <iframe src="__APP__/Public/mx/id/{$voo['id']}" id="iframepage" frameborder="0"  marginheight="0" marginwidth="0" style="width:100%; height:360px; overflow-y: scroll" ></iframe>
+                </div>
+				
+				<div align="center" style="height:36px;width:100%; padding-top:10px; background:#FFFFFF; color:#333; font-size:12px; color:#333; display:none" id="{$voo['id']}">
+				订单尚未匹配，请匹配后再{$voo['id']}进行下一步88操作{$voo.match_id}。
+				</div>
+				
+				</div>
+
+
+
+                <div class="pd donate-body-S000711113" >
+                  <div class=""> </div>
+			
+                </div>
+			
+              </div>
+		
+               	</volist> 
+              {$bpage}
+            </div>
+          </div>
+        </div>
+      </div>
+
+	  
+      <!--得列表-->
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="portlet box grey">
+            <div class="portlet-title">
+              <div class="caption"><i class="icon-cloud-download"></i>受助抢单列表</div>
+              <div class="tools"> <a href="javascript:;" class="collapse"></a></div>
+            </div>
+            <div class="portlet-body pd-wrap">
+  <volist name="selllist" id="voo" key="key"> 
+
+              <div class="table-pd table-gd">
+                <div class="donate-header clearfix"> 
+				
+			
+				
+				 <eq name="voo['match_num']" value="0">
+				
+				<i class="icon-reorder hireTable"  rel="{$voo['x1']}" value="pd" data-toggle="tooltip" data-placement="top" align="right"    ></i>
+				
+				 <else />
+				
+				<i class="icon-reorder hireTable" rel="{$voo['x1']}" value="pd" data-toggle="tooltip" data-placement="top" align="right"    ></i>
+				
+				</eq>
+				</div>
+				
+				
+                  <h4 style="color:#FFFFFF">请求援助编号：<span >{$voo['x1']}  <eq name="voo['is_timeout']" value="1">【超时重排】</eq></span></h4>
+                  <ul class="div_list">
+                    <li>参加者：{$voo['user_id']}</li>
+                    <li>请求援助数额：RMB {$voo['money']}</li>
+                    <li>排队日期：{$voo.rdt|date='Y-m-d H:i:s',###}</li>
+                    <li>当前状态：<span class="doing"><font color=yellow><eq name="voo['is_pay']" value="0">
+                        <span style="color:#FFFF00">等待匹配</span><else/>已匹配成功
+						</eq></font></span> </li>
+						<eq name="voo['is_pay']" value="1"><li>  确认状态：<span><eq name="voo['is_done']" value="0">
+                            <eq name="voo['is_get']" value="0"> 
+                            <span style="color:#FFFF00">等待付款</span>
+                            <else/>
+                            <span style="color:#FFFF00"><a>等待您确认收款</a></span>
+                            </eq>
+                            <else/>已确认</eq></span></li></eq>
+				<eq name="voo['is_done']" value="1">
+               <li> 确认时间：{$voo.okdt|date='Y-m-d H:i:s',###}</li></eq>
+              <eq name="voo['is_pay']" value="0"><li>
+            <form action="__APP__/Mavro/Delect" method="post">
+            <input type="hidden" name="del_id" value="{$voo['id']}" />
+            
+            </form></li>
+            </eq>
+         
+                  </ul>
+				  
+				  
+				  <div style="height: auto;width:100%; background:#FFFFFF; color:#333; display:none" id="{$voo['id']}">
+				  <iframe src="__APP__/Public/mx/id/{$voo['id']}" id="iframepage" frameborder="0"  marginheight="0" marginwidth="0" style="width:100%; height:360px; overflow-y: scroll" ></iframe>
+                </div>
+				
+				<div align="center" id="{$key}" style="height:36px;width:100%; padding-top:10px; background:#FFFFFF; color:#333; font-size:12px; color:#333; display:none" >
+				订单尚未匹配，请匹配后再{$key}进行下一步99操作。
+				</div>
+				  
+                </div>
+                
+                      </volist>{$spage}
+                  </div>
+
+				   
+					
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+ 
+    
+   
+  <!-- END PAGE CONTAINER--> 
+  
+</div>
+<!-- END PAGE --> 
+	   
+<!-- END CONTAINER --> 
+<include file="footers" />

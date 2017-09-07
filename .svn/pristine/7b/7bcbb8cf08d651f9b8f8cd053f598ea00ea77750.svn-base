@@ -1,0 +1,73 @@
+<div class="row-fluid">
+  <div class="span12">
+    <h3 class="page-title"> 申请升级 <small>My Homepage</small> </h3>
+    <ul class="breadcrumb">
+      <li> <i class="icon-home"></i> <a href="__APP__/Public/main">Home</a> <i class="icon-angle-right"></i> </li>
+      <li><a href="/index.php?s=/Change/shenqing">申请升级</a></li>
+    </ul>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span12">
+    <load href="__PUBLIC__/Js/UserJs.js" />
+    <div class="c_p5">
+      <div class="tips">&nbsp;&nbsp;&nbsp;&nbsp;请勿随意提交申请，否则有可能取消申请资格!</div>
+    </div>
+    <form method='post'  action="__URL__/shenqingSave/">
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+        <tr>
+          <td colspan="3" class="tabletd">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="80%"><input name="jibie" type="radio" class="ipt_radi" value="1" checked="checked" />
+            准经理&nbsp;&nbsp;&nbsp;&nbsp;</td></tr><tr><td>
+           <!-- <input type="radio" name="jibie" value="2" class="ipt_radi" />
+            合格经理&nbsp;&nbsp;&nbsp;&nbsp;</td></tr><tr><td>
+            <input type="radio" name="jibie" value="3" class="ipt_radi" />
+            高级经理--> </td>
+          <td width="57%">&nbsp;</td>
+        </tr>
+       
+        <tr>
+          <td colspan="3" style="height:5px;"><hr></td>
+        </tr>
+        <tr>
+        <tr style="display:none">
+          <td align="right">{:xstr('safe_question')}：</td>
+          <td>{$vo['wenti']}</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr style="display:none">
+          <td align="right">{:xstr('tpl137')}：</td>
+          <td><input name="wenti_dan" type="text" id="wenti_dan" value="" class="ipt"/></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="right">&nbsp;</td>
+          <td><span class="tCenter">
+            <input name="submit"  type="submit" class="btn green" value="{:xstr('confirm_3')}" alt="{:xstr('confirm_2')}" />
+            <input name="button"  type="reset" class="btn red" value="{:xstr('reset_2')}" alt="{:xstr('cancel_2')}" />
+            </span></td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+    </form>
+    <script language="JavaScript">
+
+<!--
+
+function fleshVerify(){
+
+//重载验证码
+
+var timenow = new Date().getTime();
+
+$('verifyImg').src= '__APP__/Public/verify/'+timenow;
+
+}
+
+//-->
+
+</script> 
+  </div>
+</div>

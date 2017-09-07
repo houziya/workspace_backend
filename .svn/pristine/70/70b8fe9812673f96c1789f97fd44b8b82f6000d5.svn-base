@@ -1,0 +1,47 @@
+<include file="../Public/header" />
+<script language=javascript src="__PUBLIC__/Js/wpCalendar.js"></script>
+<div id="main_top"><font>您现在的位置是：</font> 重复消费清单</div>
+<div class="bar_m10">
+<div class="bar_cont">
+<table width="100%" cellpadding=0 cellspacing=1 border=0  bgcolor="#b9c8d0" id="tb1" class="tab3">
+    <tr class="content_td" align="center">
+        <th nowrap ><span>{:xstr('account')}</span></th>
+        <th nowrap ><span>{:xstr('bank_user_name')}</span></th>
+        <th nowrap ><span>{:xstr('bank_name')}</span></th>
+        <th nowrap ><span>{:xstr('bank_code_2')}</span></th>
+        <th nowrap ><span>申请消费金额</span></th>
+        <th nowrap ><span>{:xstr('apply_date_time')}</span></th>
+        <th nowrap ><span>{:xstr('status')}</span></th>
+        
+    </tr>
+<volist name="list" id="vo">
+<tr class="content_td" align="center"> 
+	<td>{$vo['user_id']}</td>
+	<td>{$vo['user_name']}</td>
+	<td>{$vo['bank_name']}</td>
+	<td>{$vo['bank_card']}</td>
+	<td><span style="color: #F00;">{$vo['money']}</span></td>
+	<td>{$vo.rdt|date='Y-m-d H:i:s',###}</td>
+	<td><eq name="vo['is_pay']" value="1"><span style="color: #F00;">{:xstr('is_confirmed')}</span></eq><eq name="vo['is_pay']" value="0"><span style="color: #090;">{:xstr('not_comfirmed')}</span></eq></td>
+</tr>
+</volist>
+</table>
+<table width="100%" class="tab3_bottom" border="0" cellpadding="0" cellspacing="1" bgcolor="#b9c8d0">
+    <tr>
+    	<td>{$page}</td>
+        </tr>
+</table>
+<table width="100%" border="0" align="center" cellpadding="3" cellspacing="0">
+    <tr>
+    <td align="center">
+    <form method='post' action="__URL__/adminXiaofei">
+		{:xstr('account')}：<input name="UserID" type="text"id="UserID" title="{:xstr('account_query')}" maxlength="200" >
+		  <input type="submit" name="Submit" value="{:xstr('search')}"  class="btn1"/>		  
+		</form>
+    </td>
+    </tr>
+</table>
+</div>
+</div>
+</body>
+</html>

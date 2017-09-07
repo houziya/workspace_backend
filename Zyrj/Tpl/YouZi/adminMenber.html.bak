@@ -1,0 +1,97 @@
+<form name="form3" method="post" action="__URL__/adminMenberAC">
+<table width="100%" class="tab3" border="0" cellpadding="3" cellspacing="1" id="tb1" bgcolor="#b9c8d0">
+	<thead>
+    <tr align="center">
+        <th></th>
+        <th><span>{:xstr('account')}</span></th>
+        <th><span>昵称</span></th>
+        <th><span>{:xstr('full_name')}</span></th>
+        <th><span>{:xstr('contact_phone')}</span></th>
+        <!-- <eq name="myid" value="1">
+        <th><span>权限管理</span></th>
+        </eq> -->
+        <th><span>{:xstr('open_date_time')}</span></th>
+        <th><span>爱心之星钱包</span></th>
+        <th><span>业绩钱包</span></th>
+        <!--<th><span>可用人民币</span></th>-->
+        <th><span>是否受理中心</span></th>
+        <th><span>{:xstr('status')}</span></th>
+		<th><span>级别</span></th>
+		        <th><span>取消级别</span></th>
+        <!--<th><span>提现</span></th>-->        </tr>
+    </thead>
+    <volist name="list" id="vo">
+    <tr class="content_td lz" align="center">
+        <td><input type="checkbox" name="tabledb[]" value="{$vo['id']}" class="btn2" /></td>
+        <td><a href="__URL__/adminuserData/PT_id/{$vo['id']}">
+        {$vo['user_id']}
+        </a></td>
+        <td>{$vo['nickname']}</td>
+        <td>{$vo['user_name']}</td>
+        <td>{$vo['user_tel']}</td>
+        <!-- <eq name="myid" value="1">
+        <td><a href="__URL__/premAdd/id/{$vo.id}">设置</a><eq name="vo['is_boss']" value="2"><span style="color: #F30">[有]</span><else />[无]</eq></td>
+        </eq> -->
+        <td>{$vo.pdt|date='Y-m-d H:i:s',###}</td>
+        <td>{$vo['agent_cash']}</td>
+        <td>{$vo['agent_use']}</td>
+        <!--<td>{$vo['agent_gp']}</td>-->
+        <!--<td>{$vo['live_gupiao']}</td>-->
+         <td><eq name="vo['is_agent']" value='2'><span style="color: #FF0000;">是</span><else />否</eq></td>    
+        <td><eq name="vo['is_lock']" value='0'><span style="color: #FF0000;">未锁定</span><else />已锁定</eq>
+        <eq name="vo['is_null']" value='1'></eq><eq name="vo['is_null']" value='2'></eq></td>
+        <!--<td><eq name="vo['is_lockqd']" value='0'><span style="color: #FF0000;">开启</span><else />{:xstr('close')}</eq></td>-->       
+		<td>
+<if condition="$fck_rs['jingli'] eq 1 "> 准经理
+    <elseif condition="$fck_rs['zongjian'] eq 1 "/>合格经理
+<elseif condition="$fck_rs['dongshi'] eq 1 "/>高级经理
+    <else /> 普通会员
+    
+</if>
+</td>
+		  <td><a href="__URL__/adminquji/id/{$vo['user_id']}"> <input type="button"  value="取消级别" class="button_text"></a></td> 
+		
+		</tr>
+    </volist>
+</table>
+
+
+<table width="100%" class="tab3_bottom" border="0" cellpadding="0" cellspacing="1">
+    <tr>
+   	  <td width="60%">
+      <input name="{:xstr('select_all')}" type="button" class="button_text" id="{:xstr('select_all')}" onclick="CheckAll(this.form)" value="{:xstr('select_all')}" />	  &nbsp;&nbsp;
+	  <input type="submit" name="action" value="开启账户" class="button_text" onclick="if(confirm('确定要开启账户吗?')) return true; else return false;">&nbsp;&nbsp;
+	  <input type="submit" name="action" value="锁定账户" class="button_text" onclick="if(confirm('确定要锁定账户吗?')) return true; else return false;">&nbsp;&nbsp;
+      <!--<input type="submit" name="action" value="升级实单" class="button_text" onclick="if(confirm('确定要将账户升级为实单账户吗？')) return true; else return false;">&nbsp;&nbsp;--><!--<input type="submit" name="action" value="奖金转报单币" class="button_text" onclick="if(confirm('确定要将此账户的人民币全部转为报单币吗?')) return true; else return false;">-->
+      <input type="submit" name="action" value="设为受理中心" class="button_text" onclick="if(confirm('确定要将选中会员设为受理中心吗?')) return true; else return false;">
+      </td>
+    </tr>
+</table>
+<table width="100%" class="tab3_bottom" border="0" cellpadding="0" cellspacing="1">
+    <tr>
+        <td>{$page}</td>
+    </tr>
+</table>
+</form>
+<table width="100%" align="center">
+    <tr>
+    <td align="center"><form method='post' action="__URL__/adminMenber/">{:xstr('search_account')}：<input type="text" name="UserID" title="{:xstr('account_query')}">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="submit" name="Submit" value="{:xstr('query')}"  class="button_text"/>
+    &nbsp;
+    <input name="button3" type="button" onclick="window.location.href='__URL__/financeDaoChu_MM/'" value="将所有账户导出Excel表格" class="button_text" />
+    </form></td>
+    </tr>
+</table>
+<table width="100%" align="center" style="display:none">
+    <tr>
+    <td align="center"><form method='post' action="__URL__/adminMenber/">搜索账户业绩：
+    开始日期：<input name="sNowDate" type="text" id="sNowDate" onFocus="showCalendar(this)" readonly /> 
+     &nbsp;结束日期：  <input name="endNowDate" type="text" id="endNowDate" onFocus="showCalendar(this)" readonly />
+    
+    {:xstr('account')}：<input type="text" name="RID" title="{:xstr('account_query')}">
+    <input type="submit" name="Submit" value="{:xstr('query')}"  class="button_text"/>
+    &nbsp;
+    </form></td>
+    </tr>
+</table>

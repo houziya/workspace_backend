@@ -1,0 +1,36 @@
+<include file="../Public/header" />
+<style>
+.tab_l3 {
+	font-size:14px;
+}
+</style>
+<div class="ncenter_box">
+  <div class="accounttitle">
+    <h1>机器人挖币记录</h1>
+  </div>
+  <table width="100%" border="0" cellspacing="0" cellpadding="5" class="tab3" id="tb2">
+    <tr>
+      <th width="10%" height="28"><span>{:xstr('account')}</span></th>
+      <th width="10%">拥有机器人数量</th>
+      <th width="10%"><span>挖币机器人数量</span></th>
+      <th width="10%">挖币总数量</th>
+      <th width="20%"><span>挖币时间</span></th>
+      <th width="40%"><span>{:xstr('remark')}</span></th>
+    </tr>
+    <volist name="list" id="vo">
+      <tr>
+        <td height="25" align="center">{$vo.user_id}</td>
+        <td align="center">{$vo.act_pdt}</td>
+        <td align="center">{$vo.allp|round=###,0}</td>
+        <td align="center">{$vo.epoints}</td>
+        <td align="center">{$vo.pdt|date='Y-m-d H:i:s',###}</td>
+        <td align="center" nowrap="nowrap">{$vo.bz}</td>
+      </tr>
+    </volist>
+    <tr>
+      <td align="center" height="25" colspan="9">{$page}</td>
+    </tr>
+  </table>
+ 
+</div>
+</body></html>

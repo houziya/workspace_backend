@@ -1,0 +1,61 @@
+<form name="form3" method="post" action="__URL__/menberAC">
+<table width="100%" class="tab3" border="0" cellpadding="3" cellspacing="1" id="tb1" bgcolor="#b9c8d0">
+	<thead>
+    <tr align="center">
+        <th></th>
+        <th><span>{:xstr('account')}</span></th>
+        <th><span>{:xstr('reg_date_time')}</span></th>
+        <th><span>{:xstr('reg_level')}</span></th>
+        <th><span>{:xstr('reg_money')}</span></th>
+        <th><span>{:xstr('status')}</span></th>
+    </tr>
+    </thead>
+    <volist name="list" id="vo">
+    <tr align="center">
+        <td> <input type="checkbox" name="tabledb[]" value="{$vo['id']}" class="btn2" /></td>
+        <td><!--<a href="__URL__/menberData/bj_id/{$vo['id']}/eth/menber" title="{:xstr('detailed_information')}">-->{$vo['user_id']}</a></td>
+        <td>{$vo.rdt|date='Y-m-d H:i:s',###}</td>
+        <td>{$voo[$vo['u_level']]}</td>
+        <!--<td>{$vo["u_level"]+1}</td>-->
+        <td>{$regMoneyArr[$vo['u_level']-1]}$</td>
+        <td><eq name="vo['is_pay']" value='0'><span style="color: #FF0000;">{:xstr('not_opened')}</span><else />{:xstr('is_opened')}</eq></td>
+    </tr>
+    </volist>
+</table>
+<table width="100%" class="tab3_bottom" border="0" cellpadding="0" cellspacing="1">
+    <tr>
+    	<td>
+        <input name="{:xstr('select_all')}" type="button" class="bt_tj" id="{:xstr('select_all')}" onclick="CheckAll(this.form)" value="{:xstr('select_all')}" />
+        &nbsp;&nbsp;
+        <input type="submit" name="action" value="{:xstr('open_account')}" onclick="if(confirm('{:xstr('tpl024')}')) return true; else return false;" class="bt_tj">
+        &nbsp;&nbsp;
+        <!--<input type="submit" name="action" value="{:xstr('open_account_with_type2')}" onclick="if(confirm('您确定要使用激活币开通账户吗?')) return true; else return false;" class="bt_tj">
+        &nbsp;&nbsp;
+        <input type="submit" name="action" value="{:xstr('open_account_with_type3')}" onclick="if(confirm('您确定要使用50%激活币+50%报单币开通账户吗?')) return true; else return false;" class="bt_tj">
+        &nbsp;&nbsp;
+        <input type="submit" name="action" value="{:xstr('open_account_with_type1')}" onclick="if(confirm('您确定要使用种子币开通账户吗?')) return true; else return false;" class="bt_tj">
+        &nbsp;&nbsp;-->
+        <input type="submit" name="action" value="{:xstr('delete_account')}" onclick="if(confirm('{:xstr('tpl025')}')) return true; else return false;" class="bt_tj">
+        </td>
+    </tr>
+</table>
+</form>
+<table width="100%" class="tab3_bottom" border="0" cellpadding="0" cellspacing="1">
+    <tr>
+        <td align="center">{$page}</td>
+    </tr>
+</table>
+<table width="100%" align="center">
+    <tr>
+    <td align="center"><form method='post' action="__URL__/menber/">{:xstr('search_account')}：<input type="text" name="UserID" title="{:xstr('account_query')}">
+    <input type="submit" name="Submit" value="{:xstr('query')}"  class="bt_tj"/>
+    </form></td>
+    </tr>
+    <!--<tr>
+      <td align="center" colspan="2">
+    <img src="__PUBLIC__/Images/money_dol.png" align="absmiddle"/>&nbsp;&nbsp;&nbsp;
+    激活币:&nbsp;<span class="hong">{$frs['agent_xf']}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+    报单币:&nbsp;<span class="hong">{$frs['agent_cash']}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+    种子币:&nbsp;<span class="hong">{$frs['agent_kt']}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+    </td></tr>-->
+</table>

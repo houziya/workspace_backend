@@ -1,0 +1,47 @@
+    <div class="portlet-body flip-scroll">
+<table class="table table-hover table-bordered flip-content  table-full-width" style="font-size:12px;"id="tb1" bgcolor="#b9c8d0">
+	<thead>
+		<tr>
+			<th <empty name="User_namex">style="display:none"</empty>><span>编号</span></th>
+			<th><span>{:xstr('time')}</span></th>
+			<!--<th><span>{:xstr('name')}</span></th>-->
+			<th><span>收支明细</span></th>
+				<th><span>余额</span></th>
+			
+			<th><span>{:xstr('remark')}</span></th>
+		</tr>
+	</thead>
+	<tbody>
+	<volist name="list" id="vo">
+	<tr align="center" class="content_td">
+		<th <empty name="User_namex">style="display:none"</empty>>{$vo['id']}</th>
+			<th>
+        {$vo.time|date='Y-m-d H:i:s',###}
+        <!--
+        <if condition="($vo['action_type'] eq 3)">
+        <gt name="vo['act_pdt']" value="0">
+        {$vo.act_pdt|date='Y-m-d H:i:s',###}
+        <else/>
+        {$vo.pdt|date='Y-m-d H:i:s',###}
+        </gt>
+        <else/>
+        {$vo.pdt|date='Y-m-d H:i:s',###}
+        </if>--></th>
+		<!--<td>{$vo['action_type']}</td>-->
+		<th class="hong">{$vo['money']}</th>
+		<th class="hong">{$vo['new_money']}</th>
+	
+		<th>
+        {$vo['content']}
+       
+        </th>
+	</tr>
+	</volist>
+	</tbody>
+</table>
+</div>
+<table width="100%" class="tab3_bottom" border="0" cellpadding="0" cellspacing="1">
+    <tr>
+        <td align="center">{$page}</td>
+    </tr>
+</table>

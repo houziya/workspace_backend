@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'id', 1 => 'uid', 2 => 'user_id', 3 => 'did', 4 => 's_date', 5 => 'e_date', 6 => 'b0', 7 => 'b1', 8 => 'b2', 9 => 'b3', 10 => 'b4', 11 => 'b5', 12 => 'b6', 13 => 'b7', 14 => 'b8', 15 => 'b9', 16 => 'b11', 17 => 'b12', 18 => 'b10', 19 => 'encash_l', 20 => 'encash_r', 21 => 'encash', 22 => 'is_count_b', 23 => 'is_count_c', 24 => 'is_pay', 25 => 'u_level', 26 => 'type', 27 => 'additional', 28 => 'encourage', '_autoinc' => true, '_pk' => 'id', ); ?>

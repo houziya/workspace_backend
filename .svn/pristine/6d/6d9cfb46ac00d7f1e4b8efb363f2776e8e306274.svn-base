@@ -1,0 +1,88 @@
+<include file="header" />
+<!-- BEGIN CONTAINER -->
+<div class="page-container"> 
+  <!-- BEGIN SIDEBAR --> 
+  <include file="sidebar" /> 
+  <!-- END SIDEBAR --> 
+  <!-- BEGIN PAGE -->
+  <div class="page-content"> 
+    <!-- BEGIN PAGE CONTAINER-->
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12">
+          <h3 class="page-title"> 卖出M包 <small>My Homepage</small> </h3>
+          <ul class="breadcrumb">
+            <li> <i class="icon-home"></i> <a href="__APP__/Public/main">Home</a> <i class="icon-angle-right"></i> </li>
+            <li><a href="/index.php?s=/Public/sells/">卖出M包</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="portlet box">
+            <div class="portlet-body ">
+              <form action="__APP__/Mavro/sellAC/" method="post" class="form-horizontal" id="commenform">
+                <div class="control-group">
+                  <label class="control-label" for="">选择钱包<span class="required">*</span></label>
+                  <div class="controls input-icon">
+                    <select name="money_type" id="moneyflag" class="span3 m-wrap">
+                      <option value="1">静态钱包</option>
+                      <option value="2">动态钱包</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="">公益基金数量:<span class="required">&nbsp;</span></label>
+                  <div class="controls input-icon">
+             
+
+					                    <select name="s_money" id="s_money" class="span3 m-wrap">
+                      
+                        <option value="200">200</option>
+						 <option value="400">400</option>
+						  <option value="600">600</option>
+						   <option value="800">800</option>
+						    <option value="1000">1000</option>
+							 <option value="2000">2000</option>
+							  <option value="400">4000</option>
+							   <option value="6000">6000</option>
+							    <option value="8000">8000</option>
+ <option value="10000">10000</option>
+                     
+                    </select>
+
+                  </div>
+                </div>
+				           
+        <div align="left" class="pay_style"  style="display:none;">>
+          <label>
+            <input type="checkbox" value="0" name="pay_type[]" checked="checked">
+            银行支付</label>
+          <label>
+            <input type="checkbox" value="1" name="pay_type[]" checked="checked" >
+            支付宝支付</label>
+          <label>
+            <input type="checkbox" value="2" name="pay_type[]" checked="checked" >
+            微信支付</label>
+          <label>
+            <input type="checkbox" value="3" name="pay_type[]" checked="checked" >
+            财富通</label>
+        </div>
+
+                <div class="help-hint red">!警告，我已完全了解所有风险。我决定参与互助,尊重互助慈善互助文化与传统。</div>
+                <div class="form-actions">
+                  <button class="btn green" type="submit"  onclick="if(confirm('确定要申请求助吗？')) return true; else return false;">我要求助 </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END PAGE CONTAINER--> 
+  </div>
+</div>
+<!-- END PAGE --> 
+<!-- END CONTAINER --> 
+<!--FOOTERS START--> 
+<include file="common/footer" />
