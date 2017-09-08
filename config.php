@@ -7,7 +7,6 @@ return array(
 	'DB_NAME'=>'maimaibao',             //数据库用户名
 	'DB_USER'=>'maimaibao_reads',         //数据库名
         //'DB_USER'=>'root',         //数据库名
-	//'DB_USER'=>'308a2efa87020d75667b1696af72e086',         //数据库名
 	//'DB_PWD'=>'327493dbe08dab4707ecf4005f2aa198',         //数据库密码
 	'DB_PWD'=>'308a2efa87020d75667b1696af72e086',         //数据库密码
         //'DB_PWD'=>'',         //数据库密码
