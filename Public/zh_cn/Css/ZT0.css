@@ -1,0 +1,375 @@
+BODY {
+	BACKGROUND-POSITION: left 50%; SCROLLBAR-FACE-COLOR: #eeeeee; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(bg.gif); MARGIN: 0px; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #dee3e7; COLOR: #666666; SCROLLBAR-3DLIGHT-COLOR: #d1d7dc; LINE-HEIGHT: 120%; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #ededed; SCROLLBAR-DARKSHADOW-COLOR: #808080; TEXT-ALIGN: left
+}
+TD {
+	TABLE-LAYOUT: fixed;
+	FONT-SIZE: 12px;
+	WORD-BREAK: break-all;
+	LINE-HEIGHT: 15px;
+	FONT-FAMILY: ËÎÌו;
+
+}
+INPUT {
+	FONT-SIZE: 12px;
+	border: 1px solid #ADADAD;
+	background-attachment: fixed;
+	background-color: #ADADAD;
+	background-position: center center;
+	background-image: url(../images/buttom_bg.gif);
+
+
+
+
+}
+TEXTAREA {
+	FONT-SIZE: 12px;
+	border: 1px solid #ADADAD;
+
+}
+SELECT {
+	FONT-SIZE: 12px;
+	border: 1px solid #004694;
+	background-color: #D9F2FF;
+	list-style-position: inside;
+
+
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+TABLE.thumbnail {
+	
+}
+TABLE.thumbnail TD {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px
+}
+TABLE.thumbnail TD IMG {
+	
+}
+UL {
+	PADDING-RIGHT: 0px; LIST-STYLE: none none outside; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+LI {
+	PADDING-RIGHT: 0px; BACKGROUND-POSITION: left 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; PADDING-TOP: 4px; LIST-STYLE-TYPE: none; HEIGHT: 18px
+}
+UL LI SPAN {
+	MARGIN-TOP: -1.4em; FLOAT: right; COLOR: #999999
+}
+A:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #ff4500; TEXT-DECORATION: none
+}
+A:hover {
+	RIGHT: 0px; COLOR: #ff4500; POSITION: relative; TOP: 0px; TEXT-DECORATION: none
+}
+.twidth {
+	WIDTH: 800px
+}
+#navbar {
+	WIDTH: 100%
+}
+#navbar TD.m {
+	BACKGROUND: url(nav_bg.gif); HEIGHT: 29px; TEXT-ALIGN: center
+}
+#navBar TD.m IMG {
+	VERTICAL-ALIGN: middle
+}
+#navbar TD.l {
+	BACKGROUND: url(nav_bg.gif); WIDTH: 30px
+}
+#navbar TD.r {
+	BACKGROUND: url(nav_bg.gif); WIDTH: 30px
+}
+#navbar TD A:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+#navbar TD A:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+#navbar TD A:hover {
+	COLOR: #ff4500; TEXT-DECORATION: none
+}
+#navsub {
+	WIDTH: 100%
+}
+#navsub TD.m {
+	BACKGROUND: url(navsub_bg.gif); COLOR: #ffffff; HEIGHT: 23px; TEXT-ALIGN: left
+}
+#navsub TD.m IMG {
+	VERTICAL-ALIGN: middle
+}
+#navsub TD.l {
+	DISPLAY: none; WIDTH: 20px
+}
+#navsub TD.r {
+	DISPLAY: none; WIDTH: 20px
+}
+#navsub TD A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+#navsub TD A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+#navsub TD A:hover {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.bulletin A:link {
+	COLOR: #efefef; TEXT-DECORATION: none
+}
+.bulletin A:visited {
+	COLOR: #efefef; TEXT-DECORATION: none
+}
+.bulletin A:hover {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.bulletin DIV.body {
+	
+}
+.lframe0 {
+	WIDTH: 180px; TEXT-ALIGN: left
+}
+.lframe0 TABLE {
+	WIDTH: 100%
+}
+.lframe0 TD.tm {
+	BACKGROUND: url(title_bg_t.gif); WIDTH: 100%; HEIGHT: 28px
+}
+.lframe0 TD.tm IMG {
+	VERTICAL-ALIGN: middle
+}
+.lframe0 TD.tl {
+	WIDTH: 0px
+}
+.lframe0 TD.tr {
+	WIDTH: 0px
+}
+.lframe0 SPAN.tt {
+	PADDING-LEFT: 10px; FONT-WEIGHT: bold; COLOR: #666666
+}
+.lframe0 TD.mm {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; BACKGROUND: #f8f8f8; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.lframe0 TD.ml {
+	BACKGROUND: #dddddd; WIDTH: 0px
+}
+.lframe0 TD.mr {
+	BACKGROUND: #dddddd; WIDTH: 0px
+}
+.lframe0 TD.bm {
+	BORDER-TOP: #e6e6e6 0px solid; HEIGHT: 0px
+}
+.lframe0 TD.bl {
+	DISPLAY: none; WIDTH: 0px
+}
+.lframe0 TD.br {
+	DISPLAY: none; WIDTH: 0px
+}
+.lframe {
+	WIDTH: 180px; TEXT-ALIGN: left
+}
+.lframe TABLE {
+	WIDTH: 100%
+}
+.lframe TD.tm {
+	BACKGROUND: url(title_bg1.gif); WIDTH: 100%; HEIGHT: 28px
+}
+.lframe TD.tm IMG {
+	VERTICAL-ALIGN: middle
+}
+.lframe TD.tl {
+	WIDTH: 0px
+}
+.lframe TD.tr {
+	WIDTH: 0px
+}
+.lframe SPAN.tt {
+	PADDING-LEFT: 10px; FONT-WEIGHT: bold; COLOR: #666666
+}
+.lframe TD.mm {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; BACKGROUND: #f8f8f8; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.lframe TD.ml {
+	BACKGROUND: #dddddd; WIDTH: 0px
+}
+.lframe TD.mr {
+	BACKGROUND: #dddddd; WIDTH: 0px
+}
+.lframe TD.bm {
+	BORDER-TOP: #e6e6e6 0px solid; HEIGHT: 0px
+}
+.lframe TD.bl {
+	DISPLAY: none; WIDTH: 0px
+}
+.lframe TD.br {
+	DISPLAY: none; WIDTH: 0px
+}
+.mframe1 {
+	TEXT-ALIGN: left
+}
+.mframe1 TD.tm {
+	BACKGROUND: url(title_bg1.gif); WIDTH: 100%; HEIGHT: 28px
+}
+.mframe1 TD.tm IMG {
+	VERTICAL-ALIGN: middle
+}
+.mframe1 TD.tl {
+	WIDTH: 100px
+}
+.mframe1 TD.tr {
+	BACKGROUND: url(title_bg1.gif); WIDTH: 100px
+}
+.mframe1 SPAN.tt {
+	PADDING-LEFT: 0px; WIDTH: 100%; COLOR: #000000
+}
+.mframe1 TD.mm {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px
+}
+.mframe1 TD.ml {
+	WIDTH: 1px
+}
+.mframe1 TD.mr {
+	WIDTH: 1px
+}
+.mframe1 TD.bm {
+	FONT-SIZE: 1px; HEIGHT: 1px
+}
+.mframe1 TD.bl {
+	DISPLAY: none; WIDTH: 18px
+}
+.mframe1 TD.br {
+	DISPLAY: none; WIDTH: 22px
+}
+.mframe2 {
+	TEXT-ALIGN: left
+}
+.mframe2 TD.tm {
+	BACKGROUND: url(title_bg2.gif); WIDTH: 100%; HEIGHT: 32px
+}
+.mframe2 TD.tm IMG {
+	VERTICAL-ALIGN: middle
+}
+.mframe2 TD.tl {
+	WIDTH: 100px
+}
+.mframe2 TD.tr {
+	BACKGROUND: url(title_bg2.gif); WIDTH: 100px
+}
+.mframe2 SPAN.tt {
+	PADDING-LEFT: 0px; WIDTH: 100%; COLOR: #000000
+}
+.mframe2 TD.mm {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; BACKGROUND: #ffffff; PADDING-BOTTOM: 3px; PADDING-TOP: 3px; TEXT-ALIGN: center
+}
+.mframe2 TD.ml {
+	WIDTH: 0px
+}
+.mframe2 TD.mr {
+	WIDTH: 0px
+}
+.mframe2 TD.bm {
+	FONT-SIZE: 1px; HEIGHT: 1px
+}
+.mframe2 TD.bl {
+	DISPLAY: none; WIDTH: 18px
+}
+.mframe2 TD.br {
+	DISPLAY: none; WIDTH: 22px
+}
+TD.TableBody1 {
+	BACKGROUND-COLOR: #ffffff
+}
+TD.TableBody2 {
+	BACKGROUND-COLOR: #ffffff
+}
+TD.TopLighNav2 {
+	BACKGROUND-COLOR: #ffffff
+}
+.tableBorder1 {
+	BORDER-RIGHT: 1px; BORDER-TOP: 1px; BORDER-LEFT: 1px; WIDTH: 97%; BORDER-BOTTOM: 1px; BACKGROUND-COLOR: #b26b7b
+}
+.tableBorder2 {
+	BORDER-RIGHT: #c58f9b 1px solid; BORDER-TOP: #c58f9b 1px solid; BORDER-LEFT: #c58f9b 1px solid; WIDTH: 97%; BORDER-BOTTOM: #c58f9b 1px solid; BACKGROUND-COLOR: #f4d9dd
+}
+#TableTitleLink A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+#TableTitleLink A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+#TableTitleLink A:active {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+#TableTitleLink A:hover {
+	COLOR: #ffffff; TEXT-DECORATION: underline
+}
+.normalTextSmall {
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.table-1 {
+	BORDER-RIGHT: #cccccc 1px dotted; BORDER-TOP: #cccccc 1px dotted; BORDER-LEFT: #cccccc 1px dotted; BORDER-BOTTOM: #cccccc 1px dotted
+}
+.table-zuoyou {
+	BORDER-RIGHT: #cccccc 1px dotted; BORDER-LEFT: #cccccc 1px dotted
+}
+.table-youxia {
+	BORDER-RIGHT: #cccccc 1px dotted; BORDER-BOTTOM: #cccccc 1px dotted
+}
+.table-shangxia {
+	BORDER-TOP: #cccccc 1px dotted; BORDER-BOTTOM: #cccccc 1px dotted
+}
+.table-you {
+	BORDER-RIGHT: #cccccc 1px dotted
+}
+.table-zuo {
+	BORDER-LEFT: #cccccc 1px dotted
+}
+.table-shang {
+	BORDER-TOP: #cccccc 1px dotted
+}
+.table-xia {
+	BORDER-BOTTOM: #cccccc 1px dotted
+}
+.tabq-zs {
+	BORDER-TOP: #d8d8d8 1px solid; BORDER-LEFT: #d8d8d8 1px solid
+}
+.tabq-s {
+	BORDER-TOP: #d8d8d8 1px solid;
+	color: #000000;
+
+}
+.tabs-yx {
+	BORDER-RIGHT: #999999 1px solid;
+	BORDER-BOTTOM: #999999 1px solid;
+	color: #000000;
+
+}
+.tabs-x {
+	BORDER-BOTTOM: #999999 1px solid;
+	color: #000000;
+
+}
+.wenbenkuang {
+	BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; FONT-SIZE: 9pt; BORDER-LEFT: #999999 1px solid; COLOR: #333333; BORDER-BOTTOM: #999999 1px solid; FONT-FAMILY: "ËÎÌו"
+}
+.go-wenbenkuang {
+	BORDER-RIGHT: #a2a2a2 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #ffffff 1px solid; PADDING-LEFT: 1px; FONT-SIZE: 9pt; PADDING-BOTTOM: 1px; BORDER-LEFT: #ffffff 1px solid; CURSOR: hand; COLOR: #333333; PADDING-TOP: 1px; BORDER-BOTTOM: #a2a2a2 1px solid; FONT-FAMILY: "ËÎÌו"; HEIGHT: 19px; BACKGROUND-COLOR: #eeeeee
+}
+.STYLE1 {color: #007F88;
+font-size:12px;}
+.STYLE2 {color: #885800;
+font-size:12px;}
+.STYLE9 {
+	color: #885800;
+	font-size: 10pt;
+	font-weight: bold;
+}
+.STYLE10 {
+	color: #007F88;
+	font-size: 10pt;
+	font-weight: bold;
+}

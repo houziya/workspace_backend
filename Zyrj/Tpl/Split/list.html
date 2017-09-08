@@ -1,0 +1,93 @@
+<div class="row-fluid">
+  <div class="span12">
+    <h3 class="page-title">拆分进场订单管理 <small>My Homepage</small> </h3>
+    <ul class="breadcrumb">
+      <li> <i class="icon-home"></i> <a href="__APP__/Public/main">Home</a> <i class="icon-angle-right"></i> </li>
+      <li><a href="__APP__/Split/orderList">拆分进场订单管理</a></li>
+    </ul>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span12">
+    <form name="form3" method="post" action="__URL__/adminMenberAC">
+      <div class="portlet box grey">
+        <div class="portlet-title">
+          <div class="caption"><i class="icon-list"></i> 拆分进场订单管理</div>
+        </div>
+        <div class="portlet-body flip-scroll">
+          <table class="table table-hover table-bordered flip-content  table-full-width" style="font-size:12PX">
+            <thead>
+              <tr align="center">
+                <th></th>
+                  <th><span>排单号</span></th>
+                  <th><span>上级订单号</span></th>
+                <th><span>{:xstr('account')}</span></th>
+                <th><span>昵称</span></th>
+                <th><span>{:xstr('full_name')}</span></th>
+                <th><span>{:xstr('contact_phone')}</span></th>
+                <!-- <eq name="myid" value="1">
+        <th><span>权限管理</span></th>
+        </eq> -->
+                <th><span>排单时间</span></th>
+                <th><span>金额</span></th>
+                <th><span>原始金额</span></th>
+                <!--<th><span>可用人民币</span></th>-->
+                <th><span>是否原始订单</span></th>
+                </tr>
+            </thead>
+            <tbody>
+              <volist name="list" id="vos">
+                  <volist name="vos" id="vo">
+                <tr class="content_td lz" align="center">
+                  <td><input type="checkbox" name="tabledb[]" value="{$vo['id']}" class="btn2" /></td>
+                    <td>{$vo['x1']}</td>
+                    <td>{$vo['parent_order']}</td>
+                  <td><a href="__URL__/adminuserData/PT_id/{$vo['id']}"> {$vo['user_id']} </a></td>
+                  <td>{$vo['nickname']}</td>
+                  <td>{$vo['user_name']}</td>
+                  <td>{$vo['user_tel']}</td>
+                  <!-- <eq name="myid" value="1">
+        <td><a href="__URL__/premAdd/id/{$vo.id}">设置</a><eq name="vo['is_boss']" value="2"><span style="color: #F30">[有]</span><else />[无]</eq></td>
+        </eq> -->
+                  <td>{$vo.rdt|date='Y-m-d <br/> H:i:s',###}</td>
+                  <td>{$vo['money']}</td>
+                  <td>{$vo['money_two']}</td>
+                  <!--<td>{$vo['agent_gp']}</td>--> 
+                  <!--<td>{$vo['live_gupiao']}</td>-->
+                  <td><eq name="vo['parent_id']" value='0'><span style="color: #FF0000;">是</span>
+                      <else />
+                      否</eq></td>
+
+                </tr>
+                  </volist>
+              </volist>
+            </tbody>
+          </table>
+          <table class="table table-hover table-bordered flip-content  table-full-width">
+            <tr>
+              <td width="60%"><input name="{:xstr('select_all')}" type="button" class="btn red" id="{:xstr('select_all')}" onclick="CheckAll(this.form)" value="{:xstr('select_all')}" />
+              </td>
+            </tr>
+          </table>
+          <table width="100%" class="tab3_bottom" border="0" cellpadding="0" cellspacing="1">
+            <tr>
+              <td>{$page}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </form>
+    <table class="table table-hover table-bordered flip-content  table-full-width">
+      <tr>
+        <td align="center"><form method='post' action="__URL__/orderList/">
+            搜索订单号：
+            <input type="text" name="in_order" title="{:xstr('account_query')}">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" name="Submit" value="{:xstr('query')}"  class="btn red"/>
+            &nbsp;
+          </form></td>
+      </tr>
+    </table>
+
+  </div>
+</div>

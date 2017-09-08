@@ -1,0 +1,48 @@
+<include file="../Public/header" />
+<div id="main_top"><font>您现在的位置是：</font>推荐列表</div>
+<table width="100%" class="tab3" border="0" cellpadding="3" cellspacing="0" id="tb1">
+	<thead>
+    <tr align="center">
+        <th nowrap><span>{:xstr('account')}</span></th>
+        <th nowrap><span>{:xstr('user_name')}</span></th>
+        <th nowrap><span>{:xstr('bank_name')}</span></th>
+        <th nowrap><span>{:xstr('bank_code')}</span></th>
+        <th nowrap><span>{:xstr('bank_user_name')}</span></th>
+        <th nowrap><span>{:xstr('contact_address')}</span></th>
+        <th nowrap><span>{:xstr('contact_phone')}</span></th>
+        <th nowrap><span>{:xstr('reg_date_time')}</span></th>
+        <th nowrap><span>{:xstr('open_date_time')}</span></th>
+        <th nowrap><span>{:xstr('level')}</span></th>
+        <th nowrap><span>{:xstr('status')}</span></th>
+    </tr>
+    </thead>
+    <volist name="list" id="vo">
+    <tr align="center"> 
+        <td>{$vo['user_id']}</td>
+        <td>{$vo['nickname']}</td>
+        <td>{$vo['bank_name']|bank_name}</td>
+        <td>{$vo['bank_card']}</td>
+        <td>{$vo['user_name']}</td>
+        <td>{$vo['user_address']}</td>
+        <td>{$vo['user_tel']}</td>
+        <td>{$vo.rdt|date='Y-m-d H:i:s',###}</td>
+        <td>{$vo.pdt|date='Y-m-d H:i:s',###}</td>
+        <td>{$voo[$vo['u_level']]}</td>
+        <td><eq name="vo['is_pay']" value='0'><span style="color: #FF0000;">{:xstr('not_opened')}</span><else />{:xstr('is_opened')}</eq></td>
+    </tr>
+    </volist>
+</table>
+<table width="600" align="center">
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+    <td align="center"><form method='post' action="__URL__/frontMenber/">{:xstr('search_account')}：<input type="text" name="UserID" title="{:xstr('account_query')}">
+    <input type="submit" name="Submit" value="{:xstr('query')}"  class="btn1"/></span>
+    </form></td>
+    </tr>
+</table>
+</div>
+</body>
+</html>
+<script>new TableSorter("tb1");</script>

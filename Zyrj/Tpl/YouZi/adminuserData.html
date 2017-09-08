@@ -1,0 +1,249 @@
+<load href="__PUBLIC__/Js/UserJs.js" />
+<form method='post' id="form1" action="__URL__/adminuserDataSave" >
+  <table width="100%" border="0" cellpadding="3" cellspacing="0" class="tab4">
+    <tr>
+      <td width="23%" align="right">{:xstr('agent_usser_id')}：</td>
+      <td colspan="2" ><input name="shopname" type="text" value="{$vo['shop_name']}" style="background-color:#ddd" readonly  /></td>
+    </tr>
+    <tr>
+      <td align="right">推荐账户编号：</td>
+      <td colspan="2" ><input name="ReName" type="text" id="ReName" value="{$vo['re_name']}" style="background-color:#ddd" readonly /></td>
+    </tr>
+    <tr style="display:none">
+      <td align="right">接点人编号：</td>
+      <td colspan="2" ><input name="father" type="text" id="father" value="{$vo['father_name']}" style="background-color:#ddd;" readonly /></td>
+    </tr>
+    <empty name="User_namex">
+    <else/>
+    <tr>
+    <td align="right">{:xstr('account')}：</td>
+      <td width="14%"><input name="UserID" type="text" id="UserID" value="{$vo['user_id']}" style="background-color:#ddd;" readonly="readonly" class="ipt"/></td>
+      <td width="63%">&nbsp;</td>
+    </tr>
+    </empty>
+    <empty name="Nick_namex">
+    <else/>
+    <tr>
+    <td align="right">{:xstr('nick_name')}：</td>
+      <td><input name="NickName" type="text" id="NickName" value="{$vo['nickname']}" class="ipt" onkeyup="javascript:Null_Full(this.name)" onfocus="notice('0','')" onblur="notice('0','none')"/></td>
+      <td><div id="NickName1" class="info"><div id="0" class="focus_r" style="display:none;"><div class="msg_tip">请输入您的昵称。</div></div></div></td>
+    </tr>
+    </empty>
+    <tr>
+      <td align="right">所属区域：</td>
+      <td colspan="2" ><input name="quyu" type="text" id="quyu" value="{$vo['quyu']}" /></td>
+    </tr>
+    <tr>
+      <td align="right">一级密码：</td>
+      <td><input name="pwd1" type="text" id="pwd1" value="{$vo['pwd1']}" class="ipt" onfocus="notice('1','')"  onblur="" /></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td align="right">{:xstr('second_password')}：</td>
+      <td><input name="pwd2" type="text" id="pwd2" class="ipt" value="{$vo['pwd2']}" onfocus="notice('2','')"  onblur=""/></td>
+      <td></td>
+    </tr>
+<!--    <tr>
+      <td align="right">三级密码：</td>
+      <td><input name="pwd3" type="text" id="pwd3" class="ipt" value="{$vo['pwd3']}" onfocus="notice('2','')"  onblur=""/></td>
+      <td></td>
+    </tr>-->
+    <tr style="display:none">
+      <td align="right">{:xstr('level')}：</td>
+      <td>
+      <select name="newulevel">
+        <volist name="level" id="vvo" key="i">
+        <eq name="vo.u_level" value="$i">
+        <option value="{$i}" selected>{$level[$i]}</option>
+        <else/>
+        <option value="{$i}">{$level[$i]}</option>
+        </eq>
+        </volist>
+      </select>
+      </td>
+      <td><input name="oldulevel" type="hidden" id="oldulevel" class="ipt" value="{$vo['u_level']}"/></td>
+    </tr>
+    <tr style="display:none">
+      <td colspan="3" style="height:5px;"><hr></td>
+    </tr>
+    <tr style="display:none">
+      <td align="right">{:xstr('safe_question')}：</td>
+      <td><input name="wenti" type="text" id="wenti" class="ipt" value="{$vo['wenti']}"/></td>
+      <td></td>
+    </tr>
+    <tr style="display:none">
+      <td align="right">密保答案：</td>
+      <td><input name="wenti_dan" type="text" id="wenti_dan" class="ipt" value="{$vo['wenti_dan']}"/></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="3" style="height:5px;"><hr></td>
+    </tr>
+    <tr>
+      <td align="right">{:xstr('bank_name')}：</td>
+      <td><select name="BankName" onchange="javasctip:bank_us(this.value);">
+          <volist name='bank' id='voo'>
+            <eq name='bank[$key]' value="$b_bank['bank_name']">
+              <option value="{$bank[$key]}" selected="selected">{$bank[$key]}</option>
+              <else />
+              <option value="{$bank[$key]}">{$bank[$key]}</option>
+            </eq>
+          </volist>
+        </select></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="right"><span id="bank_id"><eq name="vo['bank_name']" value="财付通">财付通号<else />{:xstr('bank_code')}</eq></span>：</td>
+      <td><input name="BankCard" type="text" id="BankCard" value="{$vo['bank_card']}" class="ipt" onkeyup="javascript:Null_Int(this.name)" onfocus="notice('3','')"  onblur="notice('3','none')" /></td>
+      <td><div id="BankCard1" class="info"><div id="3" class="focus_r" style="display:none;"><div class="msg_tip">{:xstr('tpl129')}</div></div></div></td>
+    </tr>
+    <tr>
+      <td align="right">{:xstr('bank_user_name')}：</td>
+      <td><input name="UserName" type="text" id="UserName" class="ipt" value="{$vo['user_name']}" onkeyup="javascript:Null_Full(this.name)" onfocus="notice('4','')"  onblur="notice('4','none')" /></td>
+      <td><div id="UserName1" class="info"><div id="4" class="focus_r" style="display:none;"><div class="msg_tip">请输入您的姓名。</div></div></div></td>
+    </tr>
+    <tr>
+      <td align="right">{:xstr('bank_prov')}：</td>
+      <td nowrap="nowrap"><input name="BankProvince" type="text" class="ipt" value="{$vo['bank_province']}" onkeyup="javascript:Null_Full(this.name)" onfocus="notice('5','')"  onblur="notice('5','none')" /></td>
+      <td><div id="BankProvince1" class="info"><div id="5" class="focus_r" style="display:none;"><div class="msg_tip">请输入您的开户省份。</div></div></div></td>
+    </tr>
+    <tr>
+      <td align="right">{:xstr('bank_city')}：</td>
+      <td nowrap="nowrap"><input name="BankCity"     type="text" class="ipt" value="{$vo['bank_city']}" onkeyup="javascript:Null_Full(this.name)" onfocus="notice('6','')"  onblur="notice('6','none')" /></td>
+      <td><div id="BankCity1" class="info"><div id="6" class="focus_r" style="display:none;"><div class="msg_tip">请输入您的开户城市。</div></div></div></td>
+    </tr>
+    <tr>
+      <td align="right">{:xstr('bank_detail_address')}：</td>
+      <td nowrap="nowrap"><input name="BankAddress" type="text" id="BankAddress" class="ipt" value="{$vo['bank_address']}" onkeyup="javascript:Null_Full(this.name)" onfocus="notice('7','')"  onblur="notice('7','none')" /></td>
+      <td><div id="BankAddress1" class="info"><div id="7" class="focus_r" style="display:none;"><div class="msg_tip">请输入您的详细开户地址。</div></div></div></td>
+    </tr>
+    <tr>
+      <td colspan="3" style="height:5px;"><hr></td>
+    </tr>
+    <tr>
+      <td align="right">{:xstr('person_idcode')}：</td>
+      <td><input name="UserCode" type="text" id="UserCode" value="{$vo['user_code']}" maxlength="18" class="ipt" onkeyup="javascript:Null_Int(this.name)" onfocus="notice('8','')"  onblur="notice('8','none')" /></td>
+      <td><div id="UserCode1" class="info"><div id="8" class="focus_r" style="display:none;"><div class="msg_tip">请输入您的身份证号。</div></div></div></td>
+    </tr>
+    <tr>
+      <td align="right">{:xstr('contact_address')}：</td>
+      <td><input name="UserAddress" type="text" id="UserAddress" value="{$vo['user_address']}" size="20" maxlength="80" class="ipt" onkeyup="javascript:Null_Full(this.name)" onfocus="notice('9','')"  onblur="notice('9','none')" /></td>
+      <td><div id="UserAddress1" class="info"><div id="9" class="focus_r" style="display:none;"><div class="msg_tip">请输入您的联系地址。</div></div></div></td>
+    </tr>
+    <tr>
+      <td align="right">{:xstr('contact_phone')}：</td>
+      <td><input name="UserTel" type="text" id="UserTel" value="{$vo['user_tel']}" maxlength="45" size="20"  class="ipt" onkeyup="javascript:Null_Full(this.name)" onfocus="notice('10','')"  onblur="notice('10','none')" /></td>
+      <td><div id="UserTel1" class="info"><div id="10" class="focus_r" style="display:none;"><div class="msg_tip">请输入您的联系电话。</div></div></div></td>
+    </tr>
+    <tr>
+      <td align="right">E-Mail：</td>
+      <td><input name="email" type="text" id="email" value="{$vo['email']}" maxlength="45" size="20"  class="ipt" onkeyup="javascript:Email(this.name)" onfocus="notice('11','')"  onblur="notice('11','none')" /></td>
+      <td><div id="email1" class="info"><div id="11" class="focus_r" style="display:none;"><div class="msg_tip">请输入您的 E-Mail。</div></div></div></td>
+    </tr>
+    <tr style="display:">
+      <td align="right">Q Q：</td>
+      <td><input name="qq" type="text" id="qq" value="{$vo['qq']}" maxlength="45" size="20"  class="ipt" onkeyup="javascript:Null_Int(this.name)" onfocus="notice('12','')"  onblur="notice('12','none')" /></td>
+      <td><div id="qq1" class="info"><div id="12" class="focus_r" style="display:none;"><div class="msg_tip">请输入您的 Q Q。</div></div></div></td>
+    </tr>
+    <tr>
+    <td height="30" align="right">微信号：</td>
+    <td><input name="chat" type="text" id="chat" value="{$vo['chat']}" class="ipt" onkeyup="javascript:Null_Full(this.name)" onfocus="notice('26','')"  onblur="notice('26','none')" maxlength="19"  /></td>
+    <td><div id="qq1" class="info"><div id="26" class="focus_r" style="display:none;"><div class="msg_tip">请输入微信号</div></div></div></td>
+  </tr>
+  <tr>
+    <td height="30" align="right">支付宝：</td>
+    <td><input name="zhifuPay" type="text" id="zhifuPay" value="{$vo['zhifuPay']}" class="ipt" onkeyup="javascript:Null_Full(this.name)" onfocus="notice('40','')"  onblur="notice('40','none')" maxlength="19"  /></td>
+    <td><div id="zhifuPay1" class="info"><div id="40" class="focus_r" style="display:none;"><div class="msg_tip">请输入支付宝</div></div></div></td>
+  </tr>
+  <tr>
+    <td height="30" align="right">微信钱包：</td>
+    <td><input name="weixinWalet" type="text" id="weixinWalet" value="{$vo['weixinWalet']}" class="ipt" onkeyup="javascript:Null_Full(this.name)" onfocus="notice('41','')"  onblur="notice('41','none')" maxlength="19"  /></td>
+    <td><div id="weixinWalet1" class="info"><div id="41" class="focus_r" style="display:none;"><div class="msg_tip">请输入微信钱包</div></div></div></td>
+  </tr>
+  <tr>
+    <td height="30" align="right">财付通：</td>
+    <td><input name="caifuPay" type="text" id="caifuPay" value="{$vo['caifuPay']}" class="ipt" onkeyup="javascript:Null_Full(this.name)" onfocus="notice('42','')"  onblur="notice('42','none')" maxlength="19"  /></td>
+    <td><div id="caifuPay1" class="info"><div id="42" class="focus_r" style="display:none;"><div class="msg_tip">请输入财付通</div></div></div></td>
+  </tr>
+    <tr>
+      <td colspan="3" style="height:5px;"><hr></td>
+    </tr>
+    <tr style="display:none">
+      <td align="right">账户总业绩：</td>
+      <td><input name="AgentGp" type="text" id="AgentGp" value="{$vo['zjj']}" maxlength="20" class="ipt" onkeyup="javascript:Null_Int(this.name)" onfocus="notice('13','')"  onblur="notice('13','none')"/></td>
+      <td><div id="AgentUse1" class="info"><div id="13" class="focus_r" style="display:none;"><div class="msg_tip">请输入数字。</div></div></div></td>
+    </tr>
+    <tr style="display:none">
+      <td align="right">一进一出提现币账户：</td>
+      <td><input name="agent_cf" type="text" id="agent_cf" value="{$vo['agent_cf']}" maxlength="20" class="ipt" onkeyup="javascript:Null_Int(this.name)" onfocus="notice('22','')"  onblur="notice('22','none')" /></td>
+      <td><div id="agent_cf1" class="info"><div id="22" class="focus_r" style="display:none;"><div class="msg_tip">请输入数字。</div></div></div></td>
+    </tr>
+    <tr>
+      <td align="right">爱心之星钱包：</td>
+      <td><input name="AgentCash" type="text" id="AgentCash" value="{$vo['agent_cash']}" maxlength="20" class="ipt" onkeyup="javascript:Null_Int(this.name)" onfocus="notice('14','')"  onblur="notice('14','none')"/></td>
+      <td><div id="AgentCash1" class="info"><div id="14" class="focus_r" style="display:none;"><div class="msg_tip">请输入数字。</div></div></div></td>
+    </tr>
+    <tr>
+      <td align="right">业绩钱包：</td>
+      <td><input name="AgentUse" type="text" id="AgentUse" value="{$vo['agent_use']}" maxlength="20" class="ipt" onkeyup="javascript:Null_Int(this.name)" onfocus="notice('AgentGp1','')"  onblur="notice('AgentGp1','none')" /></td>
+      <td><div id="AgentGp1" class="info" style="display:none;"><div class="focus_r"><div class="msg_tip">请输入数字。</div></div></div></td>
+    </tr>
+    <tr style="display:none">
+      <td align="right">{:xstr('coin003')}：</td>
+      <td><input name="AgentKt" type="text" id="AgentKt" value="{$vo['agent_kt']}" maxlength="20" class="ipt" onkeyup="javascript:Null_Int(this.name)" onfocus="notice('AgentKt1','')"  onblur="notice('AgentKt1','none')"/></td>
+      <td><div id="AgentKt1" class="info" style="display:none;"><div class="focus_r"><div class="msg_tip">请输入数字。</div></div></div></td>
+    </tr>
+    <tr style="display:none">
+      <td align="right">{:xstr('coin004')}：</td>
+      <td><input name="AgentGp" type="text" id="AgentGp" value="{$vo['agent_gp']}" maxlength="20" class="ipt" onkeyup="javascript:Null_Int(this.name)" onfocus="notice('AgentKt1','')"  onblur="notice('AgentKt1','none')"/></td>
+      <td><div id="AgentKt1" class="info" style="display:none;"><div class="focus_r"><div class="msg_tip">请输入数字。</div></div></div></td>
+    </tr>
+    <tr style="display:none">
+      <td align="right">激活币账户：</td>
+      <td><input name="AgentXf" type="text" id="AgentXf" value="{$vo['agent_xf']}" maxlength="20" class="ipt" onkeyup="javascript:Null_Int(this.name)" onfocus="notice('AgentXf1','')"  onblur="notice('AgentXf1','none')" /></td>
+      <td><div id="AgentXf1" class="info" style="display:none;"><div class="focus_r"><div class="msg_tip">请输入数字。</div></div></div></td>
+    </tr>
+    
+    
+    <tr style="display:none">
+      <td align="right">剩余货物：</td>
+      <td><input name="GpNum" type="text" id="GpNum" value="{$vo['gp_num']}" maxlength="20" class="ipt" onkeyup="javascript:Null_Int(this.name)" onfocus="notice('GpNum1','')"  onblur="notice('GpNum1','none')" /></td>
+      <td><div id="GpNum1" class="info" style="display:none;"><div class="focus_r"><div class="msg_tip">请输入数字。</div></div></div></td>
+    </tr>
+    <tr style="display:none">
+      <td align="right">{:xstr('equities')}：</td>
+      <td><input name="live_gupiao" type="text" id="live_gupiao" value="{$vo['live_gupiao']}" maxlength="20" class="ipt" onkeyup="javascript:Null_Int(this.name)" onfocus="notice('live_gupiao1','')"  onblur="notice('live_gupiao1','none')" /></td>
+      <td><div id="live_gupiao1" class="info" style="display:none;"><div class="focus_r"><div class="msg_tip">请输入数字。</div></div></div></td>
+    </tr>
+    <tr style="display:none">
+      <td align="right">网络结构图：</td>
+      <td><input name="wang_j" type="radio" id="wang_j" value="0" <eq name="vo['wang_j']" value="0">checked</eq> class="ipt_radi"/>
+      开启
+      <input type="radio" name="wang_j" id="wang_j" value="1" <eq name="vo['wang_j']" value="1">checked</eq> class="ipt_radi"/>
+      关闭</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr style="display:none">
+      <td align="right">推荐结构图：</td>
+      <td><input name="wang_t" type="radio" id="wang_t" value="0" <eq name="vo['wang_t']" value="0">checked</eq> class="ipt_radi"/>
+      开启
+      <input type="radio" name="wang_t" id="wang_t" value="1" <eq name="vo['wang_t']" value="1">checked</eq> class="ipt_radi"/>
+      关闭</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr style="display:none">
+      <td align="right">{:xstr('all_bonus_count')}：</td>
+      <td><input name="zjj" type="text" id="zjj" value="{$vo['zjj']}" maxlength="20" class="ipt" onkeyup="javascript:Null_Int(this.name)" onfocus="notice('15','')"  onblur="notice('15','none')" /></td>
+      <td><div id="zjj1" class="info"><div id="15" class="focus_r" style="display:none;"><div class="msg_tip">请输入数字。</div></div></div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td colspan="2"><input type="hidden" name="ID" value="{$vo['id']}" >
+        <input type="submit" value="{:xstr('change')}" class="button_text">
+        &nbsp;
+        <input type="reset" value="重设" class="button_text">
+        &nbsp;
+        <input type="button" value="{:xstr('go_back')}" class="button_text" onclick="javescript:window.location.href='__URL__/adminMenber'"/></td>
+    </tr>
+  </table>
+</form>

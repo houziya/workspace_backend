@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'id', 1 => 'f_uid', 2 => 'f_user_id', 3 => 's_uid', 4 => 's_user_id', 5 => 'title', 6 => 'content', 7 => 'f_time', 8 => 'f_del', 9 => 's_del', 10 => 'f_read', 11 => 's_read', '_autoinc' => true, '_pk' => 'id', ); ?>

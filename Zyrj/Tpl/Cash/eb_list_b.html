@@ -1,0 +1,47 @@
+<include file="../Public/header" />
+<style>
+.gank{ color:#CCC;}
+</style>
+<div class="ncenter_box">
+<div class="accounttitle"><h1>{:xstr('buy_history')}</h1></div>
+  <table width="100%" class="tab3" border="0" cellpadding="0" cellspacing="0" id="tb1">
+  <thead>
+		<tr>
+			<th><span>{:xstr('tpl094')}</span></th>
+			<th><span>{:xstr('seller')}</span></th>
+			<th><span>{:xstr('tpl100')}</span></th>
+			<th><span>{:xstr('tpl082')}</span></th>
+			<th><span>{:xstr('bank_name_2')}</span></th>
+			<th><span>{:xstr('bank_code')}</span></th>
+			<th><span>{:xstr('bank_address')}</span></th>
+			<th><span>{:xstr('tpl101')}</span></th>
+			<th><span>{:xstr('limit')}</span></th>
+			<th><span>{:xstr('feature')}</span></th>
+		</tr>
+	</thead>
+    <volist name='list' id='vo'>
+	<tr align="center">
+		<td>{$vo.bdt|date='Y-m-d H:i:s',###}</td>
+		<td>{$vo['user_id']}</td>
+        <td>{$vo['user_name']}</td>
+        <td>{$vo['uid']|cx_usrate}</td>
+        <td>{$bn[$vo['id']]['bank_name']}</td>
+        <td>{$bn[$vo['id']]['bank_card']}</td>
+        <td>{$bn[$vo['id']]['bank_address']}</td>
+        <td>{$vo['money']|cx_cname}</td>
+        <td>{$vo['money']}</td>
+        <td>
+          <eq name="vo.is_buy" value="1"><a href="__URL__/eb_listAC/cid/{$vo['id']}/" title="{:xstr('tpl102')}">{:xstr('tpl103')}</a> | <a href="__URL__/eb_list_CAC/cid/{$vo['id']}/" title="{:xstr('tpl104')}">{:xstr('cancel')}</a></eq>
+        <eq name="vo.is_buy" value="2">{:xstr('tpl097')}</eq></td>
+	</tr>
+    </volist>
+</table>
+<table width="100%" class="tab3_bottom" border="0" cellpadding="0" cellspacing="1">
+<tr>
+        <td align="center">{$page}</td>
+  </tr>
+</table>
+</div>
+</body>
+</html>
+<script>new TableSorter("tb1");</script>

@@ -1,0 +1,50 @@
+<include file="../Public/header" />
+<div class="ncenter_box">
+<div class="accounttitle"><h1>购买电话卡&nbsp;[ <a href="javascript:history.go(-1);">{:xstr('return_list')}</a> ] </h1></div>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" id="tb1" bgcolor="#b9c8d0" class="tab3">
+<tr>
+    <td align="center" style="font-size:14px; line-height:40px; font-weight:bold;">
+    人民币账户：<font color="red" size="+1" style="font-family:Verdana, Geneva, sans-serif">{$fck_rs['agent_use']}</font>&nbsp;&nbsp;
+    话卡币账户：<font color="red" size="+1" style="font-family:Verdana, Geneva, sans-serif">{$fck_rs['agent_cs']}</font>&nbsp;&nbsp;
+    </td>
+</tr>
+</table>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" id="tb1" bgcolor="#b9c8d0" class="tab3">
+<tr align="center">
+	<th width="10%">{:xstr('order_id')}</th>
+    <th width="20%" nowrap>产品名称</th>
+	<th width="15%" nowrap>卡密</th>
+	<th width="15%" nowrap>市场价</th>
+    <th width="40%" nowrap>购买</th>
+	</tr>
+<volist name="list" id="vo">
+<tr align="center"> 
+	<td>{$key+1}</td>
+    <td nowrap >{$vo['card_no']}</td>
+	<td nowrap >******</td>
+    <td nowrap >{$vo['money']}</td>
+	<td nowrap >
+    <input name="bye" type="button" class="button_text" value="人民币购买" onclick="if(confirm('确定要人民币购买该电话卡吗?')) { location.href='__URL__/buy_cardAC/gid/0/cid/<?php echo $vo['id']?>';return true; } else return false;"/>
+    &nbsp;&nbsp;
+    <input name="bye" type="button" class="button_text" value="话卡币购买" onclick="if(confirm('确定要话卡币购买该电话卡吗?')) { location.href='__URL__/buy_cardAC/gid/1/cid/<?php echo $vo['id']?>';return true; } else return false;"/>
+    </td>
+	</tr>
+</volist>
+</table>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr align="center">
+	<td>{$page}</td>
+</tr>
+</table>
+</div>
+</body>
+</html>
+<script>
+function checkfm(){
+	if(confirm('您确定要购买电话卡吗？')){
+		return true;
+	}else{
+		return false;
+	}
+}
+</script>

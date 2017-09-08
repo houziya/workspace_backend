@@ -1,0 +1,46 @@
+<table width="100%" class="tab3" border="0" cellpadding="3" cellspacing="0" id="tb1">
+	<tr align="center" class="size14">
+        <th width="10%" nowrap="nowrap">{:xstr('account')}</th>
+        <th width="10%" height="24" nowrap="nowrap">收货人</th>
+        <th width="20%" nowrap="nowrap">产品名</th>
+        <th width="15%" nowrap="nowrap">购买时间</th>
+        <th width="10%" nowrap="nowrap">单价</th>
+        <th width="10%" nowrap="nowrap">数量</th>
+        <!--<td width="11%" nowrap="nowrap">PV值</td>-->
+        <th width="15%" nowrap="nowrap">总金额</th>
+        <th width="10%" nowrap="nowrap">{:xstr('status')}</th>
+    </tr>
+    <volist name="list" id="vo">
+    <tr align="center">
+        <td nowrap="nowrap">{$vo.user_id}</td>
+        <td height="24" nowrap="nowrap">{$vo.us_name}&nbsp;</td>
+        <td nowrap="nowrap">{$vo.name}&nbsp;</td>
+        <td nowrap="nowrap">{$vo.pdt|date='Y-m-d H:i:s',###}</td>
+        <td nowrap="nowrap">{$vo.money}</td>
+        <td nowrap="nowrap">{$vo.shu}</td>
+        <!--<td nowrap="nowrap" ><%'=conn.execute("select PV from [cp] where id="&rs("idd")&"")(0)%></td>-->
+        <td nowrap="nowrap">{$vo.cprice}</td>
+        <td nowrap="nowrap">
+        <eq name="vo.isfh" value="0">
+        未发
+        <else/>
+        <span style="color:#F00">已发货</span>
+        </eq></td>
+    </tr>
+    </volist>
+    <tr align="center">
+        <td>&nbsp;</td>
+        <td height="24">&nbsp;</td>
+        <td height="25">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td height="25">&nbsp;</td>
+        <td height="20">合计金额</td>
+        <td height="20">{$count}</td>
+        <td height="20">&nbsp;</td>
+    </tr>
+</table>
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" height="30">{$page}</td>
+  </tr>
+</table>

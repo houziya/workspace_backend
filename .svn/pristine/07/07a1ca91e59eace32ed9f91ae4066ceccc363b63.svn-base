@@ -1,0 +1,1597 @@
+-- phpMyAdmin SQL Dump
+-- version 3.3.10
+-- http://www.phpmyadmin.net
+--
+-- 主机: localhost
+-- 生成日期: 2016 年 01 月 09 日 20:00
+-- 服务器版本: 5.1.57
+-- PHP 版本: 5.2.17
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- 数据库: `zzmmm`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_access`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_access` (
+  `role_id` smallint(6) unsigned NOT NULL,
+  `node_id` smallint(6) unsigned NOT NULL,
+  `level` tinyint(1) NOT NULL,
+  `pid` smallint(6) NOT NULL,
+  `module` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  KEY `groupId` (`role_id`),
+  KEY `nodeId` (`node_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 转存表中的数据 `zyrj_access`
+--
+
+INSERT INTO `zyrj_access` (`role_id`, `node_id`, `level`, `pid`, `module`) VALUES
+(2, 1, 1, 0, ''),
+(2, 40, 2, 1, ''),
+(2, 30, 2, 1, ''),
+(3, 1, 1, 0, ''),
+(2, 69, 2, 1, ''),
+(2, 50, 3, 40, ''),
+(3, 50, 3, 40, ''),
+(1, 50, 3, 40, ''),
+(3, 7, 2, 1, ''),
+(3, 39, 3, 30, ''),
+(2, 39, 3, 30, ''),
+(2, 49, 3, 30, ''),
+(4, 1, 1, 0, ''),
+(4, 2, 2, 1, ''),
+(4, 3, 2, 1, ''),
+(4, 4, 2, 1, ''),
+(4, 5, 2, 1, ''),
+(4, 6, 2, 1, ''),
+(4, 7, 2, 1, ''),
+(4, 11, 2, 1, ''),
+(5, 25, 1, 0, ''),
+(5, 51, 2, 25, ''),
+(1, 1, 1, 0, ''),
+(1, 39, 3, 30, ''),
+(1, 69, 2, 1, ''),
+(1, 30, 2, 1, ''),
+(1, 40, 2, 1, ''),
+(1, 49, 3, 30, ''),
+(3, 69, 2, 1, ''),
+(3, 30, 2, 1, ''),
+(3, 40, 2, 1, ''),
+(1, 37, 3, 30, ''),
+(1, 36, 3, 30, ''),
+(1, 35, 3, 30, ''),
+(1, 34, 3, 30, ''),
+(1, 33, 3, 30, ''),
+(1, 32, 3, 30, ''),
+(1, 31, 3, 30, ''),
+(2, 32, 3, 30, ''),
+(2, 31, 3, 30, ''),
+(7, 1, 1, 0, ''),
+(7, 69, 2, 1, ''),
+(7, 30, 2, 1, ''),
+(7, 40, 2, 1, ''),
+(7, 50, 3, 40, ''),
+(7, 39, 3, 30, ''),
+(7, 49, 3, 30, ''),
+(7, 84, 1, 0, ''),
+(7, 85, 1, 0, ''),
+(2, 84, 1, 0, ''),
+(2, 85, 1, 0, ''),
+(1, 84, 1, 0, ''),
+(1, 85, 1, 0, ''),
+(1, 7, 2, 1, ''),
+(1, 6, 2, 1, ''),
+(1, 2, 2, 1, ''),
+(1, 83, 2, 1, ''),
+(7, 7, 2, 1, ''),
+(7, 6, 2, 1, ''),
+(7, 2, 2, 1, ''),
+(7, 83, 2, 1, ''),
+(7, 37, 3, 30, ''),
+(7, 36, 3, 30, ''),
+(7, 35, 3, 30, ''),
+(7, 34, 3, 30, ''),
+(7, 33, 3, 30, ''),
+(7, 32, 3, 30, ''),
+(7, 31, 3, 30, ''),
+(2, 1, 1, 0, ''),
+(2, 40, 2, 1, ''),
+(2, 30, 2, 1, ''),
+(3, 1, 1, 0, ''),
+(2, 69, 2, 1, ''),
+(2, 50, 3, 40, ''),
+(3, 50, 3, 40, ''),
+(1, 50, 3, 40, ''),
+(3, 7, 2, 1, ''),
+(3, 39, 3, 30, ''),
+(2, 39, 3, 30, ''),
+(2, 49, 3, 30, ''),
+(4, 1, 1, 0, ''),
+(4, 2, 2, 1, ''),
+(4, 3, 2, 1, ''),
+(4, 4, 2, 1, ''),
+(4, 5, 2, 1, ''),
+(4, 6, 2, 1, ''),
+(4, 7, 2, 1, ''),
+(4, 11, 2, 1, ''),
+(5, 25, 1, 0, ''),
+(5, 51, 2, 25, ''),
+(1, 1, 1, 0, ''),
+(1, 39, 3, 30, ''),
+(1, 69, 2, 1, ''),
+(1, 30, 2, 1, ''),
+(1, 40, 2, 1, ''),
+(1, 49, 3, 30, ''),
+(3, 69, 2, 1, ''),
+(3, 30, 2, 1, ''),
+(3, 40, 2, 1, ''),
+(1, 37, 3, 30, ''),
+(1, 36, 3, 30, ''),
+(1, 35, 3, 30, ''),
+(1, 34, 3, 30, ''),
+(1, 33, 3, 30, ''),
+(1, 32, 3, 30, ''),
+(1, 31, 3, 30, ''),
+(2, 32, 3, 30, ''),
+(2, 31, 3, 30, ''),
+(7, 1, 1, 0, ''),
+(7, 69, 2, 1, ''),
+(7, 30, 2, 1, ''),
+(7, 40, 2, 1, ''),
+(7, 50, 3, 40, ''),
+(7, 39, 3, 30, ''),
+(7, 49, 3, 30, ''),
+(7, 84, 1, 0, ''),
+(7, 85, 1, 0, ''),
+(2, 84, 1, 0, ''),
+(2, 85, 1, 0, ''),
+(1, 84, 1, 0, ''),
+(1, 85, 1, 0, ''),
+(1, 7, 2, 1, ''),
+(1, 6, 2, 1, ''),
+(1, 2, 2, 1, ''),
+(1, 83, 2, 1, ''),
+(7, 7, 2, 1, ''),
+(7, 6, 2, 1, ''),
+(7, 2, 2, 1, ''),
+(7, 83, 2, 1, ''),
+(7, 37, 3, 30, ''),
+(7, 36, 3, 30, ''),
+(7, 35, 3, 30, ''),
+(7, 34, 3, 30, ''),
+(7, 33, 3, 30, ''),
+(7, 32, 3, 30, ''),
+(7, 31, 3, 30, '');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_address`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_address` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `tel` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `moren` int(11) NOT NULL COMMENT '是否为默认地址',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `zyrj_address`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_bonus`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_bonus` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `user_id` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `did` int(11) NOT NULL,
+  `s_date` int(11) NOT NULL,
+  `e_date` int(11) NOT NULL,
+  `b0` decimal(12,2) NOT NULL,
+  `b1` decimal(12,2) NOT NULL,
+  `b2` decimal(12,2) NOT NULL,
+  `b3` decimal(12,2) NOT NULL,
+  `b4` decimal(12,2) NOT NULL,
+  `b5` decimal(12,2) NOT NULL,
+  `b6` decimal(12,2) NOT NULL,
+  `b7` decimal(12,2) NOT NULL,
+  `b8` decimal(12,2) NOT NULL,
+  `b9` decimal(12,2) NOT NULL,
+  `b11` decimal(12,2) NOT NULL,
+  `b12` decimal(12,2) NOT NULL,
+  `b10` decimal(12,2) NOT NULL,
+  `encash_l` int(11) NOT NULL,
+  `encash_r` int(11) NOT NULL,
+  `encash` int(11) NOT NULL,
+  `is_count_b` int(11) NOT NULL,
+  `is_count_c` int(11) NOT NULL,
+  `is_pay` int(11) NOT NULL,
+  `u_level` int(11) NOT NULL,
+  `type` smallint(2) NOT NULL DEFAULT '0',
+  `additional` varchar(50) NOT NULL COMMENT '额外奖',
+  `encourage` varchar(50) NOT NULL COMMENT '阶段鼓励奖',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1943 ;
+
+--
+-- 转存表中的数据 `zyrj_bonus`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_card`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_card` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `bid` int(11) NOT NULL DEFAULT '0',
+  `buser_id` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `card_no` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `card_pw` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `c_time` int(11) NOT NULL DEFAULT '0',
+  `f_time` int(11) NOT NULL DEFAULT '0',
+  `l_time` int(11) NOT NULL DEFAULT '0',
+  `b_time` int(11) NOT NULL DEFAULT '0',
+  `is_sell` int(3) NOT NULL DEFAULT '0',
+  `is_use` int(3) NOT NULL DEFAULT '0',
+  `money` decimal(12,2) NOT NULL,
+  `c_type` int(11) NOT NULL DEFAULT '0',
+  `bz` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12860 ;
+
+--
+-- 转存表中的数据 `zyrj_card`
+--
+
+INSERT INTO `zyrj_card` (`id`, `bid`, `buser_id`, `card_no`, `card_pw`, `c_time`, `f_time`, `l_time`, `b_time`, `is_sell`, `is_use`, `money`, `c_type`, `bz`) VALUES
+(12859, 0, 'YD600078', 'ecJ7KgqB', '', 1450501055, 0, 0, 0, 0, 0, 0.00, 0, ''),
+(12858, 0, 'YD600078', 'qx4RSeAJ', '', 1450501055, 0, 0, 0, 0, 0, 0.00, 0, ''),
+(12857, 0, 'YD577877', 'bKxxuETm', '', 1450496625, 0, 0, 0, 0, 0, 0.00, 0, ''),
+(12856, 0, 'YD577877', 'yTW8cGNU', '', 1450496625, 0, 0, 0, 0, 0, 0.00, 0, ''),
+(12855, 0, 'YD577877', 'd3SFJztP', '', 1450496614, 0, 0, 0, 0, 0, 0.00, 0, ''),
+(12854, 4250, 'YD577877', 'jQZpGteM', '', 1450496614, 0, 0, 1450500530, 0, 1, 0.00, 0, '');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_cash`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_cash` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `user_id` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `bid` text COLLATE utf8_unicode_ci NOT NULL,
+  `b_user_id` text COLLATE utf8_unicode_ci NOT NULL,
+  `sid` text COLLATE utf8_unicode_ci NOT NULL,
+  `s_user_id` text COLLATE utf8_unicode_ci NOT NULL,
+  `rdt` int(11) NOT NULL,
+  `money` decimal(12,2) NOT NULL,
+  `money_two` decimal(12,2) NOT NULL,
+  `epoint` int(11) NOT NULL DEFAULT '0',
+  `is_pay` int(11) NOT NULL,
+  `user_name` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `bank_name` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `bank_card` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `x1` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `x2` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `x3` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `x4` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `sellbz` text COLLATE utf8_unicode_ci NOT NULL,
+  `s_type` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  `is_buy` int(11) NOT NULL DEFAULT '0',
+  `bdt` int(11) NOT NULL DEFAULT '0',
+  `ldt` int(11) NOT NULL DEFAULT '0',
+  `okdt` int(11) NOT NULL DEFAULT '0',
+  `bz` text COLLATE utf8_unicode_ci NOT NULL,
+  `is_sh` int(11) NOT NULL DEFAULT '0',
+  `is_cancel` int(11) NOT NULL,
+  `type` int(11) NOT NULL COMMENT '求购类型',
+  `pdt` int(11) NOT NULL,
+  `is_done` int(11) NOT NULL,
+  `is_get` smallint(4) NOT NULL COMMENT '是否接到打款',
+  `match_num` int(11) NOT NULL COMMENT '买方匹配到的卖方条数',
+  `finish_num` int(11) NOT NULL COMMENT '卖方已付款条数',
+  `match_id` varchar(200) COLLATE utf8_unicode_ci NOT NULL COMMENT '匹配的记录ID',
+  `money_type` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `is_out` int(11) NOT NULL,
+  `lock_time` int(11) NOT NULL,
+  `img` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `money_key` int(4) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7000 ;
+
+--
+-- 转存表中的数据 `zyrj_cash`
+--
+
+INSERT INTO `zyrj_cash` (`id`, `uid`, `user_id`, `bid`, `b_user_id`, `sid`, `s_user_id`, `rdt`, `money`, `money_two`, `epoint`, `is_pay`, `user_name`, `bank_name`, `bank_card`, `x1`, `x2`, `x3`, `x4`, `sellbz`, `s_type`, `is_buy`, `bdt`, `ldt`, `okdt`, `bz`, `is_sh`, `is_cancel`, `type`, `pdt`, `is_done`, `is_get`, `match_num`, `finish_num`, `match_id`, `money_type`, `is_out`, `lock_time`, `img`, `money_key`) VALUES
+(6997, 4251, 'YD614489', '4250', 'YD577877', '4251', 'YD614489', 1450497512, 10000.00, 10000.00, 0, 1, '刘华玲', '农业银行', '6228480448578228372', 'Z75453796', NULL, '', NULL, '', '0,1,2,3', 0, 0, 0, 0, '', 0, 0, 1, 1450501146, 0, 0, 0, 0, '6998', '2', 0, 0, '', 0),
+(6998, 4250, 'YD577877', '4250', 'YD577877', '4251', 'YD614489', 1450500530, 10000.00, 10000.00, 0, 1, '齐雨晴', '中国银行', '6217857000025421072', 'T43296813', NULL, NULL, NULL, '', '0,1,2,3', 0, 0, 1450500530, 0, '', 0, 0, 0, 1450501146, 0, 0, 1, 0, '6997', '0', 0, 0, '', 3),
+(6999, 4252, 'YD600078', '4252', 'YD600078', '', '', 1451718629, 1000.00, 1000.00, 0, 0, '赖招娣', '光大银行', '6226661701659504', 'A21129150', NULL, NULL, NULL, '', '0,1,2,3', 0, 0, 1451718629, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, '', '0', 0, 0, '', 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_chistory`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_chistory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(200) COLLATE utf8_unicode_ci NOT NULL COMMENT '编号',
+  `time` int(11) NOT NULL,
+  `content` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `old_money` decimal(12,2) NOT NULL,
+  `money` decimal(12,2) NOT NULL,
+  `new_money` decimal(12,2) NOT NULL,
+  `action_type` int(11) NOT NULL COMMENT '得奖类型',
+  `did` int(11) NOT NULL COMMENT '操作会员',
+  `type` int(4) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12787 ;
+
+--
+-- 转存表中的数据 `zyrj_chistory`
+--
+
+INSERT INTO `zyrj_chistory` (`id`, `code`, `time`, `content`, `old_money`, `money`, `new_money`, `action_type`, `did`, `type`) VALUES
+(12784, 'M', 1450497117, '后台充值', 0.00, 10000.00, 10000.00, 23, 4251, 2),
+(12785, 'M', 1450497122, '后台充值', 10000.00, 10000.00, 20000.00, 23, 4251, 2),
+(12786, 'M', 1450497131, '后台充值', 20000.00, 10000.00, 30000.00, 23, 4251, 2);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_chongzhi`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_chongzhi` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `user_id` varchar(50) COLLATE utf8_bin NOT NULL,
+  `epoint` decimal(12,2) NOT NULL,
+  `huikuan` decimal(12,2) NOT NULL,
+  `zhuanghao` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `rdt` int(11) NOT NULL,
+  `pdt` int(11) NOT NULL DEFAULT '0',
+  `is_pay` smallint(2) NOT NULL,
+  `stype` int(11) NOT NULL DEFAULT '0',
+  `bz` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=29 ;
+
+--
+-- 转存表中的数据 `zyrj_chongzhi`
+--
+
+INSERT INTO `zyrj_chongzhi` (`id`, `uid`, `user_id`, `epoint`, `huikuan`, `zhuanghao`, `rdt`, `pdt`, `is_pay`, `stype`, `bz`) VALUES
+(28, 4251, 'YD614489', 10000.00, 0.00, '', 1450497131, 1450497131, 1, 1, ''),
+(27, 4251, 'YD614489', 10000.00, 0.00, '', 1450497122, 1450497122, 1, 1, ''),
+(26, 4251, 'YD614489', 10000.00, 0.00, '', 1450497117, 1450497117, 1, 1, '');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_cody`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_cody` (
+  `c_id` smallint(6) NOT NULL AUTO_INCREMENT,
+  `cody_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`c_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
+
+--
+-- 转存表中的数据 `zyrj_cody`
+--
+
+INSERT INTO `zyrj_cody` (`c_id`, `cody_name`) VALUES
+(1, 'profile'),
+(2, 'password'),
+(3, 'Jj_FA'),
+(4, '4'),
+(5, '5'),
+(6, '6'),
+(7, '7'),
+(8, '8'),
+(9, '9'),
+(10, '10'),
+(11, '11'),
+(12, '12'),
+(13, '13'),
+(14, '14'),
+(15, '15'),
+(16, '16'),
+(17, '17'),
+(18, '18'),
+(19, '19'),
+(20, '20'),
+(21, '21'),
+(22, '22'),
+(23, '23'),
+(24, '24'),
+(25, '25'),
+(26, '26'),
+(27, '27'),
+(28, '28'),
+(29, '29'),
+(30, '30');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_cptype`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_cptype` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tpname` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `b_id` int(11) NOT NULL DEFAULT '0',
+  `s_id` int(11) NOT NULL DEFAULT '0',
+  `t_pai` int(11) NOT NULL DEFAULT '0',
+  `status` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- 转存表中的数据 `zyrj_cptype`
+--
+
+INSERT INTO `zyrj_cptype` (`id`, `tpname`, `b_id`, `s_id`, `t_pai`, `status`) VALUES
+(1, '家用电器', 0, 0, 0, 0),
+(2, '食品', 0, 0, 0, 0),
+(3, '生活用品', 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_fck`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_fck` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `account` varchar(64) DEFAULT NULL,
+  `bind_account` varchar(50) DEFAULT NULL,
+  `new_login_time` int(11) NOT NULL DEFAULT '0',
+  `new_login_ip` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `last_login_time` int(11) unsigned DEFAULT '0',
+  `last_login_ip` varchar(40) DEFAULT NULL,
+  `login_count` mediumint(8) unsigned DEFAULT '0',
+  `verify` varchar(32) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `remark` varchar(255) DEFAULT NULL,
+  `create_time` int(11) unsigned NOT NULL,
+  `update_time` int(11) unsigned DEFAULT NULL,
+  `status` tinyint(1) DEFAULT '0',
+  `type_id` tinyint(2) unsigned DEFAULT '0',
+  `info` text,
+  `name` varchar(25) DEFAULT NULL,
+  `dept_id` smallint(3) DEFAULT NULL,
+  `user_id` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT '用户编号',
+  `user_name` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT '银行开户名',
+  `password` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '一级密码',
+  `pwd1` varchar(50) DEFAULT NULL COMMENT '一级密码不加密',
+  `passopen` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '二级密码',
+  `pwd2` varchar(50) DEFAULT NULL COMMENT '二级密码不加密',
+  `passopentwo` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT '三级密码',
+  `pwd3` varchar(50) DEFAULT NULL COMMENT '三级密码不加密',
+  `nickname` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '昵称',
+  `qq` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT 'QQ',
+  `bank_name` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '开户银行',
+  `bank_card` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '银行卡号',
+  `bank_province` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '开户银行所在省',
+  `bank_city` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '开户银行所在城市',
+  `bank_address` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '支行地址',
+  `user_code` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '身份证',
+  `user_address` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '联系地址',
+  `user_post` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '联系方式',
+  `user_tel` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '电话',
+  `user_phone` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '手机',
+  `rdt` int(11) NOT NULL COMMENT '注册时间',
+  `treeplace` int(11) DEFAULT NULL COMMENT '区分左(中)右',
+  `father_id` int(11) NOT NULL COMMENT '父节点',
+  `father_name` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '父名',
+  `re_id` int(11) NOT NULL COMMENT '推荐ID',
+  `re_name` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '推荐人名称',
+  `is_pay` int(11) NOT NULL COMMENT '是否开通(0,1)',
+  `is_null` int(11) NOT NULL DEFAULT '0',
+  `is_lock` int(11) NOT NULL COMMENT '是否锁定(0,1)',
+  `is_lock_ok` int(3) NOT NULL DEFAULT '0',
+  `shoplx` int(11) NOT NULL COMMENT '报单中心ID',
+  `shop_a` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '//中心所在省',
+  `shop_b` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '//中心所在县',
+  `is_agent` int(11) NOT NULL COMMENT '报单中心(0,1,2)',
+  `agent_max` decimal(12,2) NOT NULL COMMENT '申请报单总金额',
+  `agent_use` decimal(12,2) NOT NULL COMMENT '奖金币',
+  `agent_cash` decimal(12,2) NOT NULL COMMENT '报单币',
+  `agent_kt` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `agent_xf` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `agent_cf` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `agent_gp` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `agent_gw` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `gp_num` int(11) NOT NULL DEFAULT '0',
+  `agent_lock` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `live_gupiao` decimal(12,3) NOT NULL DEFAULT '0.000',
+  `all_in_gupiao` int(11) NOT NULL DEFAULT '0',
+  `all_out_gupiao` int(11) NOT NULL DEFAULT '0',
+  `p_out_gupiao` int(11) NOT NULL DEFAULT '0',
+  `no_out_gupiao` int(11) NOT NULL DEFAULT '0',
+  `ok_out_gupiao` int(11) NOT NULL DEFAULT '0',
+  `yuan_gupiao` int(11) NOT NULL DEFAULT '0',
+  `all_gupiao` int(11) NOT NULL DEFAULT '0',
+  `tx_num` int(3) NOT NULL DEFAULT '0',
+  `lssq` decimal(12,2) NOT NULL,
+  `zsq` decimal(12,2) NOT NULL,
+  `adt` int(11) NOT NULL COMMENT '申请成报单中心时间',
+  `l` int(11) NOT NULL COMMENT '左边总人数',
+  `r` int(11) NOT NULL COMMENT '右边总人数',
+  `benqi_l` int(11) NOT NULL COMMENT '本期左区新增',
+  `benqi_r` int(11) NOT NULL COMMENT '本期右区新增',
+  `shangqi_l` int(11) NOT NULL COMMENT '上期左区剩余',
+  `shangqi_r` int(11) NOT NULL COMMENT '上期右区剩余',
+  `peng_num` int(11) NOT NULL DEFAULT '0',
+  `num_l` int(11) NOT NULL DEFAULT '0',
+  `num_r` int(11) NOT NULL DEFAULT '0',
+  `num_lr` int(11) NOT NULL DEFAULT '0',
+  `u_level` int(11) NOT NULL COMMENT '等级(会员级别)',
+  `y_level` int(11) NOT NULL DEFAULT '0',
+  `is_boss` int(11) NOT NULL COMMENT '管理人为1,其它为0',
+  `idt` int(11) NOT NULL,
+  `pdt` int(11) NOT NULL COMMENT '开通时间',
+  `re_level` int(11) NOT NULL COMMENT '相对于推的代数',
+  `p_level` int(11) NOT NULL COMMENT '绝对层数',
+  `re_path` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '推荐的路径',
+  `p_path` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '自已的路径',
+  `tp_path` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `is_del` int(11) NOT NULL,
+  `shop_id` int(11) NOT NULL COMMENT '隶属报单ID',
+  `shop_name` varchar(50) NOT NULL,
+  `shop_uname` varchar(255) NOT NULL,
+  `b0` decimal(12,2) NOT NULL COMMENT '每期总资金',
+  `b1` decimal(12,2) NOT NULL COMMENT '奖1',
+  `b2` decimal(12,2) NOT NULL COMMENT '奖2',
+  `b3` decimal(12,2) NOT NULL COMMENT '奖3',
+  `b4` decimal(12,2) NOT NULL COMMENT '奖4',
+  `b5` decimal(12,2) NOT NULL COMMENT '奖5',
+  `b6` decimal(12,2) NOT NULL COMMENT '奖6',
+  `b7` decimal(12,2) NOT NULL COMMENT '奖7',
+  `b8` decimal(12,2) NOT NULL COMMENT '奖8',
+  `b9` decimal(12,2) NOT NULL COMMENT '奖9',
+  `b12` decimal(12,2) NOT NULL COMMENT '奖12',
+  `b11` decimal(12,2) NOT NULL COMMENT '奖11',
+  `b10` decimal(12,2) NOT NULL COMMENT '奖10',
+  `wlf` int(11) NOT NULL COMMENT '网络费',
+  `wlf_money` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `cpzj` decimal(12,2) NOT NULL COMMENT '注册金额',
+  `y_cpzj` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `zjj` decimal(12,2) NOT NULL DEFAULT '0.00' COMMENT '总奖金',
+  `re_money` decimal(12,2) NOT NULL DEFAULT '0.00' COMMENT '推荐总注册金额',
+  `cz_epoint` decimal(12,2) NOT NULL DEFAULT '0.00' COMMENT '冲值总金额',
+  `lr` int(11) NOT NULL COMMENT '中间总单数',
+  `shangqi_lr` int(11) NOT NULL COMMENT '中间上期剩余单数',
+  `benqi_lr` int(11) NOT NULL COMMENT '中间本期单数',
+  `user_type` varchar(200) NOT NULL COMMENT '多线登录限制',
+  `re_peat_money` decimal(12,2) NOT NULL COMMENT 'x',
+  `re_nums` smallint(4) NOT NULL DEFAULT '0' COMMENT 'x',
+  `re_nums_b` int(11) NOT NULL DEFAULT '0',
+  `re_nums_l` int(11) NOT NULL DEFAULT '0',
+  `re_nums_r` int(11) NOT NULL DEFAULT '0',
+  `duipeng` decimal(12,2) NOT NULL,
+  `_times` int(11) NOT NULL,
+  `fanli` int(11) NOT NULL,
+  `fanli_time` int(11) NOT NULL,
+  `fanli_num` int(11) NOT NULL,
+  `fanli_money` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `is_fenh` smallint(2) NOT NULL,
+  `open` smallint(2) NOT NULL,
+  `singular` int(11) NOT NULL DEFAULT '0',
+  `new_agent` smallint(1) NOT NULL DEFAULT '0' COMMENT '//是否新服务中心',
+  `day_feng` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `get_date` int(11) DEFAULT '0',
+  `get_numb` int(11) DEFAULT '0',
+  `is_jb` int(11) DEFAULT '0',
+  `sq_jb` int(11) DEFAULT '0',
+  `jb_sdate` int(11) DEFAULT '0',
+  `jb_idate` int(11) DEFAULT '0',
+  `man_ceng` int(11) NOT NULL DEFAULT '0' COMMENT '//满层数',
+  `prem` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '//权限',
+  `wang_j` smallint(1) NOT NULL DEFAULT '0' COMMENT '//结构图',
+  `wang_t` smallint(1) NOT NULL DEFAULT '0' COMMENT '//推荐图',
+  `get_level` int(11) NOT NULL DEFAULT '0',
+  `is_xf` smallint(11) NOT NULL DEFAULT '0',
+  `xf_money` decimal(12,3) NOT NULL DEFAULT '0.000',
+  `is_zy` int(11) NOT NULL DEFAULT '0',
+  `zyi_date` int(11) NOT NULL DEFAULT '0',
+  `zyq_date` int(11) NOT NULL DEFAULT '0',
+  `mon_get` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `xy_money` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `xx_money` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `down_num` int(11) NOT NULL DEFAULT '0',
+  `u_pai` int(11) NOT NULL DEFAULT '0',
+  `n_pai` int(11) NOT NULL DEFAULT '0',
+  `ok_pay` int(11) NOT NULL DEFAULT '0',
+  `wenti` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `wenti_dan` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `is_tj` int(11) NOT NULL DEFAULT '0',
+  `re_f4` int(11) NOT NULL DEFAULT '0',
+  `is_aa` int(3) NOT NULL DEFAULT '0',
+  `is_bb` int(3) NOT NULL DEFAULT '0',
+  `us_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `x_pai` int(11) NOT NULL DEFAULT '0',
+  `x_out` int(3) NOT NULL DEFAULT '0',
+  `x_num` int(11) NOT NULL DEFAULT '0',
+  `is_lockqd` int(11) NOT NULL COMMENT '是否关闭签到',
+  `is_lockfh` int(11) NOT NULL COMMENT '是否关闭分红',
+  `seller_rate` int(11) NOT NULL DEFAULT '5',
+  `g_level_a` varchar(200) NOT NULL DEFAULT '0.00',
+  `g_level_b` int(11) NOT NULL DEFAULT '0',
+  `re_cpzj` decimal(12,2) NOT NULL COMMENT '直推业绩',
+  `pro_id` text NOT NULL COMMENT '存已发的产品数',
+  `gdt` int(11) NOT NULL,
+  `end_time` int(11) NOT NULL COMMENT '到期时间',
+  `xiaofei_money` decimal(12,2) NOT NULL COMMENT '已消费金额',
+  `gp_divi_count` int(11) unsigned NOT NULL DEFAULT '0',
+  `b_apply_agent` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `quyu` varchar(200) NOT NULL,
+  `chat` varchar(200) NOT NULL,
+  `zhifuPay` varchar(200) NOT NULL COMMENT '支付宝',
+  `weixinWalet` varchar(200) NOT NULL COMMENT '微信钱包',
+  `caifuPay` varchar(200) NOT NULL COMMENT '财付通',
+  `jingli` tinyint(1) NOT NULL DEFAULT '0',
+  `zongjian` tinyint(1) NOT NULL DEFAULT '0',
+  `dongshi` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4253 ;
+
+--
+-- 转存表中的数据 `zyrj_fck`
+--
+
+INSERT INTO `zyrj_fck` (`id`, `account`, `bind_account`, `new_login_time`, `new_login_ip`, `last_login_time`, `last_login_ip`, `login_count`, `verify`, `email`, `remark`, `create_time`, `update_time`, `status`, `type_id`, `info`, `name`, `dept_id`, `user_id`, `user_name`, `password`, `pwd1`, `passopen`, `pwd2`, `passopentwo`, `pwd3`, `nickname`, `qq`, `bank_name`, `bank_card`, `bank_province`, `bank_city`, `bank_address`, `user_code`, `user_address`, `user_post`, `user_tel`, `user_phone`, `rdt`, `treeplace`, `father_id`, `father_name`, `re_id`, `re_name`, `is_pay`, `is_null`, `is_lock`, `is_lock_ok`, `shoplx`, `shop_a`, `shop_b`, `is_agent`, `agent_max`, `agent_use`, `agent_cash`, `agent_kt`, `agent_xf`, `agent_cf`, `agent_gp`, `agent_gw`, `gp_num`, `agent_lock`, `live_gupiao`, `all_in_gupiao`, `all_out_gupiao`, `p_out_gupiao`, `no_out_gupiao`, `ok_out_gupiao`, `yuan_gupiao`, `all_gupiao`, `tx_num`, `lssq`, `zsq`, `adt`, `l`, `r`, `benqi_l`, `benqi_r`, `shangqi_l`, `shangqi_r`, `peng_num`, `num_l`, `num_r`, `num_lr`, `u_level`, `y_level`, `is_boss`, `idt`, `pdt`, `re_level`, `p_level`, `re_path`, `p_path`, `tp_path`, `is_del`, `shop_id`, `shop_name`, `shop_uname`, `b0`, `b1`, `b2`, `b3`, `b4`, `b5`, `b6`, `b7`, `b8`, `b9`, `b12`, `b11`, `b10`, `wlf`, `wlf_money`, `cpzj`, `y_cpzj`, `zjj`, `re_money`, `cz_epoint`, `lr`, `shangqi_lr`, `benqi_lr`, `user_type`, `re_peat_money`, `re_nums`, `re_nums_b`, `re_nums_l`, `re_nums_r`, `duipeng`, `_times`, `fanli`, `fanli_time`, `fanli_num`, `fanli_money`, `is_fenh`, `open`, `singular`, `new_agent`, `day_feng`, `get_date`, `get_numb`, `is_jb`, `sq_jb`, `jb_sdate`, `jb_idate`, `man_ceng`, `prem`, `wang_j`, `wang_t`, `get_level`, `is_xf`, `xf_money`, `is_zy`, `zyi_date`, `zyq_date`, `mon_get`, `xy_money`, `xx_money`, `down_num`, `u_pai`, `n_pai`, `ok_pay`, `wenti`, `wenti_dan`, `is_tj`, `re_f4`, `is_aa`, `is_bb`, `us_img`, `x_pai`, `x_out`, `x_num`, `is_lockqd`, `is_lockfh`, `seller_rate`, `g_level_a`, `g_level_b`, `re_cpzj`, `pro_id`, `gdt`, `end_time`, `xiaofei_money`, `gp_divi_count`, `b_apply_agent`, `quyu`, `chat`, `zhifuPay`, `weixinWalet`, `caifuPay`, `jingli`, `zongjian`, `dongshi`) VALUES
+(1, 'admin', '0', 1452339581, '183.204.243.28', 1452339581, '183.204.243.28', 0, 'wewe', '44@163.com', '00', 0, 0, 1, 0, '0', '800000', 0, '800000', '四川', 'c4ca4238a0b923820dcc509a6f75849b', '1', 'c4ca4238a0b923820dcc509a6f75849b', '1', 'd41d8cd98f00b204e9800998ecf8427e', '', 'hello', '3333', '建设银行', '1111111111111111111', '四川', '北京市', '北京华夏方庄支行', '444422', '5111100', 'QQ126163@QQ.com', '13344446666', '0', 1295884800, 0, 0, '0', 0, '0', 1, 0, 0, 0, 1, '全国总代理', '全国总代理', 2, 0.00, 0.00, 28.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0, 4885.34, 0.000, 0, 0, 0, 0, 0, 0, 0, 0, 0.00, 0.00, 1410352713, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 0, 0, 0, 0, 0x2c, 0x2c, '', 0, 0, '800000', '800000', 1155.00, 0.00, 0.00, 2.10, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0, 1000.00, 0.00, 2000.00, 0.00, 0.00, 0.00, 0, 0, 0, '494334797d95b767075ee6899193e1bf', 0.00, 0, 0, 0, 0, 0.00, 0, 0, 1450454400, 0, 0.00, 0, 0, 100, 0, 0.00, 1450454400, 0, 1, 0, 0, 0, 0, ',1,2,3,4,16,17,5,14,6,7,8,15,9,10,11,12,13,', 0, 0, 0, 0, 0.000, 0, 0, 0, 919379.05, 0.00, 0.00, 0, 1, 1, 1, '你爱人叫什么名字？', '123', 0, 0, 0, 0, '/A199/Public/Uploads/2014010816185380.jpg', 1, 1, 0, 0, 0, 5, '0', 0, 0.00, ',', 1424880000, 0, 0.00, 0, 1, '福建', '1', '1111111111111111111', '1', '为', 1, 0, 0),
+(4250, NULL, '3333', 1450500645, '112.97.62.44', 1450500453, '112.97.62.44', 0, '0', NULL, NULL, 0, NULL, 1, 0, '信息', '名称', NULL, 'YD577877', '齐雨晴', '0591e7c969b07aeca9b0d9ba545d6550', 'qing640729', 'b0c524802e500d9a345f56094138cc49', 'qing950965', '1a100d2c0dab19c4430e7d73762b3423', '333333', '', '254848835', '中国银行', '6217857000025421072', '广东省', '梅州市', '梅州新苑支行', '', '', '', '18575251964', '', 1450496383, NULL, 0, '', 1, '800000', 1, 0, 0, 0, 0, '', '', 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0, 0.00, 0.000, 0, 0, 0, 0, 0, 0, 0, 0, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1450496383, 1, 0, 0x2c312c, '', '', 0, 1, '800000', '', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0, 0.00, 1000.00, 0.00, 0.00, 0.00, 0.00, 0, 0, 0, 'd3f5b1aa9b288bb632f90cdc1e3bb0d0', 0.00, 0, 0, 0, 0, 0.00, 0, 0, 0, 0, 0.00, 0, 1, 0, 0, 0.00, 1450496383, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0.000, 0, 0, 0, 0.00, 0.00, 0.00, 0, 0, 0, 0, '', '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 5, '0.00', 0, 0.00, '', 0, 0, 0.00, 0, 0, '800000', 'Zz20130417', '18575251964', '', '', 0, 0, 0),
+(4251, NULL, '3333', 1450496983, '101.226.61.142', 0, '', 0, '0', NULL, NULL, 0, NULL, 1, 0, '信息', '名称', NULL, 'YD614489', '刘华玲', 'a51511801691f9872d3d14bf4e3d1244', 'lhl520', '2fff3af33d495b00534f386df0767266', 'huasanye520', '1a100d2c0dab19c4430e7d73762b3423', '333333', '', '1135185876', '农业银行', '6228480448578228372', '江苏省', '扬州市', '扬州华扬西路农业分行', '', '', '', '15252729520', '', 1450496892, NULL, 0, '', 1, '800000', 1, 0, 0, 0, 0, '', '', 0, 0.00, 30000.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0, 0.00, 0.000, 0, 0, 0, 0, 0, 0, 0, 0, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1450496892, 1, 0, 0x2c312c, '', '', 0, 1, '800000', '', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0, 0.00, 1000.00, 0.00, 0.00, 0.00, 30000.00, 0, 0, 0, '871fbe1c2a3df0de8b1910271b05c709', 0.00, 0, 0, 0, 0, 0.00, 0, 0, 0, 0, 0.00, 0, 1, 0, 0, 0.00, 1450496892, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0.000, 0, 0, 0, 0.00, 0.00, 10000.00, 0, 0, 0, 0, '', '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 5, '0.00', 0, 0.00, '', 0, 0, 0.00, 0, 1, '800000', '1135185876', '15252729520', '', '', 0, 0, 0),
+(4252, NULL, '3333', 1450500776, '220.200.44.16', 1450500670, '220.200.44.16', 0, '0', NULL, NULL, 0, NULL, 1, 0, '信息', '名称', NULL, 'YD600078', '赖招娣', '8170976001474e85dd3af3291c1897db', '286329', '36e1a5072c78359066ed7715f5ff3da8', '159357', '1a100d2c0dab19c4430e7d73762b3423', '333333', '', '1261744797', '光大银行', '6226661701659504', '福建省', '龙岩市', '中国光大银行', '', '', '', '18039834339', '', 1450500635, NULL, 0, '', 1, '800000', 1, 0, 0, 0, 0, '', '', 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0, 0.00, 0.000, 0, 0, 0, 0, 0, 0, 0, 0, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1450500635, 1, 0, 0x2c312c, '', '', 0, 1, '800000', '', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0, 0.00, 1000.00, 0.00, 0.00, 0.00, 0.00, 0, 0, 0, '69fb11935ccc4cf8ddcd2da587535706', 0.00, 0, 0, 0, 0, 0.00, 0, 0, 0, 0, 0.00, 0, 1, 0, 0, 0.00, 1450500635, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0.000, 0, 0, 0, 0.00, 0.00, 0.00, 0, 0, 0, 0, '', '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 5, '0.00', 0, 0.00, '', 0, 0, 0.00, 0, 0, '800000', '18039834339', '18039834339', '', '', 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_fck2`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_fck2` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ceng` int(11) DEFAULT '0',
+  `numb` int(11) DEFAULT '0',
+  `fend` int(11) DEFAULT '0',
+  `jishu` int(11) NOT NULL DEFAULT '0' COMMENT '//局数',
+  `fck_id` int(11) DEFAULT '0',
+  `user_id` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_name` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nickname` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `is_pay` int(11) NOT NULL DEFAULT '1',
+  `u_level` int(11) DEFAULT '0',
+  `re_num` int(11) NOT NULL DEFAULT '0',
+  `pdt` int(11) NOT NULL,
+  `treeplace` int(11) DEFAULT '0',
+  `father_id` int(11) DEFAULT '0',
+  `father_name` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_level` int(11) DEFAULT '0',
+  `p_path` text CHARACTER SET utf8 COLLATE utf8_bin,
+  `u_pai` varchar(200) COLLATE utf8_unicode_ci DEFAULT '0',
+  `is_over` smallint(1) NOT NULL DEFAULT '0' COMMENT '//判断是否为新增',
+  `is_out` smallint(1) NOT NULL DEFAULT '0' COMMENT '//判断是否已经出局',
+  `is_yinc` smallint(1) NOT NULL DEFAULT '0' COMMENT '//保上',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `zyrj_fck2`
+--
+
+INSERT INTO `zyrj_fck2` (`id`, `ceng`, `numb`, `fend`, `jishu`, `fck_id`, `user_id`, `user_name`, `nickname`, `is_pay`, `u_level`, `re_num`, `pdt`, `treeplace`, `father_id`, `father_name`, `p_level`, `p_path`, `u_pai`, `is_over`, `is_out`, `is_yinc`) VALUES
+(1, 0, 0, 0, 0, 1, '800000', '公司', '管理员', 1, 4, 0, 1322031843, 0, 0, '', 0, 0x2c, '1', 1, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_fck_shop`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_fck_shop` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `did` int(11) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `price` decimal(12,2) NOT NULL,
+  `create_time` int(11) NOT NULL,
+  `is_pay` smallint(1) NOT NULL DEFAULT '0',
+  `pdt` int(11) NOT NULL,
+  `type` smallint(2) NOT NULL DEFAULT '0',
+  `num` int(11) NOT NULL DEFAULT '1',
+  `content` text NOT NULL,
+  `p_dt` int(11) NOT NULL COMMENT '退货时间',
+  `p_is_pay` smallint(2) NOT NULL DEFAULT '0' COMMENT '状态',
+  `out_type` smallint(2) NOT NULL DEFAULT '0' COMMENT '0为未评论，1为已评论',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2533 ;
+
+--
+-- 转存表中的数据 `zyrj_fck_shop`
+--
+
+INSERT INTO `zyrj_fck_shop` (`id`, `did`, `uid`, `price`, `create_time`, `is_pay`, `pdt`, `type`, `num`, `content`, `p_dt`, `p_is_pay`, `out_type`) VALUES
+(2527, 33, 4054, 20.00, 1296203686, 1, 1296289294, 2, 1, 'fff', 1296289467, 3, 0),
+(2528, 33, 4054, 20.00, 1296203703, 1, 1296289294, 2, 1, '', 1296289462, 3, 1),
+(2532, 31, 1, 68.00, 1296288802, 1, 1296288969, 2, 3, '44444', 1296289223, 3, 1);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_fee`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_fee` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `i1` int(12) DEFAULT '0',
+  `i2` int(12) DEFAULT '0',
+  `i3` int(12) DEFAULT '0',
+  `i4` int(12) DEFAULT '0',
+  `i5` int(12) DEFAULT '0',
+  `i6` int(12) DEFAULT '0',
+  `i7` int(12) DEFAULT '0',
+  `i8` int(12) DEFAULT '0',
+  `i9` int(12) DEFAULT '0',
+  `i10` int(12) DEFAULT '0',
+  `i11` int(12) unsigned NOT NULL DEFAULT '0',
+  `s1` varchar(200) DEFAULT NULL,
+  `s2` varchar(200) DEFAULT NULL,
+  `s3` varchar(200) DEFAULT NULL,
+  `strjingli` varchar(200) DEFAULT NULL,
+  `strzongjian` varchar(200) DEFAULT NULL,
+  `strdongshi` varchar(200) DEFAULT NULL,
+  `s4` varchar(200) DEFAULT NULL,
+  `s5` varchar(200) DEFAULT NULL,
+  `s6` varchar(200) DEFAULT NULL,
+  `s7` varchar(200) DEFAULT NULL,
+  `s8` varchar(200) DEFAULT NULL,
+  `s9` varchar(200) DEFAULT NULL,
+  `s10` varchar(200) DEFAULT NULL,
+  `s11` varchar(200) DEFAULT NULL,
+  `s12` varchar(200) DEFAULT NULL,
+  `s13` varchar(200) DEFAULT NULL,
+  `s14` varchar(200) DEFAULT NULL,
+  `s15` varchar(200) DEFAULT NULL,
+  `s16` varchar(200) DEFAULT NULL,
+  `s17` varchar(200) DEFAULT NULL,
+  `s18` varchar(200) DEFAULT NULL,
+  `s19` varchar(200) DEFAULT NULL,
+  `s20` varchar(200) DEFAULT NULL,
+  `str1` varchar(200) DEFAULT NULL,
+  `str2` varchar(200) DEFAULT NULL,
+  `str3` varchar(200) DEFAULT NULL,
+  `str4` varchar(200) DEFAULT NULL,
+  `str5` varchar(200) DEFAULT NULL,
+  `str6` varchar(200) DEFAULT NULL,
+  `str7` varchar(200) DEFAULT NULL,
+  `str8` varchar(200) DEFAULT NULL,
+  `str9` varchar(200) DEFAULT NULL,
+  `str10` varchar(200) DEFAULT NULL,
+  `str11` varchar(200) DEFAULT NULL,
+  `str12` varchar(200) DEFAULT NULL,
+  `str13` varchar(200) DEFAULT NULL,
+  `str14` varchar(200) DEFAULT NULL,
+  `str15` varchar(200) DEFAULT NULL,
+  `str16` varchar(200) DEFAULT NULL,
+  `str17` varchar(200) DEFAULT NULL,
+  `str18` varchar(200) DEFAULT NULL,
+  `str19` varchar(200) DEFAULT NULL,
+  `str20` varchar(200) DEFAULT NULL,
+  `str21` varchar(200) DEFAULT NULL,
+  `str22` varchar(200) DEFAULT NULL,
+  `str23` varchar(200) DEFAULT NULL,
+  `str24` varchar(200) DEFAULT NULL,
+  `str25` varchar(200) DEFAULT NULL,
+  `str26` varchar(200) DEFAULT NULL,
+  `str27` varchar(200) DEFAULT NULL,
+  `str28` varchar(200) DEFAULT NULL,
+  `str29` varchar(200) DEFAULT NULL,
+  `str30` varchar(200) DEFAULT NULL,
+  `str99` text NOT NULL,
+  `us_num` int(11) NOT NULL DEFAULT '0',
+  `create_time` int(11) DEFAULT NULL COMMENT '清空数据时间截',
+  `f_time` int(11) NOT NULL DEFAULT '0',
+  `g_time` int(11) NOT NULL DEFAULT '0',
+  `a_money` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `b_money` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `ff_num` int(11) NOT NULL DEFAULT '0',
+  `gp_one` decimal(8,5) NOT NULL DEFAULT '0.00000' COMMENT '当前价格',
+  `gp_open` decimal(12,2) NOT NULL DEFAULT '0.00' COMMENT '开盘价格',
+  `gp_close` decimal(12,2) NOT NULL DEFAULT '0.00' COMMENT '关盘价格',
+  `gp_kg` int(3) NOT NULL DEFAULT '0' COMMENT '开关',
+  `gp_cnum` int(11) NOT NULL DEFAULT '0' COMMENT '拆股次数',
+  `gp_perc` varchar(50) NOT NULL COMMENT '手续费',
+  `gp_inm` varchar(50) NOT NULL COMMENT '交易分账',
+  `gp_cgbl` varchar(50) NOT NULL COMMENT '拆比例',
+  `gp_fxnum` int(11) NOT NULL DEFAULT '0',
+  `gp_senum` int(11) NOT NULL DEFAULT '0',
+  `ys_kg` int(11) NOT NULL DEFAULT '0',
+  `ys_num` int(11) NOT NULL DEFAULT '0',
+  `gd_time` int(11) NOT NULL,
+  `str31` varchar(200) NOT NULL,
+  `str32` varchar(200) NOT NULL,
+  `gp_sell_count` int(11) unsigned NOT NULL DEFAULT '0',
+  `str33` varchar(250) DEFAULT '',
+  `str34` varchar(250) DEFAULT '',
+  `str35` varchar(250) DEFAULT '',
+  `str36` varchar(250) DEFAULT '',
+  `str37` varchar(250) NOT NULL DEFAULT '',
+  `str38` varchar(250) NOT NULL DEFAULT '',
+  `str39` varchar(250) NOT NULL DEFAULT '',
+  `str40` varchar(250) NOT NULL DEFAULT '',
+  `last_gp_count` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `zyrj_fee`
+--
+
+INSERT INTO `zyrj_fee` (`id`, `i1`, `i2`, `i3`, `i4`, `i5`, `i6`, `i7`, `i8`, `i9`, `i10`, `i11`, `s1`, `s2`, `s3`, `strjingli`, `strzongjian`, `strdongshi`, `s4`, `s5`, `s6`, `s7`, `s8`, `s9`, `s10`, `s11`, `s12`, `s13`, `s14`, `s15`, `s16`, `s17`, `s18`, `s19`, `s20`, `str1`, `str2`, `str3`, `str4`, `str5`, `str6`, `str7`, `str8`, `str9`, `str10`, `str11`, `str12`, `str13`, `str14`, `str15`, `str16`, `str17`, `str18`, `str19`, `str20`, `str21`, `str22`, `str23`, `str24`, `str25`, `str26`, `str27`, `str28`, `str29`, `str30`, `str99`, `us_num`, `create_time`, `f_time`, `g_time`, `a_money`, `b_money`, `ff_num`, `gp_one`, `gp_open`, `gp_close`, `gp_kg`, `gp_cnum`, `gp_perc`, `gp_inm`, `gp_cgbl`, `gp_fxnum`, `gp_senum`, `ys_kg`, `ys_num`, `gd_time`, `str31`, `str32`, `gp_sell_count`, `str33`, `str34`, `str35`, `str36`, `str37`, `str38`, `str39`, `str40`, `last_gp_count`) VALUES
+(1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2', '1000|2000|5000|10000|20000', '10|5|2|1|0.5|0|0|0|0|0|0|0|0|0|0', NULL, NULL, NULL, 'huaren1', '30', '40000', '0', '8', '0', '会员名称', '80|400|1600|4000', '1', '0', '1', '0', '10', '银行卡号：农业银行', '互助静态奖|互助动态奖|报单奖/ 管理奖', '15|10|5', '10', '会员级别名称', 'close', '1', 'http://api.sms.cn/mtutf8/', '-', '8888888888', '100999', '200999', '100', '10000', '80000000', '000000aa', '100', '11.5|6.5|3.5|2.5|2|1.5|1.5|1.5|1.5|1.5|1.5|1.5|1.5|1.5|1.5', '10.5|5.5|2.5|1.5|1|0.5|0.5|0.5|0.5|0.5|0.5|0.5|0.5|0.5|0.5', '11|6|3|2|1.1|1|1|1|1|1|1|1|1|1|1', '100', 'MjxWMhD33A4No6mTz49AKIJGCwyNJh0WRysnd6ZQKoV2MhjHzpwz8tYd0HuzJPKwk7WPnZQT4JP5MrT4nGy3Kay80oMvm9hV49rplu40z2VP33qjNQmc1qBkixzYm4HU', '开户银行', '', '0', '0', '1', '0', '0', '1', '系统正在升级维护中......预计5分钟开放，带来不便之处，敬请谅解！', '恭喜您注册成功，互助将圆你财富自由梦！！', '农业银行|建设银行|邮政银行|工商银行|建设银行|中国银行|交通银行|招商银行|光大银行|民生银行|平安银行|浦发银行|中信银行|兴业银行|华夏银行|广发银行|北京银行', ',', '', 1, 1450496004, 1450454400, 1450022400, 0.00, 0.00, 1, 0.10000, 0.00, 0.00, 0, 0, '', '', '1:1', 0, 0, 0, 5000, 1450368000, '032895', 'VaZyFgZCjAFE1UMKuXSX3Es6B71ZTTgqMKaY7Xb05RQyYvj6LPrO7vBFhTm8ezkFTPshtnCMwRScptXFPuD4bJjR8LqdlTL5g9U821CXCUSfTYRovWjlmfdAgRYYxYbS', 0, '0', '0', '5', '40', '1', '1:2', '0.01', '', 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_feng`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_feng` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `cash_money` decimal(12,2) NOT NULL,
+  `in_money` decimal(12,2) NOT NULL,
+  `in_time` int(11) NOT NULL,
+  `bz` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `zyrj_feng`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_fenhong`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_fenhong` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL DEFAULT '0',
+  `user_id` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `f_num` int(11) NOT NULL DEFAULT '0',
+  `f_money` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `pdt` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `zyrj_fenhong`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_form`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_form` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `content` longtext NOT NULL,
+  `e_title` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `e_content` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `create_time` int(11) unsigned NOT NULL,
+  `update_time` int(11) unsigned NOT NULL,
+  `status` tinyint(1) unsigned NOT NULL,
+  `baile` int(11) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=103 ;
+
+--
+-- 转存表中的数据 `zyrj_form`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_form_class`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_form_class` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `baile` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `zyrj_form_class`
+--
+
+INSERT INTO `zyrj_form_class` (`id`, `name`, `baile`) VALUES
+(1, '新闻公告', 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_gouwu`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_gouwu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `did` int(11) NOT NULL,
+  `lx` int(11) NOT NULL,
+  `ispay` smallint(2) NOT NULL,
+  `pdt` int(11) NOT NULL,
+  `money` decimal(12,2) NOT NULL,
+  `shu` int(11) NOT NULL,
+  `cprice` decimal(12,2) NOT NULL,
+  `pvzhi` decimal(12,2) NOT NULL,
+  `guquan` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `s_type` int(11) NOT NULL DEFAULT '0',
+  `user_id` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `us_name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `us_address` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `us_tel` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `isfh` int(11) NOT NULL DEFAULT '0',
+  `fhdt` int(11) NOT NULL DEFAULT '0',
+  `okdt` int(11) NOT NULL DEFAULT '0',
+  `ccxhbz` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `tshu` int(11) NOT NULL COMMENT '提货数量',
+  `zhong_sum` decimal(12,2) NOT NULL,
+  `zhong_ti` decimal(12,2) NOT NULL,
+  `is_fh` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `zyrj_gouwu`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_gp`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_gp` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `gp_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT '股票名称',
+  `danhao` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '股票单号',
+  `opening` decimal(12,2) NOT NULL COMMENT '开盘价',
+  `closing` decimal(12,2) NOT NULL COMMENT '收盘价',
+  `today` decimal(12,2) NOT NULL COMMENT '当前报价',
+  `most_g` decimal(12,2) NOT NULL COMMENT '最高价',
+  `most_d` decimal(12,2) NOT NULL COMMENT '最低价',
+  `up` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '涨幅',
+  `down` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '跌幅',
+  `gp_quantity` int(11) NOT NULL DEFAULT '0' COMMENT '股票数量',
+  `cgp_num` int(11) NOT NULL DEFAULT '0',
+  `gp_zongji` decimal(12,2) NOT NULL DEFAULT '0.00' COMMENT '总价',
+  `turnover` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0' COMMENT '成交量',
+  `f_date` varchar(50) COLLATE utf8_unicode_ci NOT NULL COMMENT '发布时间',
+  `status` int(11) NOT NULL COMMENT '状态（0关闭1开启）',
+  `pao_num` int(11) NOT NULL DEFAULT '0',
+  `ca_numb` int(11) NOT NULL DEFAULT '0',
+  `all_sell` int(11) NOT NULL DEFAULT '0',
+  `day_sell` int(11) NOT NULL DEFAULT '0',
+  `yt_sellnum` int(11) NOT NULL DEFAULT '0',
+  `buy_num` int(11) NOT NULL DEFAULT '0',
+  `sell_num` int(11) NOT NULL DEFAULT '0',
+  `fx_num` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `zyrj_gp`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_gupiao`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_gupiao` (
+  `id` int(12) NOT NULL AUTO_INCREMENT,
+  `uid` int(12) NOT NULL,
+  `pid` int(12) NOT NULL,
+  `price` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `one_price` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `sNun` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `used_num` int(12) NOT NULL,
+  `lnum` int(12) NOT NULL,
+  `ispay` int(2) NOT NULL,
+  `status` smallint(2) NOT NULL,
+  `eDate` int(11) NOT NULL,
+  `type` smallint(2) NOT NULL,
+  `is_en` smallint(1) NOT NULL DEFAULT '0',
+  `sell_mon` int(11) NOT NULL DEFAULT '0',
+  `sell_num` int(11) NOT NULL DEFAULT '0',
+  `sell_date` int(11) NOT NULL DEFAULT '0',
+  `is_over` smallint(1) NOT NULL DEFAULT '0',
+  `bz` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `buy_s` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `buy_a` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `buy_nn` int(11) NOT NULL DEFAULT '0',
+  `sell_g` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `is_cancel` int(11) NOT NULL DEFAULT '0',
+  `spid` int(11) NOT NULL DEFAULT '0',
+  `last_s` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `zyrj_gupiao`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_history`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `user_id` varchar(50) NOT NULL,
+  `did` int(11) NOT NULL,
+  `user_did` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `action_type` varchar(32) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `pdt` int(11) NOT NULL,
+  `epoints` decimal(12,2) NOT NULL,
+  `allp` decimal(12,2) NOT NULL,
+  `bz` text NOT NULL,
+  `type` smallint(1) NOT NULL COMMENT '充值0明细1',
+  `act_pdt` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14199 ;
+
+--
+-- 转存表中的数据 `zyrj_history`
+--
+
+INSERT INTO `zyrj_history` (`id`, `uid`, `user_id`, `did`, `user_did`, `action_type`, `pdt`, `epoints`, `allp`, `bz`, `type`, `act_pdt`) VALUES
+(14196, 4251, 'YD614489', 0, '', '21', 1450497117, 10000.00, 0.00, '21', 0, 0),
+(14197, 4251, 'YD614489', 0, '', '21', 1450497122, 10000.00, 0.00, '21', 0, 0),
+(14198, 4251, 'YD614489', 0, '', '21', 1450497131, 10000.00, 0.00, '21', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_img`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_img` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `c_time` int(11) NOT NULL DEFAULT '0',
+  `small_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `img_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+
+--
+-- 转存表中的数据 `zyrj_img`
+--
+
+INSERT INTO `zyrj_img` (`id`, `title`, `c_time`, `small_url`, `img_url`) VALUES
+(2, '1', 1389942148, '/B002/Public/Uploads/img/m_2014011714582241.jpg', '/B002/Public/Uploads/img/b_2014011714582241.jpg'),
+(4, '2', 1389942531, '__PUBLIC__/Uploads/img/m_2014011715084822.jpg', '__PUBLIC__/Uploads/img/b_2014011715084822.jpg'),
+(5, '3', 1389942544, '__PUBLIC__/Uploads/img/m_2014011715090176.jpg', '__PUBLIC__/Uploads/img/b_2014011715090176.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_msg`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_msg` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `f_uid` int(11) NOT NULL DEFAULT '0',
+  `f_user_id` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `s_uid` int(11) NOT NULL DEFAULT '0',
+  `s_user_id` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `content` text COLLATE utf8_unicode_ci NOT NULL,
+  `f_time` int(11) NOT NULL DEFAULT '0',
+  `f_del` smallint(3) NOT NULL DEFAULT '0',
+  `s_del` smallint(3) NOT NULL DEFAULT '0',
+  `f_read` smallint(3) NOT NULL DEFAULT '0',
+  `s_read` smallint(3) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=621 ;
+
+--
+-- 转存表中的数据 `zyrj_msg`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_news_a`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_news_a` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `n_title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `n_content` text COLLATE utf8_unicode_ci NOT NULL,
+  `n_top` int(11) NOT NULL DEFAULT '0',
+  `n_status` tinyint(1) NOT NULL DEFAULT '1',
+  `n_create_time` int(11) NOT NULL,
+  `n_update_time` int(11) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `zyrj_news_a`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_news_class`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_news_class` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `create_time` int(11) NOT NULL,
+  `type` smallint(2) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
+
+--
+-- 转存表中的数据 `zyrj_news_class`
+--
+
+INSERT INTO `zyrj_news_class` (`id`, `title`, `create_time`, `type`) VALUES
+(5, '成衣', 1295838556, 0),
+(6, '汽车', 1295838667, 0),
+(7, '食品', 1295838691, 1),
+(8, '包包', 1295840380, 0),
+(9, '数码', 1295853018, 0),
+(10, '日常用品', 1295853092, 2),
+(11, '电子产品', 1295921932, 2);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_plan`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_plan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `content` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '奖励计划',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
+
+--
+-- 转存表中的数据 `zyrj_plan`
+--
+
+INSERT INTO `zyrj_plan` (`id`, `content`) VALUES
+(1, '<p>奖励计划</p>\r\n<p>&nbsp;</p>\r\n<hr />\r\n<p>奖励很丰富哦</p>'),
+(2, '<p>OK</p>'),
+(3, '<p>我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章我是一篇文章</p>'),
+(4, '<embed allowfullscreen="true" allowscriptaccess="always" src="http://player.youku.com/player.php/sid/XNjYyNzAzNjMy/v.swf" quality="high" width="670" height="400" align="middle" type="application/x-shockwave-flash"></embed>'),
+(5, '<p>&nbsp; &nbsp; 宝付结算时间：即时到账</p>\r\n<p>&nbsp; &nbsp; 汇潮结算时间：即时到账</p>\r\n<p>&nbsp; &nbsp; 网银在线结算时间：即时到账</p>'),
+(6, '<p>云顿网成立于2013年，是全球控股投资公司在英属维尔京群岛注册Network technology company\r\n，致力互联数字货币及游戏开发应用。</p><p>Sampson 是The cloud&#39;s net公司的创办人，过去曾经带领投资银行成功的投资媒体、信息业、私募融资，网络营销服务及科技产业。在他创立云顿网之前，曾在华尔街的投资银行及创投界服务，也因此赚到第一桶金 。</p><p>他的投资公司主要系投资于全球的新兴科技公司，并致力于协助北美企业拓展亚洲及欧洲市场。不过，他也发现到全球各地的贫富差距问题，因此他渴望藉一己之力来解决这个问题，因此创立了一个能让普通人都能获得永续及被动收入的平台。除此之外，他也发现在线数字货币及网络营销相关服务已然成为各个行业的趋势，所以他跟一群优秀的国际商务领袖团队与创立了云顿网这家公司。云顿网提供独特的数字营销咨询及战略服务。我们协助并指导公司与机构如何利用因特网作为营销通路，无论是数字货币、社群媒体、电子邮件、行动装置或其他数字解决方案。</p>'),
+(7, '<p class="bold-title">顾问团队</p><ul class=" list-paddingleft-2"><li><p>在国际的金融业务上超过廿年的经验</p></li><li><p>以融资及共赢文化经营团队取得团队核心</p></li></ul><p class="bold-title">营运团队</p><ul class=" list-paddingleft-2"><li><p>团队从小本经营至自行开发新技术，现也是新技术供应</p></li><li><p>管理团队在管理跨国企业及国际市场开拓也超过十年的经验</p></li></ul><p class="bold-title">市场团队</p><ul class=" list-paddingleft-2"><li><p>在国际市场有超过10年以上的经验</p></li><li><p>以全方位支援(市场、培训、引领团队)为团队经验模式</p></li></ul>'),
+(8, '<p style="text-indent:0;"><bold>企业愿景:</bold>立存久远，做大做强。</p><p style="text-indent:0;"><bold>经营理念：</bold>合作、分享、共赢。</p><p style="text-indent:0;"><bold>经营宗旨：</bold>客户至上，诚信经营，规范管理，协调发展。</p><p style="text-indent:0;"><bold>企业使命:</bold>提供一个平等的平台</p><p style="text-indent:0;"><bold>企业目标：</bold>创立信息时代投资理财新帝国。</p><p>以诚实守信、卓越高效、造福社会为使命，致力于打造核心竞争力较强、公司治理结构完善、品牌影响力和企业形象俱佳的大型网络科技公司。</p><p>云顿网支付平台，是一个创新模式的平台，借助先进的团队文化，独到的经验理念，超前的经营理念，超前的营销模式，必将引领消费支付模式新时代，搭建新平台，创造新商机，最终打造成全球最全面，最方便，最高效，最快捷的支付平台</p><p>\r\n		</p>'),
+(9, '<p>云顿网以共赢取胜的核心价值观，在平台交易盛行的21世纪，创立了云顿网。</p><p>公司开创的云顿网虚拟货币支付平台，是一个创新模式的平台，借助先进的团队文化，超前的经营理念，超前的营销模式，必将引领消费支付模式新时代，搭建新平台，创造新商机，最终打造成全球最全面，最方便，最高效，最快捷的支付平台。</p>');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_product`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_product` (
+  `id` int(9) NOT NULL AUTO_INCREMENT,
+  `cid` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cptype` int(11) NOT NULL DEFAULT '0',
+  `ccname` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `xhname` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `money` decimal(12,2) DEFAULT '0.00',
+  `a_money` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `b_money` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `create_time` int(11) DEFAULT NULL,
+  `content` text COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `yc_cp` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=28 ;
+
+--
+-- 转存表中的数据 `zyrj_product`
+--
+
+INSERT INTO `zyrj_product` (`id`, `cid`, `name`, `cptype`, `ccname`, `xhname`, `money`, `a_money`, `b_money`, `create_time`, `content`, `img`, `yc_cp`) VALUES
+(18, '20200000', '1001', 1, '4985', '50', 2500.00, 2000.00, 0.00, 1404302445, '<p>gfdkf丰功硕德地枯无可奈何顶替夺顶替顶替顶替枯枯地顶替</p>\r\n<p>sf无可奈何花落去 村顶替顶替顶替顶替脾处年</p>\r\n<p>砖瓦别墅要里边</p>\r\n<p><img alt="" src="http://192.168.0.11:88/B102/Zyrj/Lib/ORG/FCKeditor/editor/images/smiley/msn/angry_smile.gif" /></p>', '/B108/Public/Uploads/image/2014082022092261.jpg', 0),
+(19, '001', '001', 3, '552', '', 7500.00, 6000.00, 0.00, 1405135188, '<p>234234234234</p>', '/b108/Public/Uploads/image/2014082022094559.jpg', 0),
+(22, '002', '002', 2, '', '', 12500.00, 10000.00, 0.00, 1408543972, '333', './Public/Uploads/image/2014082022125067.jpg', 0),
+(23, '003', '003', 1, '', '', 20000.00, 16000.00, 0.00, 1409624038, '', './Public/Uploads/image/20140902101344100.jpg', 0),
+(24, '004', '004', 1, '1090', '', 50000.00, 40000.00, 0.00, 1409624384, '', '/B121/Public/Uploads/image/2014090210194230.jpg', 0),
+(25, '111', '111', 1, '0', '', 1000.00, 1000.00, 0.00, 1421122537, '<p>&nbsp;1</p>', '', 0),
+(26, '222', '222', 2, '199990', '2.5', 3200.00, 3200.00, 1.00, 1421123124, '<p>&nbsp;<span style="background-color: rgb(0, 255, 255);"><span style="color: rgb(255, 102, 0);"><span style="font-size: x-large;"><em><u><strong>买多 送多</strong></u></em></span></span></span></p>', '/c002-ar/Public/Uploads/image/2015021709460847.jpg', 0),
+(27, 'qq', 'qqqqqqqqqqqqqq', 2, '292020', '20', 6400.00, 6400.00, 1.00, 1423622016, '<ol>\r\n    <li><strike><sub><sup>&nbsp;111111111</sup></sub></strike></li>\r\n    <li style="text-align: justify; "><span style="background-color: rgb(0, 255, 0); "><span style="color: rgb(255, 102, 0); "><span style="font-size: xx-large; "><strike><u><em><strong>春节大减价<img src="http://php.nnzy.net/c002-ar/Zyrj/Lib/ORG/FCKeditor/editor/images/smiley/msn/regular_smile.gif" alt="" /><img src="http://php.nnzy.net/c002-ar/Zyrj/Lib/ORG/FCKeditor/editor/images/smiley/msn/angry_smile.gif" alt="" />&Aacute;1</strong></em></u></strike></span></span></span><br />\r\n    &nbsp;</li>\r\n</ol>', '/c002-ar/Public/Uploads/image/2015021315084180.jpg', 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_promo`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_promo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `money` decimal(12,2) NOT NULL,
+  `money_two` decimal(12,2) NOT NULL,
+  `u_level` smallint(3) NOT NULL DEFAULT '0' COMMENT '升级前级别',
+  `uid` int(11) NOT NULL,
+  `create_time` int(11) NOT NULL,
+  `up_level` smallint(3) NOT NULL COMMENT '升级后级别',
+  `danshu` smallint(2) NOT NULL COMMENT '单数',
+  `pdt` int(11) NOT NULL,
+  `is_pay` smallint(3) NOT NULL DEFAULT '0',
+  `u_bank_name` smallint(2) NOT NULL DEFAULT '0' COMMENT '汇款银行',
+  `type` smallint(2) NOT NULL DEFAULT '0' COMMENT '0标示晋级，1标示加单',
+  `user_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `zyrj_promo`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_qiandaojiang`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_qiandaojiang` (
+  `id` int(9) NOT NULL AUTO_INCREMENT,
+  `user` int(20) NOT NULL,
+  `lastdate` int(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
+
+--
+-- 转存表中的数据 `zyrj_qiandaojiang`
+--
+
+INSERT INTO `zyrj_qiandaojiang` (`id`, `user`, `lastdate`) VALUES
+(27, 4250, 1450496417),
+(26, 4248, 1450495746),
+(25, 1, 1452332298),
+(24, 1, 1452332298),
+(23, 1, 1452332298),
+(22, 1, 1452332298),
+(21, 1, 1452332298),
+(20, 1, 1452332298),
+(19, 1, 1452332298);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_remit`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_remit` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL DEFAULT '0',
+  `user_id` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `b_uid` int(11) NOT NULL DEFAULT '0',
+  `amount` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `kh_money` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `or_time` int(11) NOT NULL DEFAULT '0',
+  `orderid` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `bankid` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `ok_time` int(11) NOT NULL DEFAULT '0',
+  `ok_type` int(11) NOT NULL DEFAULT '0',
+  `is_pay` int(11) NOT NULL DEFAULT '0',
+  `ext_chk_str` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `zyrj_remit`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_shenqing`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_shenqing` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` varchar(20) NOT NULL,
+  `jibie` int(11) NOT NULL,
+  `is_done` int(11) NOT NULL,
+  `shijian` int(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51 ;
+
+--
+-- 转存表中的数据 `zyrj_shenqing`
+--
+
+INSERT INTO `zyrj_shenqing` (`id`, `uid`, `jibie`, `is_done`, `shijian`) VALUES
+(38, 'YD920458', 1, 1, 1448451297),
+(39, 'YD920458', 2, 1, 1448451375),
+(40, 'YD920458', 3, 1, 1448451482),
+(41, 'YD920458', 1, 1, 1448451607),
+(42, 'YD920458', 2, 1, 1448452028),
+(43, 'YD920458', 3, 1, 1448452299),
+(44, 'YD920458', 1, 1, 1448452321),
+(45, 'YD920458', 2, 1, 1448458605),
+(46, 'YD920458', 3, 1, 1448458627),
+(47, '800000', 2, 1, 1449636305),
+(48, '800000', 1, 1, 1450074760),
+(49, '800000', 3, 1, 1450103462),
+(50, '800000', 1, 1, 1450337938);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_shouru`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_shouru` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL DEFAULT '0',
+  `user_id` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `in_money` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `in_time` int(11) NOT NULL DEFAULT '0',
+  `in_bz` text COLLATE utf8_unicode_ci NOT NULL,
+  `in_type` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1862 ;
+
+--
+-- 转存表中的数据 `zyrj_shouru`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_tihuo`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_tihuo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `did` int(11) NOT NULL,
+  `lx` int(11) NOT NULL,
+  `ispay` smallint(2) NOT NULL,
+  `pdt` int(11) NOT NULL,
+  `money` decimal(12,2) NOT NULL,
+  `shu` int(11) NOT NULL,
+  `cprice` decimal(12,2) NOT NULL,
+  `pvzhi` decimal(12,2) NOT NULL,
+  `guquan` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `s_type` int(11) NOT NULL DEFAULT '0',
+  `user_id` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `us_name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `us_address` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `us_tel` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `isfh` int(11) NOT NULL DEFAULT '0',
+  `fhdt` int(11) NOT NULL DEFAULT '0',
+  `okdt` int(11) NOT NULL DEFAULT '0',
+  `ccxhbz` varchar(400) COLLATE utf8_unicode_ci NOT NULL,
+  `tshu` int(11) NOT NULL COMMENT '提货数量',
+  `tzhong` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `zyrj_tihuo`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_times`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_times` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `benqi` int(11) NOT NULL COMMENT '本期结算日期',
+  `shangqi` int(11) NOT NULL COMMENT '上期结算日期',
+  `is_count_b` int(11) NOT NULL,
+  `is_count_c` int(11) NOT NULL,
+  `is_count` int(11) NOT NULL,
+  `type` smallint(2) NOT NULL DEFAULT '0' COMMENT '是否已经结算',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=183 ;
+
+--
+-- 转存表中的数据 `zyrj_times`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_tiqu`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_tiqu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `user_id` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `rdt` int(11) NOT NULL,
+  `money` decimal(12,2) NOT NULL,
+  `money_two` decimal(12,2) NOT NULL,
+  `epoint` decimal(12,2) NOT NULL,
+  `is_pay` int(11) NOT NULL,
+  `user_name` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `bank_name` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `bank_card` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `bank_address` varchar(200) NOT NULL,
+  `user_tel` varchar(200) NOT NULL,
+  `x1` varchar(50) DEFAULT NULL,
+  `x2` varchar(50) DEFAULT NULL,
+  `x3` varchar(50) DEFAULT NULL,
+  `x4` varchar(50) DEFAULT NULL,
+  `t_type` int(3) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `zyrj_tiqu`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_ulevel`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_ulevel` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `money` decimal(12,2) DEFAULT NULL,
+  `u_level` smallint(3) DEFAULT '0' COMMENT '升级前级别',
+  `uid` int(11) DEFAULT NULL,
+  `user_id` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `create_time` int(11) DEFAULT NULL,
+  `up_level` smallint(3) DEFAULT NULL COMMENT '升级后级别',
+  `danshu` smallint(2) DEFAULT NULL COMMENT '单数',
+  `pdt` int(11) DEFAULT NULL,
+  `is_pay` smallint(3) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `zyrj_ulevel`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_xfhistory`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_xfhistory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `user_id` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `did` int(11) NOT NULL,
+  `d_user_id` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `action_type` varchar(32) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `pdt` int(11) NOT NULL,
+  `epoints` decimal(12,2) NOT NULL,
+  `allp` decimal(12,2) NOT NULL,
+  `bz` text COLLATE utf8_unicode_ci NOT NULL,
+  `type` smallint(1) NOT NULL COMMENT '充值0明细1',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `zyrj_xfhistory`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_xml`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_xml` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `money` decimal(12,2) NOT NULL,
+  `amount` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `x_date` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `is_lock` smallint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `zyrj_xml`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyrj_zhuanj`
+--
+
+CREATE TABLE IF NOT EXISTS `zyrj_zhuanj` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `in_uid` int(11) DEFAULT NULL,
+  `out_uid` int(11) DEFAULT NULL,
+  `in_userid` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `out_userid` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `epoint` decimal(12,2) DEFAULT NULL,
+  `rdt` int(11) DEFAULT NULL,
+  `sm` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `type` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `zyrj_zhuanj`
+--
+

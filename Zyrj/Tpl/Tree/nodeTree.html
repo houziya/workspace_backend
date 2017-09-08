@@ -1,0 +1,130 @@
+<include file="../Public/header" />
+<style>
+div{padding:0; border:none; margin:0}
+.top_lay_bg_0{background-color:#999999;}
+.top_lay_bg_1{background-color:#D9D919;}
+.top_lay_bg_2{background-color:#5CACEE;}
+.top_lay_bg_3{background-color:#FF5555;}
+.top_lay_bg_4{background-color:#9BCD9B;}
+.top_lay_bg_5{background-color:#7F7F7F;}
+.top_lay_bg_6{background-color:#FFFF00;}
+.top_lay_bg_7{background-color:#6666FF;}
+.bottom_lay_bg_0{background-color:#C0C0C0;}
+.bottom_lay_bg_1{background-color:#F5FFFA;}
+.bottom_lay_bg_2{background-color:#DDA0DD;}
+
+.show_show_board{height:100%; text-align:center;  height:26px; line-height:26px; color:#006; width:100px; border:none; font-size:12px;}
+
+table.net_pos{border:none;padding:0; margin:0 auto; border-collapse:collapse;}
+table.net_pos td{padding:0; margin:0; border:0;}
+table.net_pos td .net_line_h_l{margin:0 auto; width:50%; height:1px; overflow:hidden; background-color:#006; clear:both; float:right;}
+table.net_pos td .net_line_h_m{margin:0 auto; width:100%; height:1px; overflow:hidden; background-color:#006; clear:both;}
+table.net_pos td .net_line_h_r{margin:0 auto; width:50%; height:1px; overflow:hidden; background-color:#006; clear:both; float:left;}
+table.net_pos td .node_padding{padding:0 2px;}
+table.net_pos td .node_padding .node_board{width:120px; height:auto; margin:0 auto;}
+table.net_pos td .node_padding .node_board .v_line_space{width:100%; height:10px; clear:both;}
+table.net_pos td .node_padding .node_board .v_line_space .net_line_v{margin:0 auto; height:100%; width:1px; background-color:#006; overflow:hidden; clear:both;}
+table.net_pos td .node_padding .node_board .main_content{width:100%; height:auto; border:1px solid #888; background-color:#FFF;}
+table.net_pos td .node_padding .node_board .user_info{height:30px; line-height:30px; text-align:center;}
+table.net_pos td .node_padding .node_board .main_content .user_info a{font-weight:bolder; font-size:14px;}
+table.net_pos td .node_padding .node_board .main_content .ext_info{height:90px;}
+table.net_pos td .node_padding .node_board .main_content .ext_info .ext_info_001{line-height:30px;text-align:center;}
+table.net_pos td .node_padding .node_board .main_content .ext_info .ext_info_001 span{padding:0 12px;}
+table.net_pos td .node_padding .node_board .main_content_null{width:100%; height:120px; line-height:60px; text-align:center; background-color:#FFF; border:1px solid #888;}
+</style>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tab3">
+      <form method='post' action="__URL__/nodeTree">
+      <tr>
+        <td>{:xstr('account')}：
+            <input type="text" name="UserID" title="{:xstr('account_query')}"  >
+            <input type="submit" name="Submit" value="{:xstr('query')}" class="btn1"/>
+            　　<a href="{:U('Tree/nodeTree')}">顶层</a>　　<a href="{:U('Tree/nodeTree?UID='.$topFID)}">上一层</a>
+        </td>
+      </tr>
+      </form>
+    </table>
+<php>$maxCols = pow($nodeNum,$allLayNum-1);</php>
+	<table class="net_pos">
+	<foreach name="userArrByLay" item="layInfo" key="lk">
+    	<tr>
+        	<php>
+            	$colSapn=intval($maxCols/pow($nodeNum,$lk));
+                $curNodeCount = 0;
+            </php>
+            <foreach name="layInfo['users']" item="user" key="uk">
+            	<td colspan="{$colSapn}">
+                	<gt name="lk" value="0">
+                        <gt name="nodeNum" value="1">
+                        <if condition="$curNodeCount egt ($nodeNum-1)">
+                            <div class="net_line_h_r"> </div>
+                            <php>$curNodeCount=0;</php>
+                        <else />
+                            <if condition="$curNodeCount eq 0">
+                                <div class="net_line_h_l"> </div>
+                            <else />
+                                <div class="net_line_h_m"> </div>
+                            </if>
+                            <php>$curNodeCount++;</php>
+                        </if>
+                        </gt>
+                    </gt>
+                    <div class="node_padding">
+                    <div class="node_board">
+                   		
+                    	<div class="v_line_space"><gt name="lk" value="0"><div class="net_line_v"> </div></gt></div>
+                        
+                    	<empty name="user['info']">
+                            <div class="main_content_null">
+                            <eq name="user['fid']" value="0">
+                                空位
+                            <else />
+                                <a href="{:U('Reg/users/?TPL='.$user['pos'].'&FID='.$user['fid'])}">点击注册</a>
+                            </eq>
+                            </div>
+                        <else />
+                            <div class="main_content">
+                                	<div class="user_info top_lay_bg_{$user['info']['u_level']}"><a href="{:U('Tree/nodeTree?UID='.$user['info']['id'])}">{$user['info']['user_id']}</a></div>
+                                <egt name="user['info']['is_agent']" value="2">
+                                	<div class="ext_info bottom_lay_bg_2">
+                                <else />
+                                    <gt name="user['info']['is_pay']" value="0">
+                                    <div class="ext_info bottom_lay_bg_1">
+                                    <else />
+                                    <div class="ext_info bottom_lay_bg_0">
+                                    </gt>
+                                    
+                                </egt>
+                                            <div class="ext_info_001">
+                                            	<div><span style="float:right; text-align:right;">{$user['info']['r']}</span><span style="float:left;">{$user['info']['l']}</span>总</div>
+                                                <div><span style="float:right; text-align:right;">{$user['info']['shangqi_r']}</span><span style="float:left;">{$user['info']['shangqi_l']}</span>余</div>
+                                                <div><span style="float:right; text-align:right;">{$user['info']['benqi_r']}</span><span style="float:left;">{$user['info']['benqi_l']}</span>新</div>
+                                            </div>
+                                	</div>
+                            </div>
+                        </empty>
+                        
+                        <div class="v_line_space"><if condition="$lk lt ($allLayNum-1)"><div class="net_line_v"> </div></if></div>
+                        
+                    </div>
+                    </div>
+                </td>
+            </foreach>
+        </tr>
+    </foreach>
+    </table>
+<div style="padding:0 80px; margin-top:36px;">
+	<div style="width:50%;float:right;">
+    	<div class="show_show_board bottom_lay_bg_2" style="float:right;">报单中心</div>
+        <div class="show_show_board bottom_lay_bg_1" style="float:right;">正式会员</div>
+        <div class="show_show_board bottom_lay_bg_0" style="float:right;">{:xstr('not_opened')}</div>
+        <div class="show_show_board" style="float:right;">下层</div>
+    </div>
+    <div style="width:50%;float:left;">
+    	<div class="show_show_board" style="float:left;">上层</div>
+        <volist name="lvNameArr" id="lvName">
+        <div class="show_show_board top_lay_bg_{$key+1}" style="float:left;">{$lvName}</div>
+        </volist>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<table width="100%" border="0" cellspacing="5" cellpadding="0" class="tab4">
+  <tr>
+    <td width="18%" align="right">{:xstr('account')}：</td>
+    <td width="82%" align="left">{$rs['user_id']}</td>
+  </tr>
+  <tr>
+    <td width="18%" align="right">{:xstr('recom_nums')}：</td>
+    <td width="82%" align="left">{$rs['re_nums']}人</td>
+  </tr>
+  <tr>
+    <td align="right">{:xstr('level')}：</td>
+    <td align="left">{$u_level}</td>
+  </tr>
+  <tr>
+    <td align="right">{:xstr('all_bonus_count')}：</td>
+    <td align="left">{$rs['zjj']}</td>
+  </tr>
+  <tr>
+    <td align="right">{:xstr('coin002')}：</td>
+    <td align="left">{$rs['agent_cash']}$</td>
+  </tr>
+  <tr>
+    <td align="right">{:xstr('coin001')}：</td>
+    <td align="left">{$rs['agent_use']}</td>
+  </tr>
+  <tr>
+    <td align="right">{:xstr('coin003')}：</td>
+    <td align="left">{$rs['agent_kt']}</td>
+  </tr>
+  <tr>
+    <td align="right">{:xstr('coin004')}：</td>
+    <td align="left">{$rs['agent_gp']}</td>
+  </tr>
+  <tr>
+    <td align="right">{:xstr('equities')}：</td>
+    <td align="left">{:intval($rs['live_gupiao'])}</td>
+  </tr>
+  <tr>
+    <td align="right">{:xstr('reg_money_name_2')}：</td>
+    <td align="left">{$rs['cpzj']}</td>
+  </tr>
+  <lt name="rs.is_pay" value="-1">
+  <tr>
+    <td align="right"></td>
+    <td align="left"><input type="button" name="button1" value="{:xstr('active_account')}"  class="bt_tj" onclick="if(confirm('{:xstr('tpl143')}{$rs['cpzj']}{:xstr('tpl144')}')) { window.location='__APP__/Agent/Renew/';return true; } else return false;"/></td>
+  </tr>
+  </lt>
+</table>

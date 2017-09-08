@@ -1,0 +1,50 @@
+<style type="text/css">
+<!--
+.STYLE1 {color: #FF0000}
+-->
+</style>
+<tagLib name="html" />
+<include file="../Public/header" />
+<div class="ncenter_box">
+<div class="accounttitle"><h1>该账户的下级账户&nbsp;[<a href="javascript:history.go(-1);">{:xstr('go_back')}</a>]</h1></div>
+<!-- 列表显示区域  -->
+<table width="100%" cellpadding=0 cellspacing=0  >
+<form name="form3" method="post" action="__URL__/menberAC">
+
+<tr align="center">
+	<td nowrap >{:xstr('account')}</td>
+	<td nowrap >{:xstr('user_name')}</td>
+	<td nowrap >{:xstr('bank_name')}</td>
+	<td nowrap >{:xstr('bank_code')}</td>
+	<td nowrap >{:xstr('bank_user_name')}</td>
+	<td owrap >{:xstr('contact_address')}</td>
+	<td nowrap >{:xstr('contact_phone')}</td>
+	<td nowrap >{:xstr('reg_date_time')}</td>
+	<td nowrap >购买数量</td>
+	<td nowrap >{:xstr('reg_money')}</td>
+	<td nowrap >{:xstr('status')}</td>
+</tr>
+<volist name="list" id="vo">
+<tr align="center"> 
+	<!--<td><a href="__URL__/menberData/bj_id/{$vo['id']}">{$vo['user_id']}</a></td>-->
+	<td>{$vo['user_id']}</td>
+	<td>{$vo['nickname']}</td>
+	<td>{$vo['bank_name']}</td>
+	<td>{$vo['bank_card']}</td>
+	<td>{$vo['user_name']}</td>
+	<td>{$vo['user_address']}</td>
+	<td>{$vo['user_tel']}</td>
+	<td>{$vo.rdt|date='Y-m-d',###}</td>
+	<td>{$vo["f4"]}</td>
+	<td><span class="STYLE1">{$vo['cpzj']}</span></td>
+    <td><eq name="vo['is_pay']" value="0"><font color="#009900">{:xstr('not_opened')}</font></eq><eq name="vo['is_pay']" value="1"><font color="#FF0000">{:xstr('is_opened')}</font></eq>&nbsp;</td>
+</tr>
+</volist>
+<tr  align="center">
+	<td  colspan=12 >{$page}</td>
+</tr>
+</form>
+</table>
+</div>
+</body>
+</html>

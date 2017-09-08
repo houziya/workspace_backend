@@ -1,0 +1,45 @@
+<table width="100%" class="tab3" border="0" cellpadding="3" cellspacing="1" id="tb1" bgcolor="#b9c8d0">
+	<thead>
+    <tr align="center">
+        <th><span>{:xstr('account')}</span></th>
+        <th><span>{:xstr('bank_name')}</span></th>
+        <th><span>{:xstr('bank_code')}</span></th>
+        <th><span>{:xstr('bank_user_name')}</span></th>
+        <th><span>{:xstr('contact_phone')}</span></th>
+        <th><span>{:xstr('reg_date_time')}</span></th>
+        <th><span>{:xstr('open_date_time')}</span></th>
+        <th><span>{:xstr('reg_level')}</span></th>
+        <th><span>{:xstr('reg_money')}</span></th>
+        <th><span>{:xstr('status')}</span></th>
+    </tr>
+    </thead>
+    <volist name="list" id="vo">
+    <tr align="center">
+        <td>{$vo['user_id']}</td>
+        <td>{$vo['bank_name']}</td>
+        <td>{$vo['bank_card']}</td>
+        <td>{$vo['user_name']}</td>
+        <td>{$vo['user_tel']}</td>
+        <td>{$vo.rdt|date='Y-m-d H:i:s',###}</td>
+        <td>{$vo.pdt|date='Y-m-d H:i:s',###}</td>
+        <td>{$voo[$vo['u_level']]}</td>
+        <td>{$vo['cpzj']}</td>
+        <td><eq name="vo['is_pay']" value='0'><span style="color: #FF0000;">{:xstr('not_opened')}</span><else />{:xstr('is_opened')}</eq></td>
+    </tr>
+    </volist>
+</table>
+<table width="100%" class="tab3_bottom" border="0" cellpadding="0" cellspacing="1">
+    <tr>
+    	<td align="center">{$page}</td>
+    </tr>
+</table>
+<table width="600" align="center">
+    <tr>
+    <td align="center">{:xstr('sum_of_money')}：<font class="hong">{$cpzj_all}</font></td>
+    </tr>
+    <tr>
+    <td align="center"><form method='post' action="__URL__/us_menber/id/{$myid}">{:xstr('search_account')}：<input type="text" name="UserID" title="{:xstr('account_query')}">
+    <input type="submit" name="Submit" value="{:xstr('query')}" class="bt_tj"/>
+    </form></td>
+    </tr>
+</table>

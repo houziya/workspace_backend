@@ -1,0 +1,63 @@
+<include file="../Public/header" />
+<style>
+.gank{ color:#CCC;}
+</style>
+<div class="ncenter_box">
+<div class="accounttitle"><h1>{:xstr('sell_history')}</h1></div>
+  <table width="100%" class="tab3" border="0" cellpadding="0" cellspacing="0" id="tb1">
+  <thead>
+		<tr>
+			<th><span>{:xstr('tpl081')}</span></th>
+			<th><span>{:xstr('buyer')}</span></th>
+			<th><span>{:xstr('tpl093')}</span></th>
+			<th><span>{:xstr('tpl094')}</span></th>
+			<th><span>{:xstr('money')}</span></th>
+			<th>{:xstr('status')}</th>
+            <th><span>{:xstr('feature')}</span></th>
+		</tr>
+	</thead>
+    <volist name='list2' id='vo'>
+	<tr align="center">
+		<td>{$vo.rdt|date='Y-m-d H:i:s',###}</td>
+		<td>{$vo['b_user_id']|default="<span class='gank'>{:xstr('tpl095')}</span>"}</td>
+        <td>{$vo['bid']|cx_usrate|default="<span class='gank'>{:xstr('tpl095')}</span>"}</td>
+        <td><gt name="vo.bdt" value="0">{$vo.bdt|date='Y-m-d',###}<else/><span class='gank'>{:xstr('tpl095')}</span></gt></td>
+        <td>{$vo['money']}</td>
+        <td>
+          <eq name="vo.is_sh" value="0">
+            {:xstr('wait_through')}
+            <else/>
+            <eq name="vo.is_buy" value="0">
+              {:xstr('tpl061')}
+            </eq>
+            <eq name="vo.is_buy" value="1">
+              {:xstr('tpl096')}
+            </eq>
+            <eq name="vo.is_buy" value="2">
+              {:xstr('tpl097')}
+            </eq>
+          </eq>
+        </td>
+        <td>
+        <eq name="vo.is_buy" value="0">
+        <a href="__URL__/eb_listDelAC/cid/{$vo['id']}/">{:xstr('cancel')}</a>
+        </eq>
+        <eq name="vo.is_buy" value="1">
+        {:xstr('tpl096')} | <a href="__URL__/eb_listDelAC/cid/{$vo['id']}/">{:xstr('cancel')}</a>
+        </eq>
+        <eq name="vo.is_buy" value="2">
+        <a href="__URL__/eb_list_DAC/cid/{$vo['id']}/">{:xstr('tpl098')}</a> | <a href="__URL__/eb_list_NODAC/cid/{$vo['id']}/">{:xstr('tpl099')}</a>
+        </eq>
+        </td>
+	</tr>
+    </volist>
+</table>
+<table width="100%" class="tab3_bottom" border="0" cellpadding="0" cellspacing="1">
+<tr>
+        <td align="center">{$page2}</td>
+  </tr>
+</table>
+</div>
+</body>
+</html>
+<script>new TableSorter("tb1");</script>

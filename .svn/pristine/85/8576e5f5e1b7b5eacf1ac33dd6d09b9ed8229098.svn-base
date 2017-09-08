@@ -1,0 +1,42 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row-fluid">
+    <div class="span12">
+        <h3 class="page-title"> 进场订单拆分
+            <small>Split Match</small>
+        </h3>
+        <ul class="breadcrumb">
+            <li><i class="icon-home"></i> <a href="__APP__/Public/main">Home</a> <i
+                    class="icon-angle-right"></i></li>
+            <li><a href="/index.php?s=/Split/split">进场订单拆分</a></li>
+        </ul>
+    </div>
+</div>
+<div class="ncenter_box">
+    <form method="post" name="match" action="__APP__/Split/splitInOrder">
+        <table width="100%" border="0" cellspacing="10" cellpadding="0">
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tab11 tab_bor">
+                <h2>拆分匹配</h2>
+                <tr>
+                    <td width="100%" height="90">
+                        进场订单:<textarea type="text" rows="5" name="in_order"
+                                            style=" background-color: #ADD9C0;; min-width:700px"/></textarea>
+                        &nbsp;&nbsp;只能填写一个进场订单号
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100%" height="90">
+                        拆分金额:<textarea type="text" rows="5" name="split_money"
+                                            style=" background-color: #ADD9C0; min-width:700px"/></textarea>
+                        &nbsp;&nbsp;类似 1000的进场订单 500,300,200
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="action" value="开始拆分" class="button_text"
+                               onclick="if(confirm('確定要进行拆分进场订单吗?')) return true; else return false;">&nbsp;&nbsp;
+                    </td>
+                </tr>
+            </table>
+        </table>
+    </form>
+</div>

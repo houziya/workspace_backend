@@ -1,0 +1,98 @@
+<include file="../Public/header" />
+<div class="bar m10">
+    <div class="bar_cont a_p5">
+<table width="100%" class="tab3" border="0" cellpadding="5" cellspacing="0" id="tb1">
+<form name="form3" method="post" action="__URL__/premAddSave">
+  <table width="100%" class="tab3" border="0" cellpadding="5" cellspacing="0" id="tb1">
+    <tr>
+      <td align="right" >后台登录权限：</td>
+      <td ><select name="isBoss" size="1" id="isBoss">
+          <eq name="rs['is_boss']" value="2">
+          <option value="0">无权限</option>
+          <option value="2" selected="selected">有权限</option>
+          <else />
+          <option value="0" selected="selected">无权限</option>
+          <option value="2">有权限</option>
+          </eq>
+        </select>
+        &nbsp;&nbsp;
+        <input name="{:xstr('select_all')}" type="button" class="button_text" id="{:xstr('select_all')}" onclick="CheckAll(this.form)" value="{:xstr('select_all')}" /></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><table width="50%" border="0" cellpadding="0" cellspacing="0" class="tab4">
+          <tr align="center">
+            <td height="30" align="left" nowrap="nowrap"><label>
+                <input name="is_boss[]" type="checkbox" id="is_boss[]" value="1" {$ars[1]} />
+                当期出纳 </label></td>
+            <td align="left" nowrap="nowrap"><label>
+                <input name="is_boss[]" type="checkbox" id="is_boss[]" value="2" {$ars[2]} />
+                奖金查询 </label></td>
+            <td align="left" nowrap="nowrap"><label>
+                <input name="is_boss[]" type="checkbox" id="is_boss[]" value="3" {$ars[3]} />
+                账户审核 </label></td>
+            <td align="left" nowrap="nowrap"><label>
+                <input name="is_boss[]" type="checkbox" id="is_boss[]" value="4" {$ars[4]} />
+                账户管理 </label></td>
+          </tr>
+          <tr align="center">
+            <td height="30" align="left" nowrap="nowrap"><label>
+                <input name="is_boss[]" type="checkbox" id="is_boss[]" value="5" {$ars[5]} />
+                产品管理 </label></td>
+            <td align="left" nowrap="nowrap"><label>
+                <input name="is_boss[]" type="checkbox" id="is_boss[]" value="6" {$ars[6]} />
+                物流管理 </label></td>
+            <td align="left" nowrap="nowrap"><label>
+                <input name="is_boss[]" type="checkbox" id="is_boss[]" value="7" {$ars[7]} />
+                充值管理 </label></td>
+            <td align="left" nowrap="nowrap"><label>
+                <input name="is_boss[]" type="checkbox" id="is_boss[]" value="8" {$ars[8]} />
+                货币流向</label></td>
+          </tr>
+          <tr align="center">
+            <td height="30" align="left" nowrap="nowrap"><label>
+                <input name="is_boss[]" type="checkbox" id="is_boss[]" value="9" {$ars[9]} />
+                提现管理</label></td>
+            <td align="left" nowrap="nowrap"><label>
+                <input name="is_boss[]" type="checkbox" id="is_boss[]" value="10" {$ars[10]} />
+                新闻公告管理</label></td>
+            <td align="left" nowrap="nowrap"><label>
+                <input name="is_boss[]" type="checkbox" id="is_boss[]" value="11" {$ars[11]} />
+                市场计划设置 </label></td>
+            <td align="left" nowrap="nowrap"><label>
+                <input name="is_boss[]" type="checkbox" id="is_boss[]" value="12" {$ars[12]} />
+                数据库备份 </label></td>
+          </tr>
+          <tr align="center">
+            <td height="30" align="left" nowrap="nowrap"><label>
+                <input name="is_boss[]" type="checkbox" id="is_boss[]" value="13" {$ars[13]} />
+                参数设置 </label></td>
+            <td align="left" nowrap="nowrap" style="display:none"><label>
+                <input name="is_boss[]" type="checkbox" id="is_boss[]" value="14" {$ars[14]} />
+                奖金结算 </label></td>
+            <td align="left" nowrap="nowrap"><label>
+                <input name="is_boss[]" type="checkbox" id="is_boss[]" value="15" {$ars[15]} />
+                清空数据 </label></td>
+            <td align="left" nowrap="nowrap">&nbsp;</td>
+          </tr>
+          <tr align="center">
+            <td height="30" align="left" nowrap="nowrap">&nbsp;</td>
+            <td align="left" nowrap="nowrap">&nbsp;</td>
+            <td align="left" nowrap="nowrap">&nbsp;</td>
+            <td align="left" nowrap="nowrap">&nbsp;</td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr>
+      <td align="right" ><input name="id" type="hidden" id="id" value="{$rs['id']}" /></td>
+      <td ><input type="submit" name="button" id="button" value="提交" class="button_text" />
+        &nbsp;
+        <input type="button" name="button" id="button" value="{:xstr('go_back')}" class="button_text" onclick="history.back();"/></td>
+    </tr>
+  </table>
+</form>
+</table>
+    </div>
+    <div class="bar_foot"></div>
+</div>
+</body>
+</html>

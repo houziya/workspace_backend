@@ -1,0 +1,88 @@
+﻿<div class="page-sidebar nav-collapse collapse"> 
+  <!-- BEGIN SIDEBAR MENU -->
+  <ul class="page-sidebar-menu">
+    <li> 
+      <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+      <div class="sidebar-toggler hidden-phone"></div>
+      <!--  BEGIN SIDEBAR TOGGLER BUTTON --> 
+    </li>
+    <li> 
+      <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+      <div style="height: 15px;"></div>
+      <form class="sidebar-search" style="display: none;">
+        <div class="input-box"> <a href="javascript:;" class="remove"></a>
+          <input type="text" placeholder="Search..." />
+          <input type="button" class="submit" value=" " />
+        </div>
+      </form>
+      <!-- END RESPONSIVE QUICK SEARCH FORM --> 
+    </li>
+    <li class="active"> <a href="__APP__/Public/main"> <i class="icon-home"></i> <span class="title">系统首页 <span class="label-en">Home</span></span> <span class="selected"></span> </a> </li>
+    <li class=""> <a href="javascript:;"> <i class="icon-cog"></i> <span class="title">账户管理 <span class="label-en">Account</span></span> <span class="arrow"></span> </a>
+      <ul class="sub-menu">
+        <li><a href="__APP__/Change/cody/c_id/1">修改资料 <span class="label-en">My profile</span></a> </li>
+        <li><a href="__APP__/Change/cody/c_id/2">变更密码 <span class="label-en">Change password</span></a> </li>
+      </ul>
+    </li>
+    <li class=""> <a href="javascript:;"> <i class="icon-user"></i> <span class="title">会员中心 <span class="label-en">Member</span></span> <span class="arrow"></span> </a>
+      <ul class="sub-menu">
+        <li><a href="__APP__/Reg/users">账户注册 <span class="label-en">Create account</span></a> </li>
+        <li><a href="__APP__/Tree/cody/c_id/6">推荐关系图 <span class="label-en">Recommend list</span></a> </li>
+        <li><a href="__APP__/Change/shenqing">申请升级 <span class="label-en">Recommend list</span></a></li>
+        <li><a href="__APP__/Change/cody/c_id/2">修改密码 <span class="label-en">Recommend list</span></a></li>
+        <li><a href="__APP__/Change/cody/c_id/4"> 我的入场券 <span class="label-en">Recommend list</span></a></li>
+        <li><a href="__APP__/Agent/cody/c_id/3">已开通会员 <span class="label-en">Recommend list</span></a></li>
+        <!--<li><a href="__APP__/Tree/cody/c_id/5">系统架构图</a></li>-->
+        <li><a href="__APP__/User/cody/c_id/1">查看推荐关系 <span class="label-en">Recommend list</span></a></li>
+      </ul>
+    </li>
+    <li class=""> <a href="javascript:;"> <i class="icon-shopping-cart"></i> <span class="title">我的帮助 <span class="label-en">Mpackage</span></span> <span class="arrow"></span> </a>
+      <ul class="sub-menu">
+        <li><a href="__APP__/Bonus/wallet">帮助明细 <span class="label-en">Buy mpackage</span></a> </li>
+        <li><a href="__APP__/Public/buys/">提供帮助 <span class="label-en">Buy mpackage</span></a> </li>
+        <li><a href="__APP__/Public/sells/">接受帮助<span class="label-en">Sale mpackage</span></a> </li>
+        <!-- <li><a href="__APP__/Cash/cody/c_id/3/">买入记录 <span class="label-en">Buy history</span></a> </li>
+        <li><a href="__APP__/Cash/cody/c_id/4/">卖出记录 <span class="label-en">Buy history</span></a> </li>-->
+      </ul>
+    </li>
+    <li class=""> <a href="javascript:;"> <i class="icon-tags"></i> <span class="title">财务管理 <span class="label-en">Financial</span></span> <span class="arrow"></span> </a>
+      <ul class="sub-menu">
+        <li><a href="__APP__/Bonus/financeTable">奖金明细 <span class="label-en">My account</span></a> </li>
+      </ul>
+    </li>
+    <li class=""> <a href="javascript:;"> <i class="icon-comments"></i> <span class="title">交流中心 <span class="label-en">Communication</span></span> <span class="arrow"></span> </a>
+      <ul class="sub-menu">
+        <li><a href="__APP__/Msg/inmsg">信息中心 <span class="label-en">Notice</span></a> </li>
+        <li><a href="__APP__/Msg/outmsg/">工单记录 <span class="label-en">Message</span></a> </li>
+        <li><a href="__APP__/Msg/writemsg/">在线工单 <span class="label-en">Message</span></a> </li>
+      </ul>
+    </li>
+    <eq name="fck_rs['is_boss']" value="2">
+      <li class=""> <a href="javascript:;"> <i class="icon-tags"></i> <span class="title">后台管理 <span class="label-en">Financial</span></span> <span class="arrow"></span> </a>
+        <ul class="sub-menu">
+          <li><a href="__APP__/YouZi/zidongpi">自动匹配 <span class="label-en">My account</span></a> </li>
+		<!-- <li><a href="__APP__/Mavro/duoyi"> 自动匹配<span class="label-en">（多进单出）</span></a> </li>-->
+          <li><a href="__APP__/YouZi/quxiaopipei">取消匹配 <span class="label-en">My account</span></a> </li>
+          <li><a href="__APP__/YouZi/cody/c_id/11">订单处理大厅 <span class="label-en">My account</span></a> </li>
+          <li><a href="__APP__/News/cody/c_id/1/">新闻公告管理 <span class="label-en">My account</span></a> </li>
+          <li> <a href="__APP__/YouZi/cody/c_id/2">会员管理</a></li>
+            <li><a href="__APP__/YouZi/cody/c_id/7">数据库备份 <span class="label-en">My account</span></a> </li>
+            <li><a href="__APP__/Agent/cody/c_id/4">受理中心管理 <span class="label-en">Create account</span></a> </li>
+            <li><a href="__APP__/YouZi/activeCodeManager">入场券管理 <span class="label-en">Create account</span></a> </li>
+            <li><a href="__APP__/YouZi/adminshenqing">申请管理 <span class="label-en">Create account</span></a> </li>
+            <li><a href="__APP__/YouZi/cody/c_id/2">会员管理 <span class="label-en">Master account</span></a> </li>
+            <li><a href="__APP__/Recharge/cody/c_id/2">充值管理 <span class="label-en">Financial</span></a> </li>
+            <li><a href="__APP__/Bonus/cody/c_id/3">当期出纳 <span class="label-en">Financial</span></a> </li> 
+            <li><a href="__APP__/Bonus/cody/c_id/4">奖金查询 <span class="label-en">Financial</span></a> </li>
+            <li><a href="__APP__/YouZi/cody/c_id/18">货币流向 <span class="label-en">Financial</span></a> </li>
+            <li><a href="__APP__/YouZi/cody/c_id/3">参数设置 <span class="label-en">My account</span></a> </li>
+            <li><a href="__APP__/YouZi/cody/c_id/9">清空数据 <span class="label-en">My account</span></a> </li>
+      
+        </ul>
+      </li>
+    </eq>
+    <li class=""> <a href="__APP__/Public/LogOut/" target="_top"  onclick="if(confirm('确定退出吗?')) return true; else 
+return false;"> <i class="icon-lock"></i> <span class="title">安全退出 <span class="label-en">Logout</span></span> <span class=""></span> </a> </li>
+  </ul>
+  <!--  END SIDEBAR MENU --> 
+</div>

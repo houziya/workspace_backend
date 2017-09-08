@@ -1,0 +1,97 @@
+<include file="../Public/header" />
+<load href="__PUBLIC__/Js/Ajax/ThinkAjax-1.js" />
+<load href="__PUBLIC__/Js/UserJs.js" />
+<script language='javascript'>
+function CheckForm(){
+	if(document.form1.ePoints.value==""){
+		alert("{:xstr('tpl117')}");
+		document.form1.ePoints.focus();
+		return false;
+	}
+	if(confirm("{:xstr('tpl118')}"+document.form1.ePoints.value+"{:xstr('tpl119')}"))
+	{
+		return true;
+	}else{
+		return false;
+	}
+}
+function change_fc(){
+	if(document.form1.agree.checked==true){
+		document.form1.Submit1.disabled=false;
+	}else{
+		document.form1.Submit1.disabled=true;
+	}
+}
+</script>
+<style>
+.Agreement{width:90%; height:100px; overflow:auto; border:1px solid #7F9DB9; padding:2px; font-size:12px; line-height:24px;}
+</style>
+<div class="ncenter_box">
+<div class="accounttitle"><h1>{:xstr('tpl120')}</h1></div>
+<form action="__URL__/eb_sell_AC" method="post" name="form1" id="form1" onSubmit="{return CheckForm();}">
+<table width="100%" border="0" cellpadding="5" cellspacing="0" class="tab4">
+      <tr>
+        <td height="30" colspan="3" align="center"><span class="hong">{:xstr('tpl121')}</span></td>
+      </tr>
+      <tr>
+        <td width="25%" height="30" align="right">{:xstr('coin001_balance')}：</td>
+        <td colspan="2"><span class="hong">{$rs['agent_cash']}</span></td>
+      </tr>
+      <tr style="display:none">
+        <td width="25%" height="30" align="right">{:xstr('trade_coin_type')}：</td>
+        <td colspan="2">
+        <select name="s_type">
+        <option value="0" selected="selected">{:xstr('tpl122')}</option>
+        <option value="1">{:xstr('tpl123')}</option>
+        </select>
+        </td>
+      </tr>
+      <tr>
+        <td height="30" align="right">{:xstr('tpl124')}：</td>
+        <td width="15%"><input name="ePoints" type="text" id="ePoints" maxlength="9" onkeyup="value=value.replace(/[^0-9]/g,'')" onblur="tot_price();"/></td>
+        <td width="60%"><div id="ePoints1" class="info"><div class="focus_r"><div class="msg_tip">{:xstr('tpl124')}</div></div></div></td>
+      </tr>
+      <tr>
+        <td height="30" align="right">{:xstr('fee')}：</td>
+        <td width="15%"><input name="ks_m" type="text" id="ks_m" value="" readonly="readonly"/></td>
+        <td width="60%"><input name="ks" type="hidden" id="ks" value="{$ks}"/><div class="info"><div class="focus_r"><div class="msg_tip">{:xstr('fee')} {$str2}%</div></div></div></td>
+      </tr>
+      <tr>
+        <td width="24%" height="30" align="right">{:xstr('remark')}：</td>
+        <td colspan="2"><textarea name="bzcontent" cols="60" rows="4"></textarea>({:xstr('tpl125')})</td>
+      </tr>
+      <tr>
+        <td width="24%" height="30" align="right">{:xstr('please_read_agreement')}：</td>
+        <td colspan="2">
+        <div class="Agreement">{$eb_tcp}</div>
+        </td>
+      </tr>
+      <tr>
+        <td width="24%" height="30" align="right"></td>
+        <td colspan="2"><label>
+        <input name="agree" type="checkbox" id="agree" value="1" checked="checked" onpropertychange="change_fc()"/>
+        {:xstr('tpl092')}</label></td>
+      </tr>
+      <tr>
+        <td height="30" align="right">{:xstr('second_password')}：</td>
+        <td colspan="2"><input name="pass2" type="password" id="pass2"/></td>
+      </tr>
+      <tr>
+        <td align="right">&nbsp;</td>
+        <td colspan="2"><input type="submit" name="Submit1" value="{:xstr('tpl126')}" class="btn1" id="Submit1" /></td>
+      </tr>
+    
+</table>
+</form>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+function tot_price(){
+	var one_price = document.getElementById('ePoints').value;//单价
+	var sNun = document.getElementById('ks').value;//税
+	var mai_num = parseInt(sNun*one_price);
+	document.getElementById('ks_m').value = mai_num;
+}
+tot_price();
+</script>

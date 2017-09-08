@@ -1,0 +1,58 @@
+<div class="row-fluid">
+  <div class="span12">
+    <h3 class="page-title"> 在线工单 <small>My Homepage</small> </h3>
+    <ul class="breadcrumb">
+      <li> <i class="icon-home"></i> <a href="__APP__/Public/main">Home</a> <i class="icon-angle-right"></i> </li>
+      <li><a href="/index.php?s=/Msg/writemsg/">在线工单</a></li>
+    </ul>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span12"> 
+    <SCRIPT language=JavaScript>
+function checklogin() {
+	if (document.myform.UserID.value=="") {
+		alert("请输入收件人!");
+		myform.UserID.focus();
+		return false;
+	}
+	if (document.myform.Title.value=="") {
+		alert("请输入邮件标题!");
+		myform.Title.focus();
+		return false;
+	}
+	return true;
+}
+</SCRIPT>
+    <form method='post' id="form1" name="myform" onSubmit="return checklogin()" action="__URL__/writeSave" >
+      <table width="100%" border="0" cellpadding="5" cellspacing="5" style="font-size:12px">
+        <tr>
+          <td width="28%" align="right">收件人编号：</td>
+          <td width="72%"><input name="UserID" type="text"  id="UserID" value="公司" readonly="readonly" style="font-size:12px"/>
+            &nbsp;
+            <label>
+              <input name="level" type="radio" value="1" checked="checked" onclick="UserID.value='公司';UserID.readOnly=true;" style="font-size:12px" />
+              给公司留言</label>
+            &nbsp;
+            <eq name="mrs.id" value="1">
+              <label>
+                <input name="level" type="radio" value="0" onclick="UserID.value='';UserID.readOnly=false;" style="font-size:12px" />
+                给账户留言</label>
+            </eq></td>
+        </tr>
+        <tr>
+          <td align="right">工单标题：</td>
+          <td><input name="Title" type="text"  id="Title" size="25" maxlength="200" /></td>
+        </tr>
+        <tr>
+          <td align="right">工单内容：</td>
+          <td><textarea name="Msg" cols="25" rows="7" id="Msg"></textarea></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><input name="submit" type="submit"  class="button_text" value="发 送" /></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

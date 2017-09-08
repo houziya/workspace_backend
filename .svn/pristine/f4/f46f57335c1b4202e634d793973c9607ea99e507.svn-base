@@ -1,0 +1,79 @@
+<style type="text/css">
+<!--
+.STYLE1 {color: #FF0000}
+-->
+</style>
+<include file="../Public/header" />
+<div class="sub_bav">
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+  <tr class="tabletd">
+    <td colspan="2" align="right">[<a href="__URL__/auditMenber">{:xstr('return_list')}</a>]&nbsp;</td>
+    </tr>
+
+  <tr class="content_td">
+    <td class="info_td_left">{:xstr('recom_usser_id')}：</td>
+    <td class="info_td_right"><present name="vo['re_name']">{$vo['re_name']}<else />无</present></td>
+ 	</tr>
+
+  <tr class="content_td">
+    <td class="info_td_left">{:xstr('account')}：</td>
+    <td class="info_td_right"><present name="vo['user_id']">{$vo['user_id']}<else />无</present></td>
+ 	</tr>
+  <!--<tr class="content_td">
+    <td class="info_td_left">账户名：</td>
+    <td class="info_td_right"><present name="vo['nickname']">{$vo['nickname']}<else />无</present></td>
+ 	</tr>-->
+
+  <tr class="content_td">
+    <td class="info_td_left" colspan="20">&nbsp;</td>
+ 	</tr>
+  <tr class="content_td">
+    <td class="info_td_left">{:xstr('bank_name')}：</td>
+    <td class="info_td_right"><present name="vo['bank_name']">{$vo['bank_name']|bank_name}<else />无</present></td>
+ 	</tr>
+  <tr class="content_td">
+    <td class="info_td_left">QQ：</td>
+    <td class="info_td_right"><present name="vo['email']">{$vo['email']}<else />无</present></td>
+ 	</tr>
+  <tr class="content_td">
+    <td class="info_td_left">{:xstr('bank_code')}：</td>
+    <td class="info_td_right"><present name="vo['bank_card']">{$vo['bank_card']}<else />无</present></td>
+ 	</tr>
+  <tr class="content_td">
+    <td class="info_td_left">{:xstr('bank_user_name')}：</td>
+    <td class="info_td_right"><present name="vo['user_name']">{$vo['user_name']}<else />无</present></td>
+ 	</tr>
+  <tr class="content_td">
+    <td class="info_td_left">开户信息：</td>
+    <td class="info_td_right"><present name="vo['bank_province']">{$vo['bank_address']}{$vo['bank_city']}<else />无</present></td>
+ 	</tr>
+  <tr class="content_td">
+    <td class="info_td_left">{:xstr('person_idcode')}：</td>
+    <td class="info_td_right"><present name="vo['user_code']">{$vo['user_code']}<else />无</present></td>
+ 	</tr>
+  <tr class="content_td">
+    <td class="info_td_left">{:xstr('contact_address')}：</td>
+    <td class="info_td_right"><present name="vo['user_address']">{$vo['user_address']}<else />无</present></td>
+ 	</tr>
+  <tr class="content_td">
+    <td class="info_td_left">{:xstr('contact_phone')}：</td>
+    <td class="info_td_right"><present name="vo['user_tel']">{$vo['user_tel']}<else />无</present></td>
+ 	</tr>
+  <tr class="content_td">
+    <td class="info_td_left" colspan="20">&nbsp;</td>
+ 	</tr>
+  <tr class="content_td">
+    <td class="info_td_left">{:xstr('reg_date_time')}：</td>
+    <td class="info_td_right"><present name="vo['rdt']">{$vo['rdt']|date='Y-m-d H:i:s',###}<else />无</present></td>
+ 	</tr>
+  <tr class="content_td">
+    <td class="info_td_left">{:xstr('open_date_time')}：</td>
+    <td class="info_td_right"><neq name="vo['pdt']" value='0'>{$vo['pdt']|date='Y-m-d H:i:s',###}<else />{:xstr('not_opened')}</neq></td>
+ 	</tr>
+  <tr class="content_td">
+    <td colspan="2">&nbsp;</td>
+ 	</tr>
+</table>
+</div>
+</body>
+</html>
