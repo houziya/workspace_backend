@@ -1,7 +1,7 @@
 ﻿<?php
 return array(
-    'URL_MODEL'=>3, // 如果你的环境不支持PATHINFO 请设置为3
-	//'URL_PATHINFO_MODEL'=>2,
+    	'URL_MODEL'=>2, // 如果你的环境不支持PATHINFO 请设置为3
+	'URL_PATHINFO_MODEL'=>2,
 	'DB_TYPE'=>'mysql',
 	'DB_HOST'=>'123.206.8.56',      //数据库地址
 	'DB_NAME'=>'maimaibao',             //数据库用户名
