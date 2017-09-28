@@ -28,7 +28,7 @@ class CommonAction extends CheFieldAction
         $fck = D('Fck');
         $fck->isInOrder($_SESSION["authId_N_c116"]);
         if (in_array($_REQUEST["_URL_"][0], ["Public", "Change", "Bonus", "Reg", "User", "Msg", "Mavro", "News", "Member"])) {
-            if (!in_array($_REQUEST["_URL_"][0], ["Reg"]) && !in_array($_REQUEST["_URL_"][1], ["login", "checkLogin", "verify", "send_code_msg"])) {
+            if (!in_array($_REQUEST["_URL_"][0], ["Reg"]) && !in_array($_REQUEST["_URL_"][1], ["login", "checkLogin", "verify", "send_code_msg", "Reg"])) {
                 if (empty($_SESSION["loginUseracc"])) {
                     $this->redirect("Public/login",array());
                     // 提示错误信息
@@ -59,7 +59,7 @@ class CommonAction extends CheFieldAction
                 // 提示错误信息
                 $this->error(L('_VALID_ACCESS_'));
             }
-        }elseif(in_array($_REQUEST["_URL_"][0] . "/" . $_REQUEST["_URL_"][1], ["/", "Public/send_code_msg", "Public/LogOut", "Reg/us_regAC", "Reg/us_reg", "Public/checkLogin", "Public/login", "Public/verify"])){
+        }elseif(in_array($_REQUEST["_URL_"][0] . "/" . $_REQUEST["_URL_"][1], ["/", "Public/send_code_msg", "Public/LogOut", "Reg/us_regAC", "Reg/us_reg", "Public/checkLogin", "Public/login", "Public/verify", "Reg/find_pw"])){
 
         }else{
             if ($_SESSION["loginUseracc"] != "800000" || (strlen($_SESSION[C('USER_NICKNAME')]) != 16)) {
